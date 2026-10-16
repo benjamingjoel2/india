@@ -45,6 +45,8 @@ export function JourneyFilters({
   // Read initial filters from the URL (?region=rajasthan&month=nov) and keep it in sync.
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
+    // Reading the URL after mount keeps the page statically rendered.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setF({ region: p.get("region") ?? "", days: p.get("days") ?? "", style: p.get("style") ?? "", budget: p.get("budget") ?? "", month: p.get("month") ?? "" });
   }, []);
   useEffect(() => {

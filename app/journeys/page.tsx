@@ -19,7 +19,7 @@ export default function JourneysPage() {
       <PageHero
         title="Journeys worth the *journey*."
         eyebrow="Journeys"
-        intro="Ten starting points, shaped by years of travelling them. Change the order, slow the pace, add a tiger forest: your specialist builds the final version with you."
+        intro="Ten starting points, shaped by years of traveling them. Change the order, slow the pace, add a tiger forest: your specialist builds the final version with you."
         image="udaipur-palace"
         breadcrumbs={[{ label: "Journeys", href: "/journeys" }]}
       />

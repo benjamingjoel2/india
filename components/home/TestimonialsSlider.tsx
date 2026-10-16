@@ -30,7 +30,7 @@ export function TestimonialsSlider({ items, journeyTitles }: { items: Testimonia
               <span aria-hidden className="text-marigold">”</span>
             </blockquote>
             <figcaption className="mt-8 text-sm text-ivory/75">
-              <span className="font-medium text-ivory">{t.name}</span>, {t.from} · {journeyTitles[t.journey] ?? "Tailor-made journey"}, {t.travelled}
+              <span className="font-medium text-ivory">{t.name}</span>, {t.from} · {journeyTitles[t.journey] ?? "Tailor-made journey"}, {t.traveled}
             </figcaption>
           </motion.figure>
         </AnimatePresence>

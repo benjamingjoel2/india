@@ -40,7 +40,7 @@ export const journeys: Journey[] = [
     summary:
       "India's classic first journey, told properly: Old Delhi's spice lanes, the Taj Mahal at first light and Jaipur's forts and bazaars, with time to breathe between them.",
     overview: [
-      "Delhi, Agra and Jaipur sit a few hours apart, which is why the Golden Triangle is so often rushed. We slow it down. You'll walk Old Delhi with someone who grew up in its lanes, reach the Taj Mahal as the gates open and the marble turns from grey to rose, and give Jaipur three full days rather than an afternoon.",
+      "Delhi, Agra and Jaipur sit a few hours apart, which is why the Golden Triangle is so often rushed. We slow it down. You'll walk Old Delhi with someone who grew up in its lanes, reach the Taj Mahal as the gates open and the marble turns from gray to rose, and give Jaipur three full days rather than an afternoon.",
       "Between the headline monuments come the moments that make the trip yours: a breakfast of nihari near Jama Masjid, the vast stepped geometry of Chand Baori at Abhaneri, a morning with block printers in Sanganer, and an evening on a haveli rooftop as the city's temples ring out below.",
       "It works beautifully as a first taste of India or as the opening chapter of a longer journey. Ask your specialist about adding two nights in Ranthambore for tiger safaris, or continuing on to Udaipur and the lakes.",
     ],

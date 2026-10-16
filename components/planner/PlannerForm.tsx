@@ -158,7 +158,7 @@ function validate(step: number, d: PlannerData): Errors {
     if (d.interests.length === 0) e.interests = "Choose at least one interest.";
   }
   if (step === 3) {
-    if (d.adults < 1) e.adults = "At least one adult is travelling.";
+    if (d.adults < 1) e.adults = "At least one adult is traveling.";
     if (d.children > 0 && d.childAges.slice(0, d.children).some((a) => a === "")) e.childAges = "Add each child's age.";
     if (d.dietary.includes("Allergies") && !d.allergyDetails.trim()) e.allergyDetails = "Tell us about the allergies so we can plan safely.";
     if (!d.budget) e.budget = "Choose a budget range. It helps us suggest the right stays.";
@@ -211,9 +211,12 @@ export function PlannerForm({ preset, variant = "page" }: { preset?: PlannerPres
         notes: preset.note && !next.notes.includes(preset.note) ? [preset.note, next.notes].filter(Boolean).join("\n") : next.notes,
       };
     }
+    // Hydrating from browser storage after mount is intentional (server has no access to it).
+    /* eslint-disable react-hooks/set-state-in-effect */
     setData(next);
     setStep(savedStep);
     setLoaded(true);
+    /* eslint-enable react-hooks/set-state-in-effect */
   }, [preset]);
 
   useEffect(() => {
@@ -304,7 +307,7 @@ export function PlannerForm({ preset, variant = "page" }: { preset?: PlannerPres
             <dd>{data.month === "flexible" ? "Flexible" : monthNames[data.month as MonthKey]} · {data.days} days</dd>
             <dt className="text-stone">Where</dt>
             <dd>{data.helpMeChoose && !data.regions.length ? "Help me choose" : data.regions.map((r) => regions.find((x) => x.slug === r)?.name).join(", ") || "Open to ideas"}</dd>
-            <dt className="text-stone">Travellers</dt>
+            <dt className="text-stone">Travelers</dt>
             <dd>
               {data.adults} adult{data.adults > 1 ? "s" : ""}
               {data.children ? `, ${data.children} child${data.children > 1 ? "ren" : ""}` : ""}
@@ -376,7 +379,7 @@ export function PlannerForm({ preset, variant = "page" }: { preset?: PlannerPres
                           {monthNames[m]}
                         </option>
                       ))}
-                      <option value="flexible">I'm flexible</option>
+                      <option value="flexible">I&rsquo;m flexible</option>
                     </select>
                   </Field>
                   <Field label={`Number of days: ${data.days}`} error={errors.days} htmlFor={`${uid}-days`} hint="Most first journeys run 12–16 days.">
@@ -500,7 +503,7 @@ export function PlannerForm({ preset, variant = "page" }: { preset?: PlannerPres
                   </div>
                   {data.children > 0 && (
                     <div>
-                      <p className="mb-3 text-sm font-medium">Children's ages</p>
+                      <p className="mb-3 text-sm font-medium">Children&rsquo;s ages</p>
                       <div className="flex flex-wrap gap-3">
                         {Array.from({ length: data.children }).map((_, i) => (
                           <label key={i} className="flex flex-col text-xs text-stone">
@@ -552,7 +555,7 @@ export function PlannerForm({ preset, variant = "page" }: { preset?: PlannerPres
 
             {step === 4 && (
               <fieldset>
-                <StepHeading ref={headingRef} step={5} title="How can we *reach* you?" text="Your specialist will reply personally. No call centres, no pressure." />
+                <StepHeading ref={headingRef} step={5} title="How can we *reach* you?" text="Your specialist will reply personally. No call centers, no pressure." />
                 <div className="grid gap-6">
                   <div className="grid gap-6 sm:grid-cols-2">
                     <Field label="Your name" error={errors.name} htmlFor={`${uid}-name`}>
@@ -592,9 +595,9 @@ export function PlannerForm({ preset, variant = "page" }: { preset?: PlannerPres
                     <Link href="/legal/privacy" className="underline underline-offset-2">
                       privacy policy
                     </Link>
-                    . We'll only use your details to plan your journey.
+                    . We&rsquo;ll only use your details to plan your journey.
                   </p>
-                  {status === "error" && <ErrorText>Sorry, that didn't send. Please try again or message us on WhatsApp.</ErrorText>}
+                  {status === "error" && <ErrorText>Sorry, that didn&rsquo;t send. Please try again or message us on WhatsApp.</ErrorText>}
                 </div>
               </fieldset>
             )}

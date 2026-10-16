@@ -20,7 +20,7 @@ export const metadata = pageMeta({
 
 const principles = [
   ["One specialist", "The person you first speak to plans every detail, answers every question and is on WhatsApp while you travel."],
-  ["Known personally", "We only recommend places we've stayed, eaten and walked ourselves, and guides we've travelled with for years."],
+  ["Known personally", "We only recommend places we've stayed, eaten and walked ourselves, and guides we've traveled with for years."],
   ["Honest advice", "Sometimes that means fewer places, a different month or a quieter town than the one you'd planned. We'll always tell you."],
   ["Fair to everyone", "Clear pricing for you, fair pay for the people who make India welcoming."],
 ];
@@ -49,7 +49,7 @@ export default function AboutPage() {
               </p>
               <p>
                 So we built a company around that detail. Every journey is planned from scratch by one specialist who knows India first-hand, with local
-                guides we&rsquo;ve travelled with for years and stays we&rsquo;ve slept in ourselves. No call centres, no set departures, no shopping
+                guides we&rsquo;ve traveled with for years and stays we&rsquo;ve slept in ourselves. No call centers, no set departures, no shopping
                 stops.
               </p>
               <p>[Placeholder] Add the founding story, year and milestones here.</p>

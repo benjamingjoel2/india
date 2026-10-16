@@ -57,7 +57,7 @@ export function MonthStrip({
               onKeyDown={(e) => onKeyDown(e, i)}
               className={cn(
                 "relative min-w-16 shrink-0 border-t py-5 text-center font-display text-lg transition-colors duration-500",
-                selected ? "border-ivory text-ivory" : "border-ivory/20 text-ivory/50 hover:text-ivory/85",
+                selected ? "border-ivory text-ivory" : "border-ivory/20 text-ivory/70 hover:text-ivory/85",
               )}
             >
               <span className={cn(selected && "italic")}>{m.name.slice(0, 3)}</span>
@@ -88,7 +88,7 @@ export function MonthStrip({
               </div>
             </div>
             <div className="lg:col-span-4">
-              <p className="eyebrow text-ivory/50">At their best</p>
+              <p className="eyebrow text-ivory/70">At their best</p>
               <ul className="mt-4 space-y-2">
                 {best.map((r) => (
                   <li key={r.slug}>
@@ -108,7 +108,7 @@ export function MonthStrip({
               )}
             </div>
             <div className="lg:col-span-3">
-              <p className="eyebrow text-ivory/50">Festivals & events</p>
+              <p className="eyebrow text-ivory/70">Festivals & events</p>
               <ul className="mt-4 space-y-2">
                 {fests.map((f) => (
                   <li key={f.slug}>

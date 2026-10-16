@@ -251,6 +251,17 @@
   }
 }
 
+/* CSS-only hero entrance: paints immediately (good for LCP), no JS needed */
+@keyframes rise {
+  from {
+    opacity: 0.01;
+    transform: translateY(28px);
+  }
+}
+.animate-rise {
+  animation: rise 1.4s var(--ease-musafir) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

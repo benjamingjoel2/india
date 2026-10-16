@@ -33,7 +33,7 @@ export function SpecialistFeature() {
             </blockquote>
             <div className="mt-8 flex flex-wrap items-end justify-between gap-6">
               <div>
-                <p className="font-display text-4xl italic text-indigo" aria-hidden style={{ fontVariationSettings: '"SOFT" 100, "WONK" 1' }}>
+                <p className="font-display text-4xl italic text-indigo" aria-hidden>
                   {first}
                 </p>
                 <p className="mt-1 text-sm text-stone">

@@ -35,7 +35,7 @@ export default function TestimonialsPage() {
                     <figcaption className="mt-6 text-sm text-stone">
                       <span className="font-medium text-charcoal">{t.name}</span>, {t.from}
                       <br />
-                      {j ? <Link href={`/journeys/${j.slug}`} className="underline underline-offset-4">{j.title}</Link> : "Tailor-made journey"} · {t.travelled}
+                      {j ? <Link href={`/journeys/${j.slug}`} className="underline underline-offset-4">{j.title}</Link> : "Tailor-made journey"} · {t.traveled}
                     </figcaption>
                   </figure>
                 </Reveal>

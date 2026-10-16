@@ -8,7 +8,7 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
   title: "Our guides",
-  description: "Meet the historians, naturalists, cooks and mountain guides who bring India to life on our journeys, each one someone we have travelled with for years.",
+  description: "Meet the historians, naturalists, cooks and mountain guides who bring India to life on our journeys, each one someone we have traveled with for years.",
   path: "/our-guides",
   image: "amber-fort",
 });

@@ -20,7 +20,7 @@ export default function FestivalsPage() {
       <PageHero
         title="Arrive in time for the *celebration*."
         eyebrow="Festivals"
-        intro="Lamps on every ledge, colour in the air, a desert town filled with camels. Most festivals follow lunar calendars, so dates move each year; we confirm them before you book."
+        intro="Lamps on every ledge, color in the air, a desert town filled with camels. Most festivals follow lunar calendars, so dates move each year; we confirm them before you book."
         image="golden-temple-dusk"
         breadcrumbs={[{ label: "Festivals", href: "/festivals" }]}
       >

@@ -71,7 +71,7 @@ export const months: MonthGuide[] = [
     key: "mar",
     name: "March",
     summary:
-      "Spring colour in the north, with Holi celebrated in streets and courtyards. As the forests dry out, central India's tiger reserves enter their best season for sightings.",
+      "Spring color in the north, with Holi celebrated in streets and courtyards. As the forests dry out, central India's tiger reserves enter their best season for sightings.",
     weather: "Warming steadily, pleasant in the north early in the month and hot in the south by the end.",
     bestRegions: ["north", "rajasthan", "central-india", "islands", "east-northeast"],
     picks: ["Holi in Rajasthan or Mathura", "Tigers in Ranthambore and Bandhavgarh", "Andaman snorkelling", "Meghalaya's hills"],

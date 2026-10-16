@@ -76,7 +76,7 @@ export function NewsletterForm({
           aria-describedby={status === "error" ? `${id}-err` : undefined}
           className={cn(
             "min-h-11 w-full bg-transparent text-base outline-none",
-            dark ? "placeholder:text-ivory/50" : "placeholder:text-charcoal/50",
+            dark ? "placeholder:text-ivory/70" : "placeholder:text-charcoal/50",
           )}
         />
         <button
