@@ -84,7 +84,7 @@ export function MonthStrip({
               <p className="mt-4 text-lede text-ivory/80">{month.summary}</p>
               <p className="mt-4 text-sm text-ivory/60">{month.weather}</p>
               <div className="mt-6 flex flex-wrap items-center gap-3">
-                <VerifyFlag className="border-marigold/50 bg-marigold/10 text-marigold">Seasons and dates vary yearly</VerifyFlag>
+                <VerifyFlag tone="dark">Seasons and dates vary yearly</VerifyFlag>
               </div>
             </div>
             <div className="lg:col-span-4">
