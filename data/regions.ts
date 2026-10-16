@@ -15,7 +15,7 @@ export const regions: Region[] = [
       "The India of the great rivers and the great empires: Mughal Delhi and Agra, the ghats of Varanasi, the Ganges at Rishikesh and the Golden Temple at Amritsar.",
     overview: [
       "North India is where many first journeys begin, and for good reason. Delhi holds seven historic cities inside one modern capital, from the red sandstone of Humayun's Tomb to the lanes of Old Delhi, where a cycle rickshaw can carry you past spice wholesalers, silversmiths and a seventeenth-century mosque in the space of ten minutes.",
-      "Follow the plains east and the story deepens. In Agra, the Taj Mahal changes colour with the hour, pale grey before sunrise, warm white at noon, rose at dusk. In Varanasi, the oldest living city on the Ganges, pilgrims bathe at first light and evening aarti fills the river with lamps, bells and the smell of camphor and marigold.",
+      "Follow the plains east and the story deepens. In Agra, the Taj Mahal changes color with the hour, pale gray before sunrise, warm white at noon, rose at dusk. In Varanasi, the oldest living city on the Ganges, pilgrims bathe at first light and evening aarti fills the river with lamps, bells and the smell of camphor and marigold.",
       "Further north the land rises. Rishikesh sits where the Ganges leaves the Himalayan foothills, a town of ashrams, suspension bridges and clear green water. Amritsar, in the Punjab, is home to the Golden Temple, whose community kitchen serves free meals to tens of thousands of people every day, cooked and served by volunteers. We plan the pace so each place has room to breathe.",
     ],
     accent: "marigold",
@@ -24,7 +24,7 @@ export const regions: Region[] = [
     highlights: [
       {
         title: "The Taj Mahal at first light",
-        text: "We time your visit for opening, when the crowds are thin and the marble turns from grey to gold over the Yamuna.",
+        text: "We time your visit for opening, when the crowds are thin and the marble turns from gray to gold over the Yamuna.",
       },
       {
         title: "Evening aarti in Varanasi",
@@ -122,7 +122,7 @@ export const regions: Region[] = [
       {
         question: "What is the fog like in winter?",
         answer:
-          "In December and January, dense morning fog can settle over the northern plains and delay flights and trains. We build in buffer time, favour later departures and use road transfers where it makes sense. Days usually clear into crisp sunshine.",
+          "In December and January, dense morning fog can settle over the northern plains and delay flights and trains. We build in buffer time, favor later departures and use road transfers where it makes sense. Days usually clear into crisp sunshine.",
       },
     ],
     seo: {
@@ -140,7 +140,7 @@ export const regions: Region[] = [
       "The land of the Rajput kingdoms: hilltop forts, lake palaces and blue and golden cities strung across the Thar Desert.",
     overview: [
       "Rajasthan was once a patchwork of princely states, each with its own ruling family, its own fort and its own fierce pride. That history is still close to the surface. Many palaces are now hotels run by descendants of the families who built them, and a conversation over tea on a haveli rooftop can easily turn into three centuries of family stories.",
-      "Each city has its own colour and character. Jaipur is pink and busy, a planned city of bazaars and the honeycombed Hawa Mahal. Udaipur is white and serene, its palaces reflected in Lake Pichola. Jodhpur sprawls in indigo beneath Mehrangarh, one of the most imposing forts in India, and Jaisalmer rises from the sand in honey-coloured stone.",
+      "Each city has its own color and character. Jaipur is pink and busy, a planned city of bazaars and the honeycombed Hawa Mahal. Udaipur is white and serene, its palaces reflected in Lake Pichola. Jodhpur sprawls in indigo beneath Mehrangarh, one of the most imposing forts in India, and Jaisalmer rises from the sand in honey-colored stone.",
       "Between the cities is a quieter Rajasthan we love just as much: village markets, stepwells, block-printing workshops and dunes where you can watch the sun go down with nothing but the sound of camel bells. Pushkar, with its holy lake and ghats, is a gentle pause on the way. We balance the grand set pieces with these slower, more personal moments.",
     ],
     accent: "sandstone",
@@ -264,7 +264,7 @@ export const regions: Region[] = [
     overview: [
       "South India runs on a different rhythm. In Kerala, life follows the water: rice barges converted into houseboats drift along the backwaters, past village churches, toddy shops and women washing brass pots at the water's edge. Up in the Western Ghats, the air smells of cardamom and wet earth, and tea estates roll across the hills around Munnar.",
       "Tamil Nadu is the great temple country. At Madurai, the gopurams of the Meenakshi Temple are crowded with thousands of painted figures, and evening ceremonies carry on much as they have for centuries. Along the coast, the French quarter of Pondicherry offers mustard-yellow villas and bakeries, and Chettinad's mansions serve one of India's great regional cuisines.",
-      "Karnataka holds the royal splendour of Mysore and the boulder-strewn ruins of Hampi, once the capital of the Vijayanagara empire. And Goa, with its Portuguese churches, spice farms and long beaches, is the place to slow right down at the end of a journey. We stitch these together by road, rail and short flights so the south feels unhurried.",
+      "Karnataka holds the royal splendor of Mysore and the boulder-strewn ruins of Hampi, once the capital of the Vijayanagara empire. And Goa, with its Portuguese churches, spice farms and long beaches, is the place to slow right down at the end of a journey. We stitch these together by road, rail and short flights so the south feels unhurried.",
     ],
     accent: "kerala",
     image: "kerala-houseboat",
@@ -276,7 +276,7 @@ export const regions: Region[] = [
       },
       {
         title: "Ayurveda done properly",
-        text: "Retreats with qualified doctors, personalised treatment plans and simple, nourishing food, not a spa menu with a new name.",
+        text: "Retreats with qualified doctors, personalized treatment plans and simple, nourishing food, not a spa menu with a new name.",
       },
       {
         title: "Temple evenings in Madurai",
@@ -467,7 +467,7 @@ export const regions: Region[] = [
       {
         question: "Will altitude be a problem in Ladakh?",
         answer:
-          "Leh sits at around 3,500 metres, so acclimatisation matters. We plan two or three gentle days on arrival before any higher excursions and choose routes that climb gradually. If you have any medical concerns, speak to your doctor before travelling.",
+          "Leh sits at around 3,500 meters, so acclimatization matters. We plan two or three gentle days on arrival before any higher excursions and choose routes that climb gradually. If you have any medical concerns, speak to your doctor before traveling.",
       },
       {
         question: "Do we need permits for the Himalaya?",
@@ -496,7 +496,7 @@ export const regions: Region[] = [
     overview: [
       "Central India is the country of The Jungle Book, a landscape of sal and teak forest, bamboo thickets, grassy meadows and rocky outcrops. It is also one of the best places in the world to see a wild tiger. Early mornings begin with a jeep, a naturalist and a thermos of chai, listening for the alarm calls of spotted deer and langur monkeys.",
       "Each reserve has its own character. Ranthambore has ruined pavilions and a thousand-year-old fort inside the park. Bandhavgarh is known for a high density of tigers. Kanha's meadows are home to the hard-ground barasingha, a deer brought back from the edge of extinction. Tadoba, in Maharashtra, has become one of the most reliable parks for sightings in recent years.",
-      "Wildlife is never guaranteed, and we never pretend it is. What we can promise is the right lodges, experienced naturalists and safari permits secured early. We favour lodges that employ local people, support conservation and take the forest seriously, and we combine the parks with temples such as Khajuraho for a fuller picture of the region.",
+      "Wildlife is never guaranteed, and we never pretend it is. What we can promise is the right lodges, experienced naturalists and safari permits secured early. We favor lodges that employ local people, support conservation and take the forest seriously, and we combine the parks with temples such as Khajuraho for a fuller picture of the region.",
     ],
     accent: "teak",
     image: "tiger",
@@ -735,7 +735,7 @@ export const regions: Region[] = [
       },
       {
         title: "Snorkelling and diving",
-        text: "Coral gardens, turtles and reef fish with dive centres we trust, including gentle first dives for beginners.",
+        text: "Coral gardens, turtles and reef fish with dive centers we trust, including gentle first dives for beginners.",
       },
       {
         title: "Island-hopping by ferry",
@@ -793,7 +793,7 @@ export const regions: Region[] = [
       {
         question: "Are the Andamans good for diving beginners?",
         answer:
-          "Yes. Havelock in particular has well-run dive centres offering introductory dives and courses in calm, clear water. We recommend operators with strong safety records who respect the reefs and keep group sizes small.",
+          "Yes. Havelock in particular has well-run dive centers offering introductory dives and courses in calm, clear water. We recommend operators with strong safety records who respect the reefs and keep group sizes small.",
       },
       {
         question: "How many nights should we spend in the islands?",
@@ -804,7 +804,7 @@ export const regions: Region[] = [
     seo: {
       title: "Andaman Islands holidays: Havelock and Neil",
       description:
-        "Tailor-made Andaman Islands stays on Havelock and Neil, with white-sand beaches, coral reefs, trusted dive centres and smooth ferry connections planned for you.",
+        "Tailor-made Andaman Islands stays on Havelock and Neil, with white-sand beaches, coral reefs, trusted dive centers and smooth ferry connections planned for you.",
     },
   },
 ];

@@ -15,7 +15,7 @@ export const people: Person[] = [
     languages: ["English", "Hindi", "Punjabi"],
     bio: [
       "Some of my earliest memories are of trains. Every school holiday my parents would pack tiffin boxes and bedrolls and take us somewhere new: to my grandmother's house in Amritsar, to the hill stations, to a cousin's wedding in Jaipur that lasted five days. I learned India through the window of a second-class carriage, and through the people who shared their food with us along the way.",
-      "As an adult I kept travelling, from the backwaters of Kerala to the monasteries of Ladakh, and kept meeting friends from abroad who wanted to see the India I knew but didn't know where to start. Too often they came home having seen the monuments but missed the warmth, the conversation and the small, unplanned moments that make this country unforgettable.",
+      "As an adult I kept traveling, from the backwaters of Kerala to the monasteries of Ladakh, and kept meeting friends from abroad who wanted to see the India I knew but didn't know where to start. Too often they came home having seen the monuments but missed the warmth, the conversation and the small, unplanned moments that make this country unforgettable.",
       "I founded Musafir to change that. Musafir means 'traveler' in Hindi and Urdu, and every journey we plan is built the way I'd plan one for a close friend: by one specialist who knows you, with guides we know personally, at a pace that gives you room to actually feel where you are.",
     ],
     quote:
@@ -72,8 +72,8 @@ export const people: Person[] = [
     base: "Leh",
     languages: ["English", "Ladakhi", "Hindi", "Tibetan"],
     bio: [
-      "Tenzin was raised in a village in the Indus Valley and spent his childhood herding goats on slopes above 3,500 metres. He has been guiding treks across Ladakh, Zanskar and the Markha Valley for more than a decade, and is trained in wilderness first aid.",
-      "He knows the monasteries of Ladakh intimately, from Hemis to Thiksey to Lamayuru, and the families who run homestays along the trails. His calm, careful approach to acclimatisation has seen countless travelers safely over high passes.",
+      "Tenzin was raised in a village in the Indus Valley and spent his childhood herding goats on slopes above 3,500 meters. He has been guiding treks across Ladakh, Zanskar and the Markha Valley for more than a decade, and is trained in wilderness first aid.",
+      "He knows the monasteries of Ladakh intimately, from Hemis to Thiksey to Lamayuru, and the families who run homestays along the trails. His calm, careful approach to acclimatization has seen countless travelers safely over high passes.",
     ],
     quote: "In the mountains, there's no hurry. The pass will still be there tomorrow.",
     specialties: ["Markha Valley and Zanskar treks", "Buddhist monasteries", "Village homestays", "High-altitude safety"],
@@ -86,7 +86,7 @@ export const people: Person[] = [
     base: "Kanha and Bandhavgarh",
     languages: ["English", "Hindi", "Gondi"],
     bio: [
-      "Anil grew up in a Gond village on the edge of Kanha National Park, where his grandfather taught him to read tracks in the dust and recognise birds by their calls. He trained as a naturalist with a lodge-run programme and has spent more than twenty years in the forests of central India.",
+      "Anil grew up in a Gond village on the edge of Kanha National Park, where his grandfather taught him to read tracks in the dust and recognize birds by their calls. He trained as a naturalist with a lodge-run program and has spent more than twenty years in the forests of central India.",
       "He has a gift for spotting what others miss: an owlet in a hollow, the scrape of a leopard, the tension in a herd of chital. He's a patient teacher, and never lets you forget that the forest is about far more than tigers.",
     ],
     quote: "The tiger is the headline, but the forest is the whole story.",

@@ -35,6 +35,8 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const saved = window.localStorage.getItem(STORAGE_KEY);
+      // Restoring the visitor's choice after mount; localStorage isn't available on the server.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (saved && saved in currencies) setCurrencyState(saved as CurrencyCode);
     } catch {
       /* storage unavailable */

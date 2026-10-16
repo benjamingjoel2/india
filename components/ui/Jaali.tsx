@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-/** Section divider: a hairline with a small carved-lattice medallion at its centre. */
+/** Section divider: a hairline with a small carved-lattice medallion at its center. */
 export function JaaliDivider({ className }: { className?: string }) {
   return (
     <div aria-hidden className={cn("flex items-center gap-4 text-current", className)}>
@@ -17,7 +17,7 @@ export function JaaliDivider({ className }: { className?: string }) {
   );
 }
 
-/** Lattice texture panel; tint with a text colour class. */
+/** Lattice texture panel; tint with a text color class. */
 export function JaaliPanel({ className }: { className?: string }) {
   return <div aria-hidden className={cn("jaali-fill pointer-events-none", className)} />;
 }

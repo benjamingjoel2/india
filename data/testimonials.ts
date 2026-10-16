@@ -8,11 +8,11 @@ export const testimonials: Testimonial[] = [
   {
     id: "t1",
     quote:
-      "Rohit turned the Amber Fort from a beautiful building into a living story. The morning he took us to his favourite kachori stall in the old city was the moment we fell for Jaipur. Every detail was handled, and we never once felt rushed.",
+      "Rohit turned the Amber Fort from a beautiful building into a living story. The morning he took us to his favorite kachori stall in the old city was the moment we fell for Jaipur. Every detail was handled, and we never once felt rushed.",
     name: "Hannah R.",
     from: "London, UK",
     journey: "rajasthan-palaces",
-    travelled: "November 2025",
+    traveled: "November 2025",
     placeholder: true,
   },
   {
@@ -22,7 +22,7 @@ export const testimonials: Testimonial[] = [
     name: "Mark T.",
     from: "Denver, USA",
     journey: "tigers-and-temples",
-    travelled: "March 2026",
+    traveled: "March 2026",
     placeholder: true,
   },
   {
@@ -32,17 +32,17 @@ export const testimonials: Testimonial[] = [
     name: "Priya and James L.",
     from: "Melbourne, Australia",
     journey: "honeymoon-india",
-    travelled: "January 2026",
+    traveled: "January 2026",
     placeholder: true,
   },
   {
     id: "t4",
     quote:
-      "Tenzin paced our acclimatisation perfectly, and when my husband struggled on the second pass he simply slowed everything down without any fuss. Sitting in a homestay kitchen drinking butter tea afterwards is a memory I'll keep forever.",
+      "Tenzin paced our acclimatization perfectly, and when my husband struggled on the second pass he simply slowed everything down without any fuss. Sitting in a homestay kitchen drinking butter tea afterwards is a memory I'll keep forever.",
     name: "Sophie M.",
     from: "Vancouver, Canada",
     journey: "himalayan-adventures",
-    travelled: "August 2025",
+    traveled: "August 2025",
     placeholder: true,
   },
   {
@@ -52,7 +52,7 @@ export const testimonials: Testimonial[] = [
     name: "Katrin W.",
     from: "Munich, Germany",
     journey: "family-india",
-    travelled: "December 2025",
+    traveled: "December 2025",
     placeholder: true,
   },
   {
@@ -62,7 +62,7 @@ export const testimonials: Testimonial[] = [
     name: "David K.",
     from: "Toronto, Canada",
     journey: "spiritual-india",
-    travelled: "February 2026",
+    traveled: "February 2026",
     placeholder: true,
   },
 ];

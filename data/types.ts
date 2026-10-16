@@ -235,7 +235,7 @@ export interface Testimonial {
   name: string;
   from: string;
   journey: string; // journey slug
-  travelled: string; // "March 2026"
+  traveled: string; // "March 2026"
   /** Always true for seed content: these are not real reviews. */
   placeholder: true;
 }

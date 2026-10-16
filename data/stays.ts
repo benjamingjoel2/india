@@ -14,7 +14,7 @@ export const stays: Stay[] = [
     summary:
       "A white marble palace on Lake Pichola, reached only by boat, with the City Palace glowing across the water at dusk.",
     description: [
-      "Picture a palace that seems to float. Courtyards of white marble open onto the lake, lotus pools ripple in the breeze, and the walls are inlaid with coloured glass and mirrorwork that catches every lamp after dark. You arrive by boat, garlanded at the jetty, and the city falls quiet behind you.",
+      "Picture a palace that seems to float. Courtyards of white marble open onto the lake, lotus pools ripple in the breeze, and the walls are inlaid with colored glass and mirrorwork that catches every lamp after dark. You arrive by boat, garlanded at the jetty, and the city falls quiet behind you.",
       "Rooms look out over Lake Pichola to the Aravalli hills and the long facade of the City Palace. Mornings start with breakfast on a terrace above the water; evenings end with a sunset cruise and dinner by candlelight in a pavilion where Mewar royals once escaped the summer heat.",
       "This is a placeholder for the kind of lake palace we love in Udaipur. Your specialist will recommend the right property for your dates, budget and style.",
     ],
@@ -45,7 +45,7 @@ export const stays: Stay[] = [
     summary:
       "A sandstone palace in gardens on the edge of the Blue City, with views to Mehrangarh Fort on its rocky ridge.",
     description: [
-      "Imagine a palace of honey-coloured sandstone set in walled gardens, where peacocks strut across the lawns in the morning and the sound of the city drifts up only faintly. Inside are high ceilings, Art Deco touches and long verandas made for an afternoon with a book and a pot of tea.",
+      "Imagine a palace of honey-colored sandstone set in walled gardens, where peacocks strut across the lawns in the morning and the sound of the city drifts up only faintly. Inside are high ceilings, Art Deco touches and long verandas made for an afternoon with a book and a pot of tea.",
       "From the terraces you look across the blue-washed houses of the old city to Mehrangarh Fort, one of the most formidable in India. Evenings bring a drink on the lawn as the fort lights up, and dinner of Marwari dishes such as ker sangri and laal maas.",
       "This is a placeholder for the kind of palace stay we recommend in Jodhpur. We will match you with the right property for your journey.",
     ],
@@ -61,7 +61,7 @@ export const stays: Stay[] = [
       "Spa and yoga pavilion",
     ],
     whyWeLoveIt:
-      "Watching Mehrangarh light up from the lawn with a gin and tonic in hand is my favourite evening in Rajasthan.",
+      "Watching Mehrangarh light up from the lawn with a gin and tonic in hand is my favorite evening in Rajasthan.",
     seo: {
       title: "Palace Stay in Jodhpur, Rajasthan",
       description:

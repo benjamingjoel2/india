@@ -44,10 +44,12 @@ export function PlannerProvider({ children }: { children: React.ReactNode }) {
     returnFocus.current?.focus?.();
   }, []);
 
-  useEffect(() => {
-    // Close when navigating away
+  // Close when navigating away (adjust state during render rather than in an effect).
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
     setIsOpen(false);
-  }, [pathname]);
+  }
 
   useEffect(() => {
     if (!isOpen) return;

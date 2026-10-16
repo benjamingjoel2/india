@@ -19,17 +19,17 @@ export function Footer() {
             <p className="mt-4 max-w-sm font-display text-lg italic text-ivory/90">{brand.tagline}</p>
             <ul className="mt-8 space-y-3 text-[0.95rem]">
               <li>
-                <span className="eyebrow mr-3 text-ivory/50">Call</span>
+                <span className="eyebrow mr-3 text-ivory/70">Call</span>
                 <a href={contact.phoneHref} className="link-underline">{contact.phone}</a>
               </li>
               <li>
-                <span className="eyebrow mr-3 text-ivory/50">WhatsApp</span>
+                <span className="eyebrow mr-3 text-ivory/70">WhatsApp</span>
                 <a href={contact.whatsappHref} target="_blank" rel="noopener noreferrer" className="link-underline inline-flex items-center gap-1.5">
                   <WhatsAppIcon className="size-4" /> {contact.whatsappNumber}
                 </a>
               </li>
               <li>
-                <span className="eyebrow mr-3 text-ivory/50">Email</span>
+                <span className="eyebrow mr-3 text-ivory/70">Email</span>
                 <a href={contact.emailHref} className="link-underline">{contact.email}</a>
               </li>
             </ul>
@@ -38,7 +38,7 @@ export function Footer() {
           <nav aria-label="Footer" className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-5">
             {Object.entries(navigation.footer).map(([title, links]) => (
               <div key={title}>
-                <h2 className="eyebrow mb-5 font-sans text-ivory/50">{title}</h2>
+                <h2 className="eyebrow mb-5 font-sans text-ivory/70">{title}</h2>
                 <ul className="space-y-2.5 text-[0.95rem] text-ivory/85">
                   {links.map((l) => (
                     <li key={l.href}>
@@ -49,7 +49,7 @@ export function Footer() {
               </div>
             ))}
             <div>
-              <h2 className="eyebrow mb-5 font-sans text-ivory/50">Connect</h2>
+              <h2 className="eyebrow mb-5 font-sans text-ivory/70">Connect</h2>
               <ul className="space-y-2.5 text-[0.95rem] text-ivory/85">
                 {contact.social.map((s) => (
                   <li key={s.label}>

@@ -30,7 +30,7 @@ export function ButtonLink({
     const { prefetch: _prefetch, replace: _replace, scroll: _scroll, ...anchorProps } = rest as Record<string, unknown>;
     void _prefetch; void _replace; void _scroll;
     return (
-      <a href={href as string} className={buttonClass(variant, className)} target="_blank" rel="noopener noreferrer" {...(anchorProps as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
+      <a href={href as string} className={buttonClass(variant, className)} {...(/^https?:/.test(href as string) ? { target: "_blank", rel: "noopener noreferrer" } : {})} {...(anchorProps as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
         {children}
       </a>
     );

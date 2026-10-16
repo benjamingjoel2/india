@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
@@ -36,11 +35,14 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
+  // Close menus on navigation (adjust state during render rather than in an effect).
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
     setActive(null);
     setMobileOpen(false);
     setSearchOpen(false);
-  }, [pathname]);
+  }
 
   // Cmd/Ctrl+K or "/" opens search
   useEffect(() => {
@@ -126,8 +128,12 @@ export function Header() {
               <button type="button" onClick={() => setSearchOpen(true)} aria-label="Search (press / or Ctrl+K)" className="flex size-11 items-center justify-center rounded-full hover:bg-current/10">
                 <SearchIcon className="size-[1.1rem]" />
               </button>
-              <CurrencySwitcher className="hidden md:inline-flex" />
-              <PlanButton variant={solid ? "primary" : "light"} className="hidden min-h-11! px-5! text-sm! sm:inline-flex" />
+              <div className="hidden md:block">
+                <CurrencySwitcher />
+              </div>
+              <div className="hidden sm:block">
+                <PlanButton variant={solid ? "primary" : "light"} className="min-h-11! px-5! text-sm!" />
+              </div>
               <button
                 type="button"
                 onClick={() => setMobileOpen(true)}

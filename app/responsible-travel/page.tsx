@@ -18,7 +18,7 @@ export const metadata = pageMeta({
 const pillars = [
   {
     id: "respect",
-    title: "Travelling *respectfully*.",
+    title: "Traveling *respectfully*.",
     image: "golden-temple-day" as const,
     points: [
       ["Dress for the place", "Shoulders and knees covered at temples, mosques and gurdwaras; a scarf for covering your head where it's asked. We'll brief you before each visit."],
@@ -33,7 +33,7 @@ const pillars = [
     image: "spice-bowls" as const,
     points: [
       ["Fair pay, on time", "Guides, drivers and hosts are paid fairly and promptly, with clear tipping guidance so nobody is left guessing."],
-      ["Locally owned first", "We favour family-run havelis, homestays and lodges that employ and buy from their neighbours."],
+      ["Locally owned first", "We favor family-run havelis, homestays and lodges that employ and buy from their neighbors."],
       ["Craft at its source", "Block printers, weavers and potters are visited in their workshops, at a fair price, with no commission-driven shopping stops."],
       ["Giving back, quietly", "[Placeholder] Describe the community projects and partners the company supports here."],
     ],

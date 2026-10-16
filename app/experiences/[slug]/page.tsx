@@ -76,7 +76,7 @@ export default async function ExperiencePage({ params }: PageProps<"/experiences
               </ul>
               {e.ethics && (
                 <div className="mt-10 border-l-2 border-kerala bg-kerala/5 p-6">
-                  <p className="eyebrow text-[0.62rem] text-kerala">Travelling responsibly</p>
+                  <p className="eyebrow text-[0.62rem] text-kerala">Traveling responsibly</p>
                   <p className="mt-2 text-[0.95rem] text-charcoal/85">{e.ethics}</p>
                 </div>
               )}

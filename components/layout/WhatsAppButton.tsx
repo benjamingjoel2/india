@@ -14,7 +14,7 @@ export function WhatsAppButton() {
       href={contact.whatsappHref}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with a specialist on WhatsApp"
+      aria-label="Chat on WhatsApp with a specialist"
       className="group fixed right-4 bottom-4 z-40 flex items-center gap-2 rounded-full bg-[#1f7a4d] p-3.5 text-ivory shadow-[0_10px_30px_-10px_rgba(20,27,51,0.6)] transition-all duration-700 ease-musafir hover:bg-[#186640] md:right-6 md:bottom-6"
     >
       <WhatsAppIcon className="size-6" />

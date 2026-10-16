@@ -23,7 +23,7 @@ export const experiences: Experience[] = [
       "Safari permits are limited and released months in advance, so book early, especially for winter and Indian holidays.",
       "Morning drives start before sunrise and can be cold from December to February; bring layers, a hat and gloves.",
       "Sightings are never guaranteed. Several drives across different zones give you the best odds.",
-      "Neutral colours, binoculars and a camera with a zoom lens make a real difference.",
+      "Neutral colors, binoculars and a camera with a zoom lens make a real difference.",
     ],
     ethics:
       "We use licensed naturalists and book permits only through official park portals. There is no baiting, no off-track driving and no crowding of animals, and we never offer elephant rides.",
@@ -41,7 +41,7 @@ export const experiences: Experience[] = [
     summary:
       "Nights in Rajasthan's royal palaces and forts, many still lived in by the families who built them.",
     description: [
-      "The door to your room might be carved sheesham wood, taller than two people. The ceiling may be painted with peacocks and the windows set with coloured glass that throws red and green across the floor in the late afternoon. Below, a courtyard where court musicians once played now holds a quiet breakfast of poha and masala chai.",
+      "The door to your room might be carved sheesham wood, taller than two people. The ceiling may be painted with peacocks and the windows set with colored glass that throws red and green across the floor in the late afternoon. Below, a courtyard where court musicians once played now holds a quiet breakfast of poha and masala chai.",
       "After Indian independence, many princely families turned their palaces into hotels to keep them standing. Today you can stay in a lake palace in Udaipur, a sandstone fort above Jodhpur's blue city, or a rambling country thikana where the owner may join you for a drink on the terrace and tell you about the grandfather who hunted with a falcon.",
       "We choose palace stays for character as much as comfort, from grand five-star properties to smaller family-run heritage hotels where a single conversation over dinner can teach you more about Rajput history than any museum.",
     ],
@@ -58,7 +58,7 @@ export const experiences: Experience[] = [
       "Many families still live on site, so some areas are private.",
     ],
     ethics:
-      "Where we can, we favour family-run heritage hotels that keep money, jobs and craft skills in the local community.",
+      "Where we can, we favor family-run heritage hotels that keep money, jobs and craft skills in the local community.",
     relatedJourneys: ["rajasthan-palaces", "honeymoon-india", "luxury-train-journeys"],
     seo: {
       title: "Palace Stays in Rajasthan: Heritage Hotels",
@@ -108,7 +108,7 @@ export const experiences: Experience[] = [
     description: [
       "Ayurveda, the traditional system of medicine with roots stretching back more than two thousand years, is still a living practice in Kerala. A good retreat starts with a consultation with an Ayurvedic doctor, who asks about your sleep, your digestion and your habits before recommending treatments and a simple diet. Warm herbal oils, rhythmic massage, steam and rest set the pace of the day.",
       "Yoga sits alongside it naturally. In Kerala that might mean a dawn session in an open pavilion as the light comes up over the coconut palms. In Rishikesh, on the banks of the Ganges in the Himalayan foothills, you can study with teachers in the town where countless schools of yoga have taken root.",
-      "We suggest anything from a few gentle sessions within a wider journey to a dedicated stay of a week or more, which is what traditional treatment programmes such as panchakarma require. We only recommend centres with qualified practitioners and a calm, unhurried atmosphere.",
+      "We suggest anything from a few gentle sessions within a wider journey to a dedicated stay of a week or more, which is what traditional treatment programs such as panchakarma require. We only recommend centers with qualified practitioners and a calm, unhurried atmosphere.",
     ],
     category: "wellness",
     regions: ["south", "north"],
@@ -117,18 +117,18 @@ export const experiences: Experience[] = [
     bestMonths: ["jun", "jul", "aug", "sep", "oct", "nov", "dec", "jan", "feb", "mar"],
     image: "yoga-dawn",
     whatToKnow: [
-      "Traditional Ayurvedic programmes are often recommended for a minimum of 7, and ideally 14 or 21, nights.",
+      "Traditional Ayurvedic programs are often recommended for a minimum of 7, and ideally 14 or 21, nights.",
       "Kerala's monsoon (June to September) is traditionally considered an excellent time for Ayurveda.",
       "Retreats generally serve a simple vegetarian diet and may discourage alcohol.",
       "Classes welcome all levels; tell your teacher about any injuries.",
     ],
     ethics:
-      "Ayurveda is not a substitute for medical care. Consult your doctor before starting a treatment programme, and keep taking any prescribed medication unless your doctor advises otherwise.",
+      "Ayurveda is not a substitute for medical care. Consult your doctor before starting a treatment program, and keep taking any prescribed medication unless your doctor advises otherwise.",
     relatedJourneys: ["kerala-backwaters", "spiritual-india", "honeymoon-india"],
     seo: {
       title: "Ayurveda and Yoga Retreats in India",
       description:
-        "Experience authentic Ayurveda in Kerala and yoga by the Ganges in Rishikesh. How retreats work, how long to stay and how to choose a reputable centre.",
+        "Experience authentic Ayurveda in Kerala and yoga by the Ganges in Rishikesh. How retreats work, how long to stay and how to choose a reputable center.",
     },
   },
   {
@@ -168,7 +168,7 @@ export const experiences: Experience[] = [
     summary:
       "Meet the artisans of Rajasthan's block-printing villages and try your hand at a craft passed down for generations.",
     description: [
-      "In the workshops of Bagru and Sanganer, near Jaipur, printers lay long lengths of cotton across padded tables and work along them with hand-carved wooden blocks, pressing each one down with a firm thump of the palm. A single design might use four or five blocks, each carrying one colour, lined up by eye with a precision that takes years to learn.",
+      "In the workshops of Bagru and Sanganer, near Jaipur, printers lay long lengths of cotton across padded tables and work along them with hand-carved wooden blocks, pressing each one down with a firm thump of the palm. A single design might use four or five blocks, each carrying one color, lined up by eye with a precision that takes years to learn.",
       "Bagru is known for its dabu mud-resist printing and natural dyes: indigo, madder root, turmeric, pomegranate rind and iron rust fermented with jaggery. Watching the cloth come out of the indigo vat green and turn blue in the air is one of those small moments of wonder that stays with you.",
       "We arrange visits with family workshops and cooperatives, where you can carve a little, print a scarf of your own and buy directly from the people who made it. Elsewhere in India, we can connect you with ikat weavers in Odisha, Banarasi silk weavers in Varanasi and ajrakh printers in Kutch.",
     ],
@@ -264,7 +264,7 @@ export const experiences: Experience[] = [
     description: [
       "In Ladakh, the trail climbs between whitewashed villages and barley fields to a pass strung with prayer flags snapping in the wind. In Sikkim, it rises through rhododendron forest toward the bulk of Kangchenjunga, the world's third-highest mountain. In Himachal, shepherds drive their flocks across meadows that turn gold in autumn.",
       "Not every Himalayan walk has to be an expedition. Some of the most rewarding are village treks where you sleep in homestays, share butter tea in a kitchen warmed by a stove, and walk only a few hours a day. For more experienced walkers we arrange fully supported camping treks with cooks, ponies and experienced mountain guides.",
-      "Acclimatisation shapes every Himalayan itinerary we plan. In Ladakh that means at least two or three easy days in Leh, at around 3,500 metres, before you walk anywhere strenuous.",
+      "Acclimatization shapes every Himalayan itinerary we plan. In Ladakh that means at least two or three easy days in Leh, at around 3,500 meters, before you walk anywhere strenuous.",
     ],
     category: "adventure",
     regions: ["himalaya"],
@@ -274,7 +274,7 @@ export const experiences: Experience[] = [
     image: "snow-trek",
     whatToKnow: [
       "Ladakh is best from June to September; Sikkim and Uttarakhand are best in spring (March to May) and autumn (October to November).",
-      "Plan rest days to acclimatise to altitude, and ask your doctor about altitude sickness before you travel.",
+      "Plan rest days to acclimatize to altitude, and ask your doctor about altitude sickness before you travel.",
       "Some areas, including parts of Ladakh and Sikkim, require permits that we arrange for you.",
       "Check that your travel insurance covers trekking at the altitude you plan to reach.",
       "Good boots, worn in before you arrive, matter more than anything else you pack.",
@@ -296,7 +296,7 @@ export const experiences: Experience[] = [
       "Evenings among the dunes of the Thar Desert near Jaisalmer, with folk music, a fireside dinner and a night in a desert camp.",
     description: [
       "Late afternoon, the dunes beyond Jaisalmer turn from pale gold to apricot. You walk to the crest of one and watch the sun slide into the haze. Somewhere behind you, a Manganiyar musician tunes a kamaicha, the bowed string instrument of these desert communities, and the first notes carry a long way in the still air.",
-      "The Thar has a culture as rich as any palace city: songs passed down through families of hereditary musicians, villages of round mud houses with neatly swept courtyards, and the honey-coloured fort city of Jaisalmer itself, where people still live within the twelfth-century walls.",
+      "The Thar has a culture as rich as any palace city: songs passed down through families of hereditary musicians, villages of round mud houses with neatly swept courtyards, and the honey-colored fort city of Jaisalmer itself, where people still live within the twelfth-century walls.",
       "We avoid the crowded, loud dune camps near Sam and choose quieter, well-run camps away from the main road, where dinner is cooked over the fire and the only light pollution is from the Milky Way.",
     ],
     category: "culture",
@@ -344,7 +344,7 @@ export const experiences: Experience[] = [
       "Evenings are cool year-round, and cold in winter.",
     ],
     ethics:
-      "We favour estates that invest in their workers' housing, health care and schooling, and encourage you to buy tea directly from them.",
+      "We favor estates that invest in their workers' housing, health care and schooling, and encourage you to buy tea directly from them.",
     relatedJourneys: ["himalayan-adventures", "luxury-train-journeys", "food-and-markets"],
     seo: {
       title: "Darjeeling Tea Estate Stays and Tastings",
@@ -359,7 +359,7 @@ export const experiences: Experience[] = [
     summary:
       "Walk to the living root bridges of Meghalaya, shaped over generations by Khasi communities from the roots of rubber fig trees.",
     description: [
-      "Deep in the rainforest of Meghalaya, the trail drops through thousands of stone steps to a river the colour of jade. Spanning it is a bridge made of roots: thick, twisting cables of rubber fig, guided across the water by Khasi villagers and woven together over decades until they are strong enough to carry dozens of people.",
+      "Deep in the rainforest of Meghalaya, the trail drops through thousands of stone steps to a river the color of jade. Spanning it is a bridge made of roots: thick, twisting cables of rubber fig, guided across the water by Khasi villagers and woven together over decades until they are strong enough to carry dozens of people.",
       "The most famous is the Umshiang double-decker bridge near the village of Nongriat, two root bridges stacked one above the other. It is a demanding walk down and back, but the reward is a morning of natural pools, butterflies and waterfalls, and a sense of a relationship between people and forest that is both ancient and very much alive.",
       "Meghalaya, 'the abode of clouds', is one of the wettest places on Earth, and its villages, caves and cloud-wrapped plateaus feel a long way from India's tourist trail. We pair the root bridges with stays in village guesthouses and walks with local Khasi guides.",
     ],

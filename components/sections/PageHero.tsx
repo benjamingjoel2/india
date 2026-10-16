@@ -4,7 +4,6 @@ import { colors } from "@/config/site";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { Display } from "@/components/ui/Display";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { Reveal } from "@/components/ui/Reveal";
 import { JaaliPanel, BlockPrintBand } from "@/components/ui/Jaali";
 import { cn } from "@/lib/utils";
 
@@ -30,13 +29,13 @@ export function PageHero({ title, eyebrow, intro, image, breadcrumbs, accent, ch
       >
         <div className="relative flex flex-col justify-end overflow-hidden px-4 pt-40 pb-14 md:px-8 lg:px-12 lg:pb-20">
           <JaaliPanel className="absolute inset-0 text-current opacity-[0.07]" />
-          <Reveal className="relative">
-            <Breadcrumbs items={breadcrumbs} className="mb-10" />
-            {eyebrow && <p className="eyebrow mb-5 opacity-80">{eyebrow}</p>}
+          <div className="animate-rise relative">
+            <Breadcrumbs items={breadcrumbs} className="mb-10 [&_ol]:opacity-100" />
+            {eyebrow && <p className="eyebrow mb-5">{eyebrow}</p>}
             <Display as="h1" size="xl">{title}</Display>
-            {intro && <p className="mt-8 max-w-xl text-lede opacity-90">{intro}</p>}
+            {intro && <p className="mt-8 max-w-xl text-lede">{intro}</p>}
             {children && <div className="mt-10">{children}</div>}
-          </Reveal>
+          </div>
         </div>
         <div className="relative min-h-[60svh] lg:min-h-0">
           <SmartImage image={image} priority sizes="(min-width:1024px) 50vw, 100vw" />
@@ -49,13 +48,13 @@ export function PageHero({ title, eyebrow, intro, image, breadcrumbs, accent, ch
     <section className={cn("relative flex items-end overflow-hidden bg-indigo-deep text-ivory", size === "tall" ? "min-h-[88svh]" : "min-h-[70svh]")}>
       <SmartImage image={image} priority sizes="100vw" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-indigo-deep/85 via-indigo-deep/30 to-indigo-deep/45" />
-      <Reveal className="page-x relative mx-auto w-full max-w-page pt-40 pb-14 md:pb-20">
+      <div className="animate-rise page-x relative mx-auto w-full max-w-page pt-40 pb-14 md:pb-20">
         <Breadcrumbs items={breadcrumbs} className="mb-8" />
         {eyebrow && <p className="eyebrow mb-5 text-ivory/80">{eyebrow}</p>}
         <Display as="h1" size="xl" className="max-w-5xl">{title}</Display>
         {intro && <p className="mt-8 max-w-2xl text-lede text-ivory/85">{intro}</p>}
         {children && <div className="mt-10">{children}</div>}
-      </Reveal>
+      </div>
     </section>
   );
 }
@@ -65,12 +64,12 @@ export function PlainHero({ title, intro, breadcrumbs, eyebrow }: { title: strin
   return (
     <section className="relative overflow-hidden bg-ivory-deep pt-40 pb-16 md:pt-48 md:pb-24">
       <JaaliPanel className="absolute top-0 right-0 h-full w-1/3 text-sandstone opacity-25" />
-      <Reveal className="page-x relative mx-auto max-w-page">
+      <div className="animate-rise page-x relative mx-auto max-w-page">
         <Breadcrumbs items={breadcrumbs} className="mb-8" />
         {eyebrow && <p className="eyebrow mb-5 text-stone">{eyebrow}</p>}
         <Display as="h1" size="lg" className="max-w-4xl">{title}</Display>
         {intro && <p className="mt-6 max-w-2xl text-lede text-charcoal/80">{intro}</p>}
-      </Reveal>
+      </div>
     </section>
   );
 }

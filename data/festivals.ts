@@ -12,8 +12,8 @@ export const festivals: Festival[] = [
     summary:
       "India's best-loved festival, when homes, temples and whole cities glow with oil lamps, and families gather for sweets, prayers and fireworks.",
     description: [
-      "Diwali celebrates the victory of light over darkness. For many Hindus it marks the return of Lord Rama to Ayodhya, and it is also an important festival for Sikhs, Jains and many Buddhists. In the days before, homes are cleaned and decorated, rangoli patterns appear on doorsteps in coloured powder and petals, and markets fill with lamps, lanterns and boxes of sweets.",
-      "On the main night, families light rows of small clay diyas, perform puja to Lakshmi, the goddess of prosperity, and visit friends and neighbours. In Jaipur the bazaars are strung with lights, in Udaipur the lakes reflect glowing palaces, and in Amritsar the Golden Temple shimmers with lamps on the same night as Bandi Chhor Divas, the Sikh celebration of freedom.",
+      "Diwali celebrates the victory of light over darkness. For many Hindus it marks the return of Lord Rama to Ayodhya, and it is also an important festival for Sikhs, Jains and many Buddhists. In the days before, homes are cleaned and decorated, rangoli patterns appear on doorsteps in colored powder and petals, and markets fill with lamps, lanterns and boxes of sweets.",
+      "On the main night, families light rows of small clay diyas, perform puja to Lakshmi, the goddess of prosperity, and visit friends and neighbors. In Jaipur the bazaars are strung with lights, in Udaipur the lakes reflect glowing palaces, and in Amritsar the Golden Temple shimmers with lamps on the same night as Bandi Chhor Divas, the Sikh celebration of freedom.",
       "Celebrating Diwali as a traveler is a joyful, generous experience, but it helps to plan. Many Indians travel home for the festival, some shops and businesses close, and fireworks can make cities noisy and smoky. We often suggest spending the night itself in a heritage hotel or with a family who will welcome you into their celebrations.",
     ],
     typicalMonths: ["oct", "nov"],
@@ -24,7 +24,7 @@ export const festivals: Festival[] = [
     tips: [
       "Book hotels, trains and flights early, as Diwali is one of India's busiest travel periods.",
       "Expect some shops, markets and offices to close for a day or two around the main night.",
-      "If you are sensitive to smoke or noise, choose a stay outside the busiest city centres.",
+      "If you are sensitive to smoke or noise, choose a stay outside the busiest city centers.",
       "A box of sweets is a welcome gift if you are invited into someone's home.",
       "Dress in your best; many people wear new clothes, and joining in is appreciated.",
     ],
@@ -38,13 +38,13 @@ export const festivals: Festival[] = [
   {
     slug: "holi",
     name: "Holi",
-    headline: "Spring, in every *colour*.",
+    headline: "Spring, in every *color*.",
     summary:
-      "The joyful spring festival when people take to the streets to throw coloured powder and water, sing, dance and share festive food.",
+      "The joyful spring festival when people take to the streets to throw colored powder and water, sing, dance and share festive food.",
     description: [
-      "Holi marks the end of winter and the arrival of spring, and celebrates the triumph of good over evil in the story of Prahlad and Holika. On the evening before, bonfires are lit in neighbourhoods across north India. The next morning, the streets fill with people of every age smearing each other with gulal, bright coloured powder, and drenching friends and strangers alike with water.",
+      "Holi marks the end of winter and the arrival of spring, and celebrates the triumph of good over evil in the story of Prahlad and Holika. On the evening before, bonfires are lit in neighborhoods across north India. The next morning, the streets fill with people of every age smearing each other with gulal, bright colored powder, and drenching friends and strangers alike with water.",
       "The celebrations are especially famous around Mathura and Vrindavan, linked to the legends of Krishna, where festivities stretch over days and include the Lathmar Holi of Barsana. In Rajasthan, palaces and havelis host their own celebrations, and in Jaipur and Udaipur you can join in at a gentler pace in a hotel courtyard or a private home.",
-      "By early afternoon the colour throwing usually winds down, people wash, rest and visit friends with sweets such as gujiya. Holi is exuberant and can be boisterous in crowded public spaces, so we help you choose how to experience it, whether that is out on the streets with a trusted local host or in a calmer setting.",
+      "By early afternoon the color throwing usually winds down, people wash, rest and visit friends with sweets such as gujiya. Holi is exuberant and can be boisterous in crowded public spaces, so we help you choose how to experience it, whether that is out on the streets with a trusted local host or in a calmer setting.",
     ],
     typicalMonths: ["feb", "mar"],
     typicalTiming: "Usually March, occasionally late February, on the full moon of the Hindu month of Phalguna. Dates vary each year; verify before booking.",
@@ -52,15 +52,15 @@ export const festivals: Festival[] = [
     regions: ["north", "rajasthan"],
     image: "hawa-mahal",
     tips: [
-      "Wear old clothes you are happy to lose, as some colours stain permanently.",
-      "Rub coconut oil into your hair and skin beforehand to help the colour wash off.",
+      "Wear old clothes you are happy to lose, as some colors stain permanently.",
+      "Rub coconut oil into your hair and skin beforehand to help the color wash off.",
       "Protect phones and cameras in waterproof pouches and keep sunglasses on.",
       "Celebrate with a local host or at your hotel if you prefer a calmer experience.",
-      "Women travelers may feel more comfortable joining organised or private celebrations rather than crowded streets.",
+      "Women travelers may feel more comfortable joining organized or private celebrations rather than crowded streets.",
     ],
     relatedJourneys: ["golden-triangle", "rajasthan-palaces", "spiritual-india", "family-india"],
     seo: {
-      title: "Holi in India: celebrate the festival of colours",
+      title: "Holi in India: celebrate the festival of colors",
       description:
         "Celebrate Holi in India, from Mathura and Vrindavan to Rajasthan's palace courtyards, with tips on timing, what to wear and how to join in comfortably.",
     },
@@ -68,7 +68,7 @@ export const festivals: Festival[] = [
   {
     slug: "pushkar-camel-fair",
     name: "Pushkar Camel Fair",
-    headline: "Camels, colour and *devotion*.",
+    headline: "Camels, color and *devotion*.",
     summary:
       "A great desert gathering where livestock traders, pilgrims and musicians converge on the holy town of Pushkar in Rajasthan.",
     description: [
@@ -100,10 +100,10 @@ export const festivals: Festival[] = [
     name: "Durga Puja",
     headline: "Kolkata's grandest *celebration*.",
     summary:
-      "Bengal's biggest festival, when Kolkata becomes a city-wide art installation of themed pandals honouring the goddess Durga.",
+      "Bengal's biggest festival, when Kolkata becomes a city-wide art installation of themed pandals honoring the goddess Durga.",
     description: [
-      "Durga Puja celebrates the goddess Durga's victory over the buffalo demon Mahishasura. In Kolkata, preparations begin months ahead in Kumartuli, the potters' quarter, where artisans shape clay idols over straw frames, paint their faces and dress them in silk and jewellery. The festival has been recognised by UNESCO as part of humanity's intangible cultural heritage.",
-      "During the main days, hundreds of neighbourhood pandals, temporary pavilions built by local committees, open across the city. Some recreate famous buildings, others are ambitious works of contemporary art. Families stroll from one to the next late into the night, stopping for street food, music and dhak drumming.",
+      "Durga Puja celebrates the goddess Durga's victory over the buffalo demon Mahishasura. In Kolkata, preparations begin months ahead in Kumartuli, the potters' quarter, where artisans shape clay idols over straw frames, paint their faces and dress them in silk and jewelry. The festival has been recognized by UNESCO as part of humanity's intangible cultural heritage.",
+      "During the main days, hundreds of neighborhood pandals, temporary pavilions built by local committees, open across the city. Some recreate famous buildings, others are ambitious works of contemporary art. Families stroll from one to the next late into the night, stopping for street food, music and dhak drumming.",
       "The festival ends with Bijoya Dashami, when married women smear each other with vermilion in the sindoor khela ritual and the idols are carried to the river for immersion. It is crowded, emotional and unforgettable. We arrange guided pandal-hopping with a Bengali host who can steer you to the best and explain the stories behind them.",
     ],
     typicalMonths: ["sep", "oct"],
@@ -137,7 +137,7 @@ export const festivals: Festival[] = [
       "The festival offers a vivid introduction, but we like to pair it with time in the villages themselves. Staying in a homestay near Kohima or Khonoma, walking terraced fields with a local guide and sharing a meal by a family hearth adds depth and context to what you see on stage.",
     ],
     typicalMonths: ["dec"],
-    typicalTiming: "Usually 1 to 10 December each year. Dates and programmes can change; verify before booking.",
+    typicalTiming: "Usually 1 to 10 December each year. Dates and programs can change; verify before booking.",
     where: "Kisama Heritage Village, near Kohima, Nagaland",
     regions: ["east-northeast"],
     image: "valley-clouds",
@@ -160,11 +160,11 @@ export const festivals: Festival[] = [
     name: "Hemis Festival",
     headline: "Masked dances in *Ladakh*.",
     summary:
-      "A colourful monastery festival in Ladakh, honouring Guru Padmasambhava with masked dances in the courtyard of Hemis Monastery.",
+      "A colorful monastery festival in Ladakh, honoring Guru Padmasambhava with masked dances in the courtyard of Hemis Monastery.",
     description: [
-      "Hemis is one of Ladakh's largest and wealthiest monasteries, tucked into a side valley above the Indus about forty kilometres from Leh. Each summer it hosts a two-day festival marking the birth of Guru Padmasambhava, the teacher credited with bringing Tantric Buddhism to the Himalaya.",
+      "Hemis is one of Ladakh's largest and wealthiest monasteries, tucked into a side valley above the Indus about forty kilometers from Leh. Each summer it hosts a two-day festival marking the birth of Guru Padmasambhava, the teacher credited with bringing Tantric Buddhism to the Himalaya.",
       "The highlight is the cham, a sacred masked dance performed by monks in brocade robes and vividly painted masks, to the sound of long horns, cymbals and drums. The dances depict the triumph of good over evil and the deeds of the Guru. Every few years a huge thangka, a painted silk scroll, is unveiled to the crowd.",
-      "Ladakhis come in their finest clothes, with turquoise-studded perak headdresses and long woollen robes, turning the festival into a joyful social occasion. Because Leh sits at around 3,500 metres, we plan several days of acclimatisation before the festival and combine it with other monasteries, village walks and the high valleys.",
+      "Ladakhis come in their finest clothes, with turquoise-studded perak headdresses and long woollen robes, turning the festival into a joyful social occasion. Because Leh sits at around 3,500 meters, we plan several days of acclimatization before the festival and combine it with other monasteries, village walks and the high valleys.",
     ],
     typicalMonths: ["jun", "jul"],
     typicalTiming: "June or July, on the tenth day of the Tibetan lunar month. Dates vary each year; verify before booking.",
@@ -172,7 +172,7 @@ export const festivals: Festival[] = [
     regions: ["himalaya"],
     image: "himalaya-stupa",
     tips: [
-      "Allow at least two or three days in Leh to acclimatise before the festival.",
+      "Allow at least two or three days in Leh to acclimatize before the festival.",
       "Arrive early to find a good spot in the courtyard; it fills quickly.",
       "Dress modestly, remove hats inside prayer halls and follow monks' guidance.",
       "Bring sun protection; the high-altitude sun is strong even when the air is cool.",
