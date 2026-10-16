@@ -1,11 +1,12 @@
 import { cn } from "@/lib/utils";
 
 /** Small inline flag for content that must be checked each year (dates, rules, seasons). */
-export function VerifyFlag({ children = "Verify", className }: { children?: React.ReactNode; className?: string }) {
+export function VerifyFlag({ children = "Verify", className, tone = "light" }: { children?: React.ReactNode; className?: string; tone?: "light" | "dark" }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full border border-spice/40 bg-spice/5 px-2.5 py-0.5 text-[0.7rem] font-medium tracking-wide text-spice uppercase",
+        "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[0.7rem] font-medium tracking-wide uppercase",
+        tone === "dark" ? "border-marigold/50 bg-marigold/10 text-marigold" : "border-spice/40 bg-spice/5 text-spice",
         className,
       )}
     >
