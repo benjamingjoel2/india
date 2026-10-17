@@ -13,6 +13,8 @@ export const brand = {
   },
   meaning:
     "Musafir means traveler in Hindi and Urdu: someone on a long, curious journey, open to whatever the road brings.",
+  /** The name in its source scripts and a pronunciation guide, shown in the name-meaning statement. */
+  scripts: { devanagari: "मुसाफ़िर", urdu: "مسافر", pronunciation: "mu·saa·fir" },
   tagline: "Every journey needs a traveler.",
   /** Same tagline with the emphasised word marked for the display heading component. */
   taglineDisplay: "Every journey needs a *traveler*.",

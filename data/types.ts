@@ -65,6 +65,8 @@ export interface Region {
   summary: string;
   overview: string[];
   accent: AccentKey;
+  /** Representative coordinates shown as an editorial label, e.g. "26°55′ N, 75°49′ E". */
+  coordinates?: string;
   image: ImageKey;
   gallery: ImageKey[];
   highlights: Highlight[];

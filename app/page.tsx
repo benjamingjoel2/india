@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { brand } from "@/config/site";
+import { brand, contact } from "@/config/site";
+import { allDestinations, journeys, regions } from "@/data";
 import { Hero } from "@/components/home/Hero";
 import { ValueStrip } from "@/components/home/ValueStrip";
 import { RegionMosaic } from "@/components/home/RegionMosaic";
@@ -22,7 +23,17 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <Hero />
+      <Hero
+        stats={[
+          `${regions.length} regions`,
+          `${allDestinations.length} destinations`,
+          `${journeys.length} journeys to start from`,
+          "One specialist, start to finish",
+          "Guides who grew up where you're going",
+          contact.replyPromise,
+          "24/7 WhatsApp while you travel",
+        ]}
+      />
       <ValueStrip />
       <RegionMosaic />
       <FeaturedJourneys />

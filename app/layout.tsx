@@ -8,6 +8,8 @@ import { PlannerProvider } from "@/components/planner/PlannerProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { SideTab } from "@/components/planner/SideTab";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -72,6 +74,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               </main>
               <Footer />
               <WhatsAppButton />
+              <SideTab />
+              <SmoothScroll />
             </PlannerProvider>
           </CurrencyProvider>
         </MotionConfig>

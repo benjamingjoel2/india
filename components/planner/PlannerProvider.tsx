@@ -82,6 +82,7 @@ export function PlannerProvider({ children }: { children: React.ReactNode }) {
               role="dialog"
               aria-modal="true"
               aria-label="Plan my journey"
+              data-lenis-prevent
               className="relative h-full w-full overflow-y-auto bg-ivory md:max-w-3xl"
               initial={reduce ? false : { x: "8%", opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}

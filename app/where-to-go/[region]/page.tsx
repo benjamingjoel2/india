@@ -49,7 +49,7 @@ export default async function RegionPage({ params }: PageProps<"/where-to-go/[re
       <PageHero
         accent={region.accent}
         title={region.headline}
-        eyebrow={region.name}
+        eyebrow={region.coordinates ? `${region.name} · [ ${region.coordinates} ]` : region.name}
         intro={region.summary}
         image={region.image}
         breadcrumbs={[

@@ -70,7 +70,8 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
           role="dialog"
           aria-modal="true"
           aria-label="Search the site"
-          className="fixed inset-0 z-[80] overflow-y-auto bg-ivory text-charcoal"
+          data-lenis-prevent
+              className="fixed inset-0 z-[80] overflow-y-auto bg-ivory text-charcoal"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
