@@ -119,7 +119,9 @@ export default async function JourneyPage({ params }: PageProps<"/journeys/[slug
 
       {/* Itinerary */}
       <Section tone="deep" labelledBy="j-itinerary">
-        <Container className="max-w-5xl">
+        <Container>
+          <div className="grid gap-14 lg:grid-cols-12">
+          <div className="lg:col-span-8">
           <Display id="j-itinerary" size="lg" className="mb-14">Day by *day*.</Display>
           <ol className="relative border-l border-charcoal/20">
             {journey.itinerary.map((d) => (
@@ -139,6 +141,39 @@ export default async function JourneyPage({ params }: PageProps<"/journeys/[slug
               </Reveal>
             ))}
           </ol>
+          </div>
+          <aside aria-label="Journey summary" className="lg:col-span-4">
+            <div className="jaali-frame bg-ivory p-8 lg:sticky lg:top-28">
+              <p className="eyebrow text-[0.62rem] text-stone">{journey.title}</p>
+              <p className="mt-4 text-sm text-stone">From</p>
+              <Price usd={journey.priceFromUSD} className="font-display text-4xl" />
+              <p className="text-sm text-stone">per person sharing</p>
+              <dl className="mt-6 space-y-3 border-t border-charcoal/15 pt-6 text-sm">
+                <div className="flex justify-between gap-4">
+                  <dt className="text-stone">Length</dt>
+                  <dd>{journey.days} days</dd>
+                </div>
+                <div className="flex justify-between gap-4">
+                  <dt className="text-stone">Route</dt>
+                  <dd className="text-right">{stops.join(" · ")}</dd>
+                </div>
+                <div className="flex justify-between gap-4">
+                  <dt className="text-stone">Best months</dt>
+                  <dd className="text-right">{journey.bestMonths.map((m) => monthNames[m].slice(0, 3)).join(" ")}</dd>
+                </div>
+              </dl>
+              <div className="mt-8 flex flex-col gap-3">
+                <PlanButton variant="primary" preset={{ regions: journey.regions, styles: journey.styles, note: `I'm interested in “${journey.title}”.` }}>
+                  Enquire about this journey
+                </PlanButton>
+                <ButtonLink href={contact.whatsappHref} variant="secondary">
+                  Ask on WhatsApp
+                </ButtonLink>
+              </div>
+              <p className="mt-5 text-xs text-stone">Every day can be changed. Your specialist shapes the final version with you.</p>
+            </div>
+          </aside>
+          </div>
         </Container>
       </Section>
 
