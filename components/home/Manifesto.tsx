@@ -14,14 +14,14 @@ export function Manifesto() {
   const text = `${brand.meaning} We plan India for musafirs: one specialist from first idea to flight home, guides who grew up where you're going, and stays we know by heart.`;
   const words = text.split(" ");
   return (
-    <div ref={ref} className="page-x mx-auto max-w-page pt-24 pb-6 md:pt-36">
-      <div className="mb-10 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-stone">
+    <div ref={ref} className="page-x mx-auto max-w-page pt-14 pb-4 md:pt-20">
+      <div className="mb-6 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-stone">
         <span className="font-display text-4xl text-charcoal italic md:text-5xl">{brand.shortName}</span>
         <span lang="hi" className="text-2xl">{brand.scripts.devanagari}</span>
         <span lang="ur" dir="rtl" className="text-2xl">{brand.scripts.urdu}</span>
         <span className="eyebrow">/{brand.scripts.pronunciation}/ · noun</span>
       </div>
-      <p className="max-w-6xl font-display text-display-md font-light">
+      <p className="max-w-[90rem] font-display text-display-md font-light">
         {words.map((w, i) => (
           <Word key={i} progress={scrollYProgress} range={[i / words.length, (i + 1) / words.length]}>
             {w}

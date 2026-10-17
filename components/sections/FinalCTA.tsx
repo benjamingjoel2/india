@@ -20,7 +20,7 @@ export function FinalCTA({
     <section aria-labelledby="cta-title" className="relative overflow-hidden bg-indigo-deep text-ivory">
       <SmartImage image={image} sizes="100vw" className="opacity-60" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-indigo-deep via-indigo-deep/50 to-indigo-deep/30" />
-      <Reveal className="page-x relative mx-auto flex max-w-page flex-col items-center py-32 text-center md:py-48">
+      <Reveal className="page-x relative mx-auto flex max-w-page flex-col items-center py-20 text-center md:py-28">
         <Display id="cta-title" size="xl" className="max-w-5xl">
           {title}
         </Display>

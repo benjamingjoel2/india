@@ -92,7 +92,7 @@ export default async function RegionPage({ params }: PageProps<"/where-to-go/[re
             </Reveal>
           </div>
           {gallery.length > 1 && (
-            <div className="mt-20 grid grid-cols-2 gap-3 md:grid-cols-3">
+            <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3">
               {gallery.slice(0, 3).map((g, i) => (
                 <Reveal key={g + i} delay={i * 0.08} className={i === 0 ? "relative col-span-2 aspect-[16/10] overflow-hidden md:col-span-2 md:row-span-2 md:aspect-auto" : "relative aspect-[4/3] overflow-hidden"}>
                   <SmartImage image={g} sizes="(min-width:768px) 40vw, 50vw" />
@@ -205,10 +205,12 @@ export default async function RegionPage({ params }: PageProps<"/where-to-go/[re
       )}
 
       <Section tone={festivals.length > 0 ? "deep" : "ivory"} labelledBy="rfaq-title">
-        <Container className="max-w-5xl">
+        <Container>
           <Display id="rfaq-title" size="md" className="mb-10">Good to *know*.</Display>
-          <FaqList items={region.faqs} />
-          <JaaliDivider className="mt-20 text-charcoal" />
+          <div className="max-w-5xl">
+            <FaqList items={region.faqs} />
+          </div>
+          <JaaliDivider className="mt-14 text-charcoal" />
         </Container>
       </Section>
 

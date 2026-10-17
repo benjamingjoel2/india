@@ -86,9 +86,9 @@ export default function ResponsibleTravelPage() {
         </Section>
       ))}
       <Section>
-        <Container className="max-w-3xl text-center">
+        <Container className="text-center">
           <JaaliDivider className="mb-12 text-charcoal" />
-          <p className="text-lede text-charcoal/85">
+          <p className="mx-auto max-w-3xl text-lede text-charcoal/85">
             We&rsquo;re not perfect, and long-haul travel has a real footprint. We&rsquo;d rather be honest about that, encourage longer
             and slower journeys, and keep improving. Questions? <Link href="/contact" className="underline decoration-marigold underline-offset-4">Talk to us</Link>.
           </p>

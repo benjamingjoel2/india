@@ -74,14 +74,14 @@ export default function WhenToGoPage() {
       {/* Month by month */}
       <Section tone="deep" labelledBy="mbm">
         <Container>
-          <Display id="mbm" size="lg" className="mb-16">Month by *month*.</Display>
+          <Display id="mbm" size="lg" className="mb-10">Month by *month*.</Display>
           <ol className="divide-y divide-charcoal/15 border-y border-charcoal/15">
             {months.map((m) => {
               const best = m.bestRegions.map((s) => regions.find((r) => r.slug === s)!).filter(Boolean);
               const fests = m.festivals.map((s) => festivals.find((f) => f.slug === s)!).filter(Boolean);
               return (
                 <Reveal as="li" key={m.key}>
-                  <article id={m.key} className="grid scroll-mt-28 gap-8 py-12 lg:grid-cols-12">
+                  <article id={m.key} className="grid scroll-mt-28 gap-8 py-10 lg:grid-cols-12">
                     <h3 className="font-display text-display-md lg:col-span-3">
                       <em className="display-em">{m.name}</em>
                     </h3>

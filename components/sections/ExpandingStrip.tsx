@@ -22,7 +22,7 @@ export interface StripItem {
 export function ExpandingStrip({ items, className }: { items: StripItem[]; className?: string }) {
   const [active, setActive] = useState(0);
   return (
-    <ul className={cn("flex flex-col gap-2 lg:h-[34rem] lg:flex-row", className)}>
+    <ul className={cn("flex flex-col gap-2 lg:h-[clamp(30rem,36vw,48rem)] lg:flex-row", className)}>
       {items.map((it, i) => {
         const open = i === active;
         return (

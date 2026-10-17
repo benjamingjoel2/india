@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="relative overflow-hidden bg-indigo-deep text-ivory">
       <BlockPrintBand className="text-marigold/70" />
       <GridLines className="text-ivory/[0.05]" />
-      <div className="page-x relative mx-auto max-w-page pt-20 pb-10">
+      <div className="page-x relative mx-auto max-w-page pt-14 pb-8">
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Logo className="text-ivory" />
@@ -71,7 +71,7 @@ export function Footer() {
           </div>
         </div>
 
-        <p aria-hidden className="mt-24 -mb-[0.18em] select-none font-display text-[clamp(4rem,35vw,33.5rem)] leading-[0.8] font-[300] tracking-[-0.04em] text-ivory/90">
+        <p aria-hidden className="mt-14 -mb-[0.18em] select-none font-display text-[clamp(4rem,35vw,33.5rem)] leading-[0.8] font-[300] tracking-[-0.04em] text-ivory/90">
           {brand.logo.primary}
           <em className="display-em text-marigold">.</em>
         </p>

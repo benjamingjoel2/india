@@ -15,7 +15,7 @@ export function ValueStrip() {
     <section aria-labelledby="values-title" className="border-b border-charcoal/10 bg-ivory">
       <h2 id="values-title" className="sr-only">Why travel with us</h2>
       <Manifesto />
-      <ul className="page-x mx-auto grid max-w-page grid-cols-2 gap-x-6 gap-y-10 py-14 md:grid-cols-3 lg:grid-cols-6 lg:py-20">
+      <ul className="page-x mx-auto grid max-w-page grid-cols-2 gap-x-6 gap-y-10 py-10 md:grid-cols-3 lg:grid-cols-6 lg:py-14">
         {values.map((v, i) => (
           <Reveal as="li" key={v.title} delay={i * 0.06} className="lg:border-l lg:border-charcoal/10 lg:pl-6 lg:first:border-l-0 lg:first:pl-0">
             <svg aria-hidden viewBox="0 0 24 24" className="size-6 text-marigold" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinejoin="round">

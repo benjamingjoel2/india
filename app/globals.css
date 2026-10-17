@@ -46,7 +46,7 @@
   --text-eyebrow--letter-spacing: 0.22em;
 
   --ease-musafir: cubic-bezier(0.22, 1, 0.36, 1);
-  --container-page: 90rem;
+  --container-page: 160rem;
   --container-prose: 42rem;
 }
 
@@ -116,12 +116,12 @@
   }
   @media (min-width: 768px) {
     .page-x {
-      padding-inline: 2rem;
+      padding-inline: 1.5rem;
     }
   }
   @media (min-width: 1280px) {
     .page-x {
-      padding-inline: 3rem;
+      padding-inline: 2rem;
     }
   }
 

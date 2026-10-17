@@ -20,7 +20,7 @@ export function Hero({ stats }: { stats: string[] }) {
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-indigo-deep/90 via-indigo-deep/20 to-indigo-deep/50" />
         <GridLines className="text-ivory/[0.07]" />
 
-        <div className="page-x relative mx-auto flex w-full max-w-page flex-1 flex-col justify-end pt-36 pb-32 md:pb-40">
+        <div className="page-x relative mx-auto flex w-full max-w-page flex-1 flex-col justify-end pt-32 pb-28 md:pb-32">
           <div className="animate-rise">
             <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
               <p className="max-w-xs font-display text-lg leading-snug text-ivory/85 italic">

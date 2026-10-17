@@ -48,7 +48,7 @@ export default function WhereToGoPage() {
       </Section>
       <Section>
         <Container>
-          <ul className="space-y-24 md:space-y-36">
+          <ul className="space-y-16 md:space-y-20">
             {regions.map((r, i) => {
               const a = colors.accents[r.accent];
               return (

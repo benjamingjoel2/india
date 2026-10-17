@@ -107,7 +107,7 @@ export function JourneyFilters({
         {results.length} {results.length === 1 ? "journey" : "journeys"} · every one can be tailored
       </p>
       {results.length === 0 ? (
-        <div className="py-20 text-center">
+        <div className="py-14 text-center">
           <p className="font-display text-display-sm">Nothing quite matches.</p>
           <p className="mt-3 text-charcoal/75">That doesn&rsquo;t mean we can&rsquo;t plan it. Every journey here is a starting point.</p>
         </div>

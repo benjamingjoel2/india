@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PlanMyJourneyPage() {
   return (
-    <div className="relative bg-ivory pt-36 pb-24 md:pt-44">
+    <div className="relative bg-ivory pt-32 pb-16 md:pt-36">
       <JaaliPanel className="absolute top-0 right-0 h-80 w-1/3 text-sandstone opacity-30" />
       <div className="page-x relative mx-auto grid max-w-page gap-16 lg:grid-cols-12">
         <aside className="lg:col-span-4">
