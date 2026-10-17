@@ -6,6 +6,7 @@ import { Display } from "@/components/ui/Display";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JaaliPanel, BlockPrintBand } from "@/components/ui/Jaali";
 import { cn } from "@/lib/utils";
+import { GridLines } from "@/components/ui/GridLines";
 
 interface Props {
   title: string;
@@ -48,6 +49,7 @@ export function PageHero({ title, eyebrow, intro, image, breadcrumbs, accent, ch
     <section className={cn("relative flex items-end overflow-hidden bg-indigo-deep text-ivory", size === "tall" ? "min-h-[88svh]" : "min-h-[70svh]")}>
       <SmartImage image={image} priority sizes="100vw" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-indigo-deep/85 via-indigo-deep/30 to-indigo-deep/45" />
+      <GridLines className="text-ivory/[0.06]" />
       <div className="animate-rise page-x relative mx-auto w-full max-w-page pt-40 pb-14 md:pb-20">
         <Breadcrumbs items={breadcrumbs} className="mb-8" />
         {eyebrow && <p className="eyebrow mb-5 text-ivory/80">{eyebrow}</p>}

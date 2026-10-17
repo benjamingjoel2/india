@@ -73,6 +73,20 @@ spice red `#B0442D` (verify flags, errors). Region pages set `--accent`/`--accen
 1.4s to 1.06×, hero stills cross-fade over 2.4s. `<MotionConfig reducedMotion="user">` plus a CSS
 `prefers-reduced-motion` rule remove movement for visitors who ask for less.
 
+**Editorial details** (adapted from the reference set: White Desert, Kultiveret, H+I Adventures,
+The Drake, The Tailor, Mammut):
+- Oversized hero headline over the film, a hairline column grid (`GridLines`) echoing the jaali lattice, and
+  labelled slide indicators with progress bars plus a pause/play control
+- Ticker band of key facts under the hero (`Marquee`)
+- Name-meaning statement (`Manifesto`): *Musafir* in Latin, Devanagari and Urdu script with words that brighten
+  as you scroll (scripts live in `data/brand.ts`)
+- Region coordinates as editorial labels (`coordinates` in `data/regions.ts`)
+- Images unveiled from the centre as they enter the viewport (`RevealImage`)
+- Stays showcase: full-bleed photograph with an overlapping card, one stay type at a time
+- Expanding image strip of the seven regions on `/where-to-go` (`ExpandingStrip`)
+- Vertical "Plan my journey" tab on large screens, oversized wordmark in the footer
+- Inertial smooth scrolling with Lenis (off for prefers-reduced-motion; overlays use `data-lenis-prevent`)
+
 ## Features
 
 - Sticky header that shrinks on scroll, mega-menu (hover with intent delay, click, keyboard, Esc), full-screen

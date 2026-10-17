@@ -19,6 +19,7 @@ export const regions: Region[] = [
       "Further north the land rises. Rishikesh sits where the Ganges leaves the Himalayan foothills, a town of ashrams, suspension bridges and clear green water. Amritsar, in the Punjab, is home to the Golden Temple, whose community kitchen serves free meals to tens of thousands of people every day, cooked and served by volunteers. We plan the pace so each place has room to breathe.",
     ],
     accent: "marigold",
+    coordinates: "27°10′ N, 78°02′ E",
     image: "taj-arch",
     gallery: ["taj-arch", "varanasi-ghats", "golden-temple-day", "humayun-tomb"],
     highlights: [
@@ -144,6 +145,7 @@ export const regions: Region[] = [
       "Between the cities is a quieter Rajasthan we love just as much: village markets, stepwells, block-printing workshops and dunes where you can watch the sun go down with nothing but the sound of camel bells. Pushkar, with its holy lake and ghats, is a gentle pause on the way. We balance the grand set pieces with these slower, more personal moments.",
     ],
     accent: "sandstone",
+    coordinates: "26°55′ N, 75°49′ E",
     image: "hawa-mahal",
     gallery: ["hawa-mahal", "amber-fort", "udaipur-palace"],
     highlights: [
@@ -267,6 +269,7 @@ export const regions: Region[] = [
       "Karnataka holds the royal splendor of Mysore and the boulder-strewn ruins of Hampi, once the capital of the Vijayanagara empire. And Goa, with its Portuguese churches, spice farms and long beaches, is the place to slow right down at the end of a journey. We stitch these together by road, rail and short flights so the south feels unhurried.",
     ],
     accent: "kerala",
+    coordinates: "9°30′ N, 76°20′ E",
     image: "kerala-houseboat",
     gallery: ["kerala-houseboat", "kerala-backwater-palms", "mysore-palace", "kerala-canoe"],
     highlights: [
@@ -383,6 +386,7 @@ export const regions: Region[] = [
       "In the east, Darjeeling looks across its tea estates to Kangchenjunga, the world's third-highest mountain, and the toy train still puffs up from the plains. Neighbouring Sikkim is small, green and devoutly Buddhist, with monasteries, rhododendron forests and walks through villages where every house seems to have a garden. Whatever you choose, we plan carefully for altitude and access.",
     ],
     accent: "sky",
+    coordinates: "34°10′ N, 77°35′ E",
     image: "ladakh-road",
     gallery: ["ladakh-road", "himalaya-stupa", "himachal-meadow", "valley-clouds"],
     highlights: [
@@ -499,6 +503,7 @@ export const regions: Region[] = [
       "Wildlife is never guaranteed, and we never pretend it is. What we can promise is the right lodges, experienced naturalists and safari permits secured early. We favor lodges that employ local people, support conservation and take the forest seriously, and we combine the parks with temples such as Khajuraho for a fuller picture of the region.",
     ],
     accent: "teak",
+    coordinates: "22°20′ N, 80°37′ E",
     image: "tiger",
     gallery: ["tiger", "elephant-forest", "safari-tent"],
     highlights: [
@@ -611,6 +616,7 @@ export const regions: Region[] = [
       "Nagaland, in the far east, is home to many distinct Naga tribes with their own languages, crafts and festivals, best known to visitors through the Hornbill Festival each December. Travel here is slower and simpler than in the rest of India, which is exactly the appeal. We work with small local operators and homestays who open doors that would otherwise stay closed.",
     ],
     accent: "peacock",
+    coordinates: "22°34′ N, 88°22′ E",
     image: "victoria-memorial",
     gallery: ["victoria-memorial", "valley-clouds", "elephant-forest"],
     highlights: [
@@ -726,6 +732,7 @@ export const regions: Region[] = [
       "Beneath the surface are coral reefs, turtles and shoals of reef fish, with good snorkelling and diving for beginners and the experienced alike. We pair the islands with the mainland as a restful finale, choosing small beach resorts with care, and advise on responsible snorkelling and the protected status of the islands' indigenous communities.",
     ],
     accent: "lagoon",
+    coordinates: "11°58′ N, 92°59′ E",
     image: "andaman-beach",
     gallery: ["andaman-beach", "tropical-pool", "palm-pool"],
     highlights: [

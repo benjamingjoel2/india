@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { brand, company, contact, navigation } from "@/config/site";
 import { Logo } from "@/components/ui/Logo";
-import { BlockPrintBand, JaaliPanel } from "@/components/ui/Jaali";
+import { BlockPrintBand } from "@/components/ui/Jaali";
+import { GridLines } from "@/components/ui/GridLines";
 import { NewsletterForm } from "./NewsletterForm";
 import { WhatsAppIcon } from "./WhatsAppButton";
 
@@ -10,7 +11,7 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-indigo-deep text-ivory">
       <BlockPrintBand className="text-marigold/70" />
-      <JaaliPanel className="absolute -right-24 -bottom-24 size-[28rem] text-ivory opacity-[0.04]" />
+      <GridLines className="text-ivory/[0.05]" />
       <div className="page-x relative mx-auto max-w-page pt-20 pb-10">
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-4">
@@ -70,7 +71,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 flex flex-col gap-6 border-t border-ivory/15 pt-8 text-[0.8rem] text-ivory/60 lg:flex-row lg:items-center lg:justify-between">
+        <p aria-hidden className="mt-24 -mb-[0.18em] select-none font-display text-[clamp(4rem,35vw,33.5rem)] leading-[0.8] font-[300] tracking-[-0.04em] text-ivory/90">
+          {brand.logo.primary}
+          <em className="display-em text-marigold">.</em>
+        </p>
+
+        <div className="mt-12 flex flex-col gap-6 border-t border-ivory/15 pt-8 text-[0.8rem] text-ivory/60 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-1">
             <p>
               © {year} {company.legalName}. Trading as {brand.name}.
