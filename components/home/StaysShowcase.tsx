@@ -28,7 +28,7 @@ export function StaysShowcase({ stays, labels }: { stays: Stay[]; labels: Record
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-indigo-deep/80 via-indigo-deep/30 to-indigo-deep/10" />
       <GridLines className="text-ivory/[0.07]" />
 
-      <div className="page-x relative mx-auto grid min-h-[92svh] max-w-page items-end gap-10 py-20 lg:grid-cols-12">
+      <div className="page-x relative mx-auto grid min-h-[92svh] max-w-page items-end gap-10 py-14 lg:grid-cols-12">
         <div className="lg:col-span-6">
           <p className="eyebrow mb-5 text-ivory/80">Where you&rsquo;ll stay</p>
           <h2 id="stays-title" className="font-display text-display-lg">

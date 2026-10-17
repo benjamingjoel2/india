@@ -38,7 +38,7 @@ export default function AboutPage() {
         size="tall"
       />
       <Section>
-        <Container className="max-w-4xl">
+        <Container>
           <Reveal>
             <Display size="lg">{brand.promise.replace("personally", "*personally*")}</Display>
             <div className="mt-10 space-y-6 text-lede text-charcoal/85">
@@ -55,7 +55,7 @@ export default function AboutPage() {
               <p>[Placeholder] Add the founding story, year and milestones here.</p>
             </div>
           </Reveal>
-          <JaaliDivider className="my-20 text-charcoal" />
+          <JaaliDivider className="my-12 text-charcoal" />
           <dl className="grid gap-10 sm:grid-cols-2">
             {principles.map(([t, d], i) => (
               <Reveal key={t} delay={(i % 2) * 0.08}>
@@ -70,7 +70,7 @@ export default function AboutPage() {
       <Section id="team" tone="deep" labelledBy="team-title" className="scroll-mt-20">
         <Container>
           <Eyebrow className="mb-5 text-stone">Meet the team</Eyebrow>
-          <Display id="team-title" size="lg" className="mb-16">The people who&rsquo;ll *plan* it.</Display>
+          <Display id="team-title" size="lg" className="mb-10">The people who&rsquo;ll *plan* it.</Display>
           <ul className="grid gap-16 lg:grid-cols-2">
             {team.map((p, i) => (
               <Reveal as="li" key={p.id} delay={i * 0.1} className="grid gap-8 sm:grid-cols-[14rem_1fr]">

@@ -122,16 +122,16 @@ export default async function JourneyPage({ params }: PageProps<"/journeys/[slug
         <Container>
           <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-8">
-          <Display id="j-itinerary" size="lg" className="mb-14">Day by *day*.</Display>
+          <Display id="j-itinerary" size="lg" className="mb-10">Day by *day*.</Display>
           <ol className="relative border-l border-charcoal/20">
             {journey.itinerary.map((d) => (
-              <Reveal as="li" key={d.day} className="relative pb-12 pl-8 last:pb-0 md:pl-14">
+              <Reveal as="li" key={d.day} className="relative pb-10 pl-8 last:pb-0 md:pl-12">
                 <span aria-hidden className="absolute top-2 -left-[5px] size-[9px] rotate-45 bg-marigold" />
                 <p className="eyebrow text-stone">
                   Day {d.day} · {d.location}
                 </p>
                 <h3 className="mt-2 font-display text-display-sm">{d.title}</h3>
-                <p className="mt-3 max-w-3xl leading-relaxed text-charcoal/85">{d.description}</p>
+                <p className="mt-3 max-w-4xl leading-relaxed text-charcoal/85">{d.description}</p>
                 {(d.overnight || d.meals) && (
                   <p className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-stone">
                     {d.overnight && <span>Overnight: {d.overnight}</span>}

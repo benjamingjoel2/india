@@ -18,7 +18,7 @@ const layout = [
   "lg:col-span-4 aspect-[4/3] lg:aspect-auto", // east
   "lg:col-span-12 aspect-[16/9] lg:aspect-auto", // islands
 ];
-const rowHeights = "lg:grid-rows-[20rem_20rem_24rem_22rem]";
+const rowHeights = "lg:grid-rows-[clamp(18rem,21vw,32rem)_clamp(18rem,21vw,32rem)_clamp(20rem,24vw,36rem)_clamp(18rem,22vw,34rem)]";
 
 export function RegionMosaic() {
   return (

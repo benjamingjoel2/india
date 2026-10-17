@@ -41,7 +41,7 @@ export default function JournalPage() {
               </Link>
             </div>
           </Reveal>
-          <div className="mt-24">
+          <div className="mt-14">
             <CardGrid cols={3}>
               {rest.map((p) => (
                 <PostCard key={p.slug} post={p} />

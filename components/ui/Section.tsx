@@ -27,7 +27,7 @@ export function Section({
     none: "",
   };
   return (
-    <section id={id} aria-labelledby={labelledBy} className={cn("py-20 md:py-32", tones[tone], className)}>
+    <section id={id} aria-labelledby={labelledBy} className={cn("py-14 md:py-20", tones[tone], className)}>
       {children}
     </section>
   );
@@ -53,12 +53,12 @@ export function SectionHeading({
   return (
     <Reveal
       className={cn(
-        "mb-12 flex flex-col gap-6 md:mb-16",
+        "mb-8 flex flex-col gap-5 md:mb-12",
         align === "center" ? "items-center text-center" : "md:flex-row md:items-end md:justify-between",
         className,
       )}
     >
-      <div className={cn("max-w-3xl", align === "center" && "mx-auto")}>
+      <div className={cn("max-w-4xl", align === "center" && "mx-auto")}>
         {eyebrow && <Eyebrow className={cn("mb-5 opacity-80", align === "center" && "justify-center")}>{eyebrow}</Eyebrow>}
         <Display id={id} size="lg">
           {title}
