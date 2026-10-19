@@ -1,0 +1,336 @@
+@import "tailwindcss";
+
+/*
+ * Musafir design tokens.
+ * Colour values mirror /config/site.ts (colors). Region pages set --accent and
+ * --accent-ink inline; components use bg-accent / text-accent-ink.
+ */
+@theme {
+  --color-ivory: #f7f1e6;
+  --color-ivory-deep: #eee3cf;
+  --color-sand: #e2d5bd;
+  --color-indigo: #1f2a4d;
+  --color-indigo-deep: #141b33;
+  --color-charcoal: #2b2926;
+  --color-stone: #6b655c;
+
+  --color-marigold: #e39b2d;
+  --color-sandstone: #d58a7f;
+  --color-kerala: #3e7b52;
+  --color-sky: #7fa7cc;
+  --color-teak: #a26a34;
+  --color-peacock: #1c6e73;
+  --color-lagoon: #2f8f98;
+  --color-spice: #b0442d;
+
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+
+  /* Fluid type scale */
+  --text-display-xl: clamp(3rem, 1.6rem + 6vw, 7rem);
+  --text-display-xl--line-height: 0.96;
+  --text-display-xl--letter-spacing: -0.025em;
+  --text-display-lg: clamp(2.5rem, 1.6rem + 3.8vw, 4.75rem);
+  --text-display-lg--line-height: 1.02;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-md: clamp(2rem, 1.45rem + 2.3vw, 3.375rem);
+  --text-display-md--line-height: 1.06;
+  --text-display-md--letter-spacing: -0.015em;
+  --text-display-sm: clamp(1.5rem, 1.25rem + 1vw, 2.125rem);
+  --text-display-sm--line-height: 1.15;
+  --text-display-xs: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
+  --text-display-xs--line-height: 1.25;
+  --text-lede: clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem);
+  --text-lede--line-height: 1.6;
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--letter-spacing: 0.22em;
+
+  --ease-musafir: cubic-bezier(0.22, 1, 0.36, 1);
+  --container-page: 160rem;
+  --container-prose: 42rem;
+}
+
+@theme inline {
+  --color-accent: var(--accent, #e39b2d);
+  --color-accent-ink: var(--accent-ink, #2b2926);
+}
+
+@layer base {
+  :root {
+    --accent: #e39b2d;
+    --accent-ink: #2b2926;
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "kern";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    font-weight: 350;
+    font-optical-sizing: auto;
+    text-wrap: balance;
+  }
+
+  em.display-em {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-marigold);
+    color: var(--color-charcoal);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-marigold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .page-x {
+    padding-inline: 1rem;
+  }
+  @media (min-width: 768px) {
+    .page-x {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .page-x {
+      padding-inline: 2rem;
+    }
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--text-eyebrow);
+    letter-spacing: var(--text-eyebrow--letter-spacing);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Jaali lattice, tinted with currentColor via mask */
+  .jaali-fill {
+    background-color: currentColor;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg fill='none' stroke='black' stroke-width='0.8'%3E%3Cpath d='M14 2 L18 10 L26 14 L18 18 L14 26 L10 18 L2 14 L10 10 Z'/%3E%3Ccircle cx='14' cy='14' r='2.5'/%3E%3Cpath d='M0 0 L4 4 M28 0 L24 4 M0 28 L4 24 M28 28 L24 24'/%3E%3C/g%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg fill='none' stroke='black' stroke-width='0.8'%3E%3Cpath d='M14 2 L18 10 L26 14 L18 18 L14 26 L10 18 L2 14 L10 10 Z'/%3E%3Ccircle cx='14' cy='14' r='2.5'/%3E%3Cpath d='M0 0 L4 4 M28 0 L24 4 M0 28 L4 24 M28 28 L24 24'/%3E%3C/g%3E%3C/svg%3E");
+    -webkit-mask-size: 28px 28px;
+    mask-size: 28px 28px;
+  }
+
+  /* Block-print border: a repeating lozenge-and-dot band */
+  .blockprint-band {
+    height: 14px;
+    background-color: currentColor;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='14' viewBox='0 0 24 14'%3E%3Cpath d='M12 1 L17 7 L12 13 L7 7 Z' fill='black'/%3E%3Ccircle cx='1' cy='7' r='1.3' fill='black'/%3E%3Ccircle cx='23' cy='7' r='1.3' fill='black'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='14' viewBox='0 0 24 14'%3E%3Cpath d='M12 1 L17 7 L12 13 L7 7 Z' fill='black'/%3E%3Ccircle cx='1' cy='7' r='1.3' fill='black'/%3E%3Ccircle cx='23' cy='7' r='1.3' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-size: 24px 14px;
+    mask-size: 24px 14px;
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+  }
+
+  /* Thin double-rule frame used around feature panels */
+  .jaali-frame {
+    position: relative;
+    border: 1px solid color-mix(in oklab, currentColor 30%, transparent);
+  }
+  .jaali-frame::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid color-mix(in oklab, currentColor 15%, transparent);
+    pointer-events: none;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.6s var(--ease-musafir);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Long-form article typography (journal, legal) */
+  .prose-musafir {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--color-charcoal);
+  }
+  .prose-musafir > * + * {
+    margin-top: 1.25em;
+  }
+  .prose-musafir h2 {
+    font-size: var(--text-display-sm);
+    line-height: 1.2;
+    margin-top: 2.2em;
+  }
+  .prose-musafir h3 {
+    font-size: var(--text-display-xs);
+    margin-top: 1.8em;
+  }
+  .prose-musafir a {
+    color: var(--color-indigo);
+    text-decoration: underline;
+    text-decoration-color: var(--color-marigold);
+    text-underline-offset: 3px;
+  }
+  .prose-musafir ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .prose-musafir ul li {
+    position: relative;
+    padding-left: 1.5em;
+  }
+  .prose-musafir ul li + li {
+    margin-top: 0.5em;
+  }
+  .prose-musafir ul li::before {
+    content: "";
+    position: absolute;
+    left: 0.2em;
+    top: 0.7em;
+    width: 0.45em;
+    height: 0.45em;
+    transform: rotate(45deg);
+    border: 1px solid var(--color-marigold);
+  }
+  .prose-musafir ol {
+    list-style: decimal;
+    padding-left: 1.4em;
+  }
+  .prose-musafir blockquote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: var(--text-display-xs);
+    line-height: 1.4;
+    color: var(--color-indigo);
+    border-left: 1px solid var(--color-marigold);
+    padding: 0.25em 0 0.25em 1.25em;
+    margin-block: 2em;
+  }
+  .prose-musafir strong {
+    font-weight: 600;
+  }
+}
+
+/* CSS-only hero entrance: paints immediately (good for LCP), no JS needed */
+@keyframes rise {
+  from {
+    opacity: 0.01;
+    transform: translateY(28px);
+  }
+}
+.animate-rise {
+  animation: rise 1.4s var(--ease-musafir) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Editorial motion utilities                                          */
+/* ------------------------------------------------------------------ */
+
+/* Ticker band */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 48s linear infinite;
+}
+
+/* Image unveiled from its centre as it enters the viewport (see <RevealImage>) */
+.clip-reveal {
+  clip-path: inset(9% 9% 9% 9%);
+  transition: clip-path 1.6s var(--ease-musafir);
+}
+.clip-reveal > .clip-reveal-inner {
+  transform: scale(1.14);
+  transition: transform 2.2s var(--ease-musafir);
+}
+.clip-reveal.is-in {
+  clip-path: inset(0 0 0 0);
+}
+.clip-reveal.is-in > .clip-reveal-inner {
+  transform: scale(1);
+}
+
+/* Hero slide progress */
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clip-reveal,
+  .clip-reveal > .clip-reveal-inner {
+    clip-path: none;
+    transform: none;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+}
