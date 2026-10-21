@@ -20,7 +20,7 @@ export const festivals: Festival[] = [
     typicalTiming: "October or November, set by the lunar calendar. Dates vary each year; verify before booking.",
     where: "Jaipur, Udaipur, Varanasi, Amritsar and across India",
     regions: ["north", "rajasthan"],
-    image: "golden-temple-dusk",
+    image: "festival-diwali",
     tips: [
       "Book hotels, trains and flights early, as Diwali is one of India's busiest travel periods.",
       "Expect some shops, markets and offices to close for a day or two around the main night.",
@@ -50,7 +50,7 @@ export const festivals: Festival[] = [
     typicalTiming: "Usually March, occasionally late February, on the full moon of the Hindu month of Phalguna. Dates vary each year; verify before booking.",
     where: "Mathura, Vrindavan, Jaipur, Udaipur, Varanasi and across north India",
     regions: ["north", "rajasthan"],
-    image: "hawa-mahal",
+    image: "festival-holi",
     tips: [
       "Wear old clothes you are happy to lose, as some colors stain permanently.",
       "Rub coconut oil into your hair and skin beforehand to help the color wash off.",
@@ -80,7 +80,7 @@ export const festivals: Festival[] = [
     typicalTiming: "October or November, around the Kartik Purnima full moon. Dates vary each year; verify before booking.",
     where: "Pushkar, near Ajmer, Rajasthan",
     regions: ["rajasthan"],
-    image: "amber-fort",
+    image: "festival-pushkar",
     tips: [
       "Arrive in the early days of the fair for the most livestock trading and fewer crowds.",
       "Book camps or hotels many months ahead; rooms are limited and in high demand.",
@@ -110,7 +110,7 @@ export const festivals: Festival[] = [
     typicalTiming: "September or October, during the lunar month of Ashvin. Dates vary each year; verify before booking.",
     where: "Kolkata and across West Bengal",
     regions: ["east-northeast"],
-    image: "victoria-memorial",
+    image: "festival-durga-puja",
     tips: [
       "Visit Kumartuli in the weeks before to see the idols being made.",
       "Go pandal-hopping in the afternoon or very late at night to avoid the heaviest crowds.",
@@ -140,7 +140,7 @@ export const festivals: Festival[] = [
     typicalTiming: "Usually 1 to 10 December each year. Dates and programs can change; verify before booking.",
     where: "Kisama Heritage Village, near Kohima, Nagaland",
     regions: ["east-northeast"],
-    image: "valley-clouds",
+    image: "festival-hornbill",
     tips: [
       "Book accommodation in Kohima early, as rooms are limited during the festival.",
       "Check current permit requirements for Nagaland well before you travel.",
@@ -170,7 +170,7 @@ export const festivals: Festival[] = [
     typicalTiming: "June or July, on the tenth day of the Tibetan lunar month. Dates vary each year; verify before booking.",
     where: "Hemis Monastery, near Leh, Ladakh",
     regions: ["himalaya"],
-    image: "himalaya-stupa",
+    image: "festival-cham",
     tips: [
       "Allow at least two or three days in Leh to acclimatize before the festival.",
       "Arrive early to find a good spot in the courtyard; it fills quickly.",

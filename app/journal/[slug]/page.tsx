@@ -10,7 +10,7 @@ import { PostCard } from "@/components/cards/PostCard";
 import { Container, Section } from "@/components/ui/Section";
 import { Display } from "@/components/ui/Display";
 import { JaaliDivider } from "@/components/ui/Jaali";
-import { PortraitPlaceholder } from "@/components/ui/PortraitPlaceholder";
+import { Portrait } from "@/components/ui/Portrait";
 import { pageMeta } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -54,7 +54,7 @@ export default async function PostPage({ params }: PageProps<"/journal/[slug]">)
       <Section>
         <Container className="max-w-prose px-4!">
           <div className="mb-12 flex items-center gap-4 border-b border-charcoal/15 pb-8">
-            {author && <PortraitPlaceholder name={author.name} className="size-14 [&_span]:hidden [&_svg]:hidden" />}
+            {author && <Portrait person={author} compact sizes="56px" className="size-14 shrink-0 rounded-full" />}
             <div className="text-sm">
               <p className="font-medium">{author?.name}</p>
               <p className="text-stone">

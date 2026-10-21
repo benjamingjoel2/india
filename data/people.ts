@@ -8,6 +8,7 @@ import type { Person } from "./types";
 export const people: Person[] = [
   {
     id: "meera",
+    image: "portrait-meera",
     name: "Meera Kapoor",
     role: "Founder & lead India specialist",
     kind: "founder",
@@ -24,6 +25,7 @@ export const people: Person[] = [
   },
   {
     id: "sana",
+    image: "portrait-sana",
     name: "Sana Iyer",
     role: "India specialist",
     kind: "specialist",
@@ -38,6 +40,7 @@ export const people: Person[] = [
   },
   {
     id: "rohit",
+    image: "portrait-rohit",
     name: "Rohit Shekhawat",
     role: "Rajasthan heritage guide",
     kind: "guide",
@@ -52,6 +55,7 @@ export const people: Person[] = [
   },
   {
     id: "lakshmi",
+    image: "portrait-lakshmi",
     name: "Lakshmi Menon",
     role: "Kerala culture & food guide",
     kind: "guide",
@@ -66,6 +70,7 @@ export const people: Person[] = [
   },
   {
     id: "tenzin",
+    image: "portrait-tenzin",
     name: "Tenzin Namgyal",
     role: "Ladakh mountain guide",
     kind: "guide",
@@ -80,6 +85,7 @@ export const people: Person[] = [
   },
   {
     id: "anil",
+    image: "portrait-anil",
     name: "Anil Dhurve",
     role: "Naturalist",
     kind: "guide",
