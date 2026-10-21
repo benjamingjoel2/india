@@ -34,7 +34,8 @@ Everything in square brackets in `config/site.ts` and `data/brand.ts`: `[YEAR]`,
 `[NUMBER]` (WhatsApp), `[COMPANY NAME]`, `[REGISTRATION NUMBER]`, `[GST NUMBER]`, `[OFFICE ADDRESS]`, `[CITY]`.
 Also:
 
-- **People** (`data/people.ts`): placeholder profiles; portraits render as designed placeholders until an `image` is set.
+- **People** (`data/people.ts`): placeholder profiles with stand-in stock portraits (labelled "Stand-in photo" on the site).
+  Swap the `portrait-*` entries in `data/images.ts` for real team photos; remove a person's `image` to fall back to the designed placeholder.
 - **Stays** (`data/stays.ts`): property names end in "(placeholder)".
 - **Testimonials** (`data/testimonials.ts`): flagged `placeholder: true` and labelled as such on the site.
 - **FAQ** cancellations answer and the `/legal/*` pages.

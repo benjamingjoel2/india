@@ -7,7 +7,7 @@ import { Display } from "@/components/ui/Display";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { JaaliDivider } from "@/components/ui/Jaali";
-import { PortraitPlaceholder } from "@/components/ui/PortraitPlaceholder";
+import { Portrait } from "@/components/ui/Portrait";
 import { ButtonLink } from "@/components/ui/Button";
 import { pageMeta } from "@/lib/seo";
 
@@ -74,7 +74,7 @@ export default function AboutPage() {
           <ul className="grid gap-16 lg:grid-cols-2">
             {team.map((p, i) => (
               <Reveal as="li" key={p.id} delay={i * 0.1} className="grid gap-8 sm:grid-cols-[14rem_1fr]">
-                <PortraitPlaceholder name={p.name} tone={i % 2 ? "peacock" : "sandstone"} className="aspect-[4/5] w-full" />
+                <Portrait person={p} tone={i % 2 ? "peacock" : "sandstone"} sizes="14rem" className="aspect-[4/5] w-full" />
                 <div>
                   <h3 className="font-display text-display-sm">{p.name}</h3>
                   <p className="mt-1 text-sm text-stone">
@@ -90,7 +90,7 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </ul>
-          <p className="mt-12 text-xs text-stone">Team profiles are placeholders. Replace with real names, photographs and stories.</p>
+          <p className="mt-12 text-xs text-stone">Team names, stories and photos are placeholders (stand-in stock portraits). Replace with your real team and their own photos.</p>
           <div className="mt-12 flex flex-wrap gap-3">
             <ButtonLink href="/our-guides" variant="secondary">Meet our guides</ButtonLink>
             <ButtonLink href="/responsible-travel" variant="secondary">How we travel</ButtonLink>

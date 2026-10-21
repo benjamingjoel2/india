@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getPersonById } from "@/data";
-import { PortraitPlaceholder } from "@/components/ui/PortraitPlaceholder";
+import { Portrait } from "@/components/ui/Portrait";
 import { Container, Section } from "@/components/ui/Section";
 import { Display } from "@/components/ui/Display";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -18,7 +18,7 @@ export function SpecialistFeature() {
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
           <Reveal className="relative lg:col-span-5">
             <JaaliPanel className="absolute -top-6 -left-6 h-40 w-40 text-sandstone opacity-50" />
-            <PortraitPlaceholder name={person.name} tone="sandstone" className="relative aspect-[4/5] w-full" />
+            <Portrait person={person} tone="sandstone" sizes="(min-width:1024px) 40vw, 100vw" className="relative aspect-[4/5] w-full" />
           </Reveal>
           <Reveal delay={0.1} className="lg:col-span-7">
             <Eyebrow className="mb-5 text-stone">Meet your specialist</Eyebrow>
