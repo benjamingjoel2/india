@@ -21,7 +21,7 @@ Set `NEXT_PUBLIC_SITE_URL` to the production domain (used for canonical URLs, si
 | Brand name, meaning, tagline, logo text | `data/brand.ts` (single source; re-exported by `config/site.ts`) |
 | Colours, currencies + rates, contact details, company details, navigation, hero film | `config/site.ts` |
 | Content model (types) | `data/types.ts` |
-| Content | `data/regions.ts`, `journeys.ts`, `experiences.ts`, `stays.ts`, `festivals.ts`, `people.ts`, `testimonials.ts`, `faqs.ts`, `months.ts`, `posts.ts` |
+| Content | `data/regions.ts`, `journeys.ts`, `experiences.ts`, `stays.ts`, `festivals.ts`, `faqs.ts`, `legal.ts`, `months.ts`, `posts.ts` |
 | Data access helpers (swap for CMS calls later) | `data/index.ts` |
 | Photography library | `data/images.ts` (content refers to images by key) |
 | Journal post bodies | `content/journal/<slug>.mdx` (metadata in `data/posts.ts`) |
@@ -30,15 +30,12 @@ Set `NEXT_PUBLIC_SITE_URL` to the production domain (used for canonical URLs, si
 
 ### Placeholders to replace before launch
 
-Everything in square brackets in `config/site.ts` and `data/brand.ts`: `[YEAR]`, `[PHONE]`, `[EMAIL]`,
-`[NUMBER]` (WhatsApp), `[COMPANY NAME]`, `[REGISTRATION NUMBER]`, `[GST NUMBER]`, `[OFFICE ADDRESS]`, `[CITY]`.
-Also:
+- **Contact**: create the `musafirtravel@tourground.com` inbox and confirm the business address (WeWork Enam Sambhav,
+  Bandra Kurla Complex, Mumbai) in `config/site.ts`. The site deliberately shows no phone, WhatsApp, social links,
+  licence/registration numbers, team or guide profiles, or testimonials.
 
-- **People** (`data/people.ts`): placeholder profiles with stand-in stock portraits (labelled "Stand-in photo" on the site).
-  Swap the `portrait-*` entries in `data/images.ts` for real team photos; remove a person's `image` to fall back to the designed placeholder.
-- **Stays** (`data/stays.ts`): property names end in "(placeholder)".
-- **Testimonials** (`data/testimonials.ts`): flagged `placeholder: true` and labelled as such on the site.
-- **FAQ** cancellations answer and the `/legal/*` pages.
+- **Stays** (`data/stays.ts`): property names end in "(placeholder)" (see `IMAGES-NEEDED.md`).
+- **Legal pages** (`data/legal.ts`: Privacy Policy, Booking Terms, Cookie Policy) are complete; have a lawyer review them.
 - **Currency rates** in `config/site.ts` are indicative; wire to a rates API or update regularly.
 - **Photography** is from Unsplash; images marked "stand-in" in `data/images.ts` are near matches.
 - **Hero film**: add MP4/WebM files to `public/films` and set `media.heroFilm` in `config/site.ts`. Until then the

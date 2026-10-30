@@ -4,7 +4,6 @@ import { Logo } from "@/components/ui/Logo";
 import { BlockPrintBand } from "@/components/ui/Jaali";
 import { GridLines } from "@/components/ui/GridLines";
 import { NewsletterForm } from "./NewsletterForm";
-import { WhatsAppIcon } from "./WhatsAppButton";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -20,18 +19,12 @@ export function Footer() {
             <p className="mt-4 max-w-sm font-display text-lg italic text-ivory/90">{brand.tagline}</p>
             <ul className="mt-8 space-y-3 text-[0.95rem]">
               <li>
-                <span className="eyebrow mr-3 text-ivory/70">Call</span>
-                <a href={contact.phoneHref} className="link-underline">{contact.phone}</a>
-              </li>
-              <li>
-                <span className="eyebrow mr-3 text-ivory/70">WhatsApp</span>
-                <a href={contact.whatsappHref} target="_blank" rel="noopener noreferrer" className="link-underline inline-flex items-center gap-1.5">
-                  <WhatsAppIcon className="size-4" /> {contact.whatsappNumber}
-                </a>
-              </li>
-              <li>
                 <span className="eyebrow mr-3 text-ivory/70">Email</span>
                 <a href={contact.emailHref} className="link-underline">{contact.email}</a>
+              </li>
+              <li className="flex">
+                <span className="eyebrow mr-3 shrink-0 text-ivory/70">Office</span>
+                <span className="text-ivory/85">{contact.address}</span>
               </li>
             </ul>
           </div>
@@ -49,19 +42,6 @@ export function Footer() {
                 </ul>
               </div>
             ))}
-            <div>
-              <h2 className="eyebrow mb-5 font-sans text-ivory/70">Connect</h2>
-              <ul className="space-y-2.5 text-[0.95rem] text-ivory/85">
-                {contact.social.map((s) => (
-                  <li key={s.label}>
-                    <a href={s.href} className="link-underline">{s.label}</a>
-                  </li>
-                ))}
-                <li>
-                  <a href={contact.whatsappHref} target="_blank" rel="noopener noreferrer" className="link-underline">WhatsApp</a>
-                </li>
-              </ul>
-            </div>
           </nav>
 
           <div className="lg:col-span-3">
@@ -79,10 +59,7 @@ export function Footer() {
         <div className="mt-12 flex flex-col gap-6 border-t border-ivory/15 pt-8 text-[0.8rem] text-ivory/60 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-1">
             <p>
-              © {year} {company.legalName}. Trading as {brand.name}.
-            </p>
-            <p>
-              Company registration {company.registrationNumber} · GST {company.gstNumber}
+              © {year} {company.legalName}.
             </p>
           </div>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">

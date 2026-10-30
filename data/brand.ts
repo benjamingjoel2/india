@@ -21,8 +21,6 @@ export const brand = {
   promise: "India, beautifully planned, by people who know it personally.",
   description:
     "Tailor-made journeys across India, from Rajasthan's palaces to Kerala's backwaters, the Himalaya to the tiger forests of central India, planned by one dedicated specialist and guided by people who call these places home.",
-  /** Placeholder: replace with the founding year. */
-  established: "[YEAR]",
 } as const;
 
 export type Brand = typeof brand;

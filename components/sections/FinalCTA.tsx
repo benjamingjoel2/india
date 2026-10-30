@@ -5,7 +5,6 @@ import { Display } from "@/components/ui/Display";
 import { Reveal } from "@/components/ui/Reveal";
 import { ButtonLink } from "@/components/ui/Button";
 import { PlanButton } from "@/components/planner/PlanButton";
-import { WhatsAppIcon } from "@/components/layout/WhatsAppButton";
 
 export function FinalCTA({
   image = "udaipur-palace",
@@ -27,8 +26,8 @@ export function FinalCTA({
         <p className="mt-8 max-w-xl text-lede text-ivory/85">{text}</p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <PlanButton variant="accent" />
-          <ButtonLink href={contact.whatsappHref} variant="light">
-            <WhatsAppIcon className="size-4" /> Chat on WhatsApp
+          <ButtonLink href={contact.emailHref} variant="light">
+            Email us
           </ButtonLink>
         </div>
       </Reveal>

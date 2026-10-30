@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { brand, siteUrl } from "@/config/site";
-import { getPersonById, getPost, posts } from "@/data";
+import { getPost, posts } from "@/data";
 import { images } from "@/data/images";
 import { PageHero } from "@/components/sections/PageHero";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -10,7 +10,6 @@ import { PostCard } from "@/components/cards/PostCard";
 import { Container, Section } from "@/components/ui/Section";
 import { Display } from "@/components/ui/Display";
 import { JaaliDivider } from "@/components/ui/Jaali";
-import { Portrait } from "@/components/ui/Portrait";
 import { pageMeta } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -27,7 +26,6 @@ export default async function PostPage({ params }: PageProps<"/journal/[slug]">)
   const post = getPost((await params).slug);
   if (!post) notFound();
   const { default: Body } = await import(`@/content/journal/${post.slug}.mdx`);
-  const author = getPersonById(post.author);
   const date = new Date(post.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
   const jsonLd = {
     "@context": "https://schema.org",
@@ -36,7 +34,7 @@ export default async function PostPage({ params }: PageProps<"/journal/[slug]">)
     description: post.excerpt,
     datePublished: post.date,
     image: images[post.image].src,
-    author: { "@type": "Person", name: author?.name },
+    author: { "@type": "Organization", name: brand.name },
     publisher: { "@type": "Organization", name: brand.name },
     mainEntityOfPage: `${siteUrl}/journal/${post.slug}`,
   };
@@ -54,11 +52,10 @@ export default async function PostPage({ params }: PageProps<"/journal/[slug]">)
       <Section>
         <Container className="max-w-prose px-4!">
           <div className="mb-12 flex items-center gap-4 border-b border-charcoal/15 pb-8">
-            {author && <Portrait person={author} compact sizes="56px" className="size-14 shrink-0 rounded-full" />}
             <div className="text-sm">
-              <p className="font-medium">{author?.name}</p>
+              <p className="font-medium">{brand.name}</p>
               <p className="text-stone">
-                {author?.role} · <time dateTime={post.date}>{date}</time>
+                <time dateTime={post.date}>{date}</time>
               </p>
             </div>
           </div>

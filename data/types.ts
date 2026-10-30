@@ -214,34 +214,6 @@ export interface Festival {
   seo: Seo;
 }
 
-export type PersonKind = "founder" | "specialist" | "guide";
-
-export interface Person {
-  id: string;
-  /** Placeholder name; replace with the real person. */
-  name: string;
-  role: string;
-  kind: PersonKind;
-  base: string;
-  languages: string[];
-  bio: string[];
-  quote: string;
-  specialties: string[];
-  /** Optional photo; a designed placeholder portrait is shown when absent. */
-  image?: ImageKey;
-}
-
-export interface Testimonial {
-  id: string;
-  quote: string;
-  name: string;
-  from: string;
-  journey: string; // journey slug
-  traveled: string; // "March 2026"
-  /** Always true for seed content: these are not real reviews. */
-  placeholder: true;
-}
-
 export type FaqCategory =
   | "Before you go"
   | "When to travel"
@@ -283,7 +255,6 @@ export interface Post {
   headline: string;
   excerpt: string;
   date: string; // ISO
-  author: string; // person id
   readingMinutes: number;
   image: ImageKey;
   category: string;

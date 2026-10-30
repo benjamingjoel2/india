@@ -53,7 +53,7 @@ export function ContactForm() {
         <textarea name="message" rows={6} className={input} aria-invalid={!!errors.message} aria-describedby={errors.message ? "c-msg-e" : undefined} />
         {errors.message && <span id="c-msg-e" role="alert" className="mt-1 block text-spice">{errors.message}</span>}
       </label>
-      {status === "error" && <p role="alert" className="text-sm text-spice">Sorry, that didn&rsquo;t send. Please try WhatsApp or email.</p>}
+      {status === "error" && <p role="alert" className="text-sm text-spice">Sorry, that didn&rsquo;t send. Please try again or email us.</p>}
       <div>
         <button type="submit" disabled={status === "sending"} className={buttonClass("primary")}>
           {status === "sending" ? "Sending…" : "Send message"}

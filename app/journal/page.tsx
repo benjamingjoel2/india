@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getPersonById, posts } from "@/data";
+import { posts } from "@/data";
 import { PlainHero } from "@/components/sections/PageHero";
 import { CardGrid } from "@/components/sections/CardGrid";
 import { PostCard } from "@/components/cards/PostCard";
@@ -17,7 +17,6 @@ export const metadata = pageMeta({
 
 export default function JournalPage() {
   const [lead, ...rest] = posts;
-  const author = getPersonById(lead.author);
   return (
     <>
       <PlainHero title="Letters from *India*." eyebrow="Journal" intro="Stories, seasons and practical advice from the people who plan our journeys." breadcrumbs={[{ label: "Journal", href: "/journal" }]} />
@@ -35,7 +34,6 @@ export default function JournalPage() {
                 {lead.headline}
               </Display>
               <p className="mt-4 text-lede text-charcoal/80">{lead.excerpt}</p>
-              <p className="mt-4 text-sm text-stone">By {author?.name}</p>
               <Link href={`/journal/${lead.slug}`} className="mt-6 font-medium after:absolute after:inset-0">
                 Read the story →
               </Link>

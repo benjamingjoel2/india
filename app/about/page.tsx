@@ -1,32 +1,27 @@
 import { brand } from "@/config/site";
-import { people } from "@/data";
 import { PageHero } from "@/components/sections/PageHero";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Container, Section } from "@/components/ui/Section";
 import { Display } from "@/components/ui/Display";
 import { Reveal } from "@/components/ui/Reveal";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { JaaliDivider } from "@/components/ui/Jaali";
-import { Portrait } from "@/components/ui/Portrait";
-import { ButtonLink } from "@/components/ui/Button";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
   title: "Our story",
-  description: `${brand.meaning} Meet the small team of India specialists behind ${brand.name} and learn how we plan every journey personally.`,
+  description: `${brand.meaning} Learn how ${brand.name} plans every journey personally.`,
   path: "/about",
   image: "taj-arch",
 });
 
 const principles = [
-  ["One specialist", "The person you first speak to plans every detail, answers every question and is on WhatsApp while you travel."],
+  ["One specialist", "The person you first speak to plans every detail, answers every question and stays in touch while you travel."],
   ["Known personally", "We only recommend places we've stayed, eaten and walked ourselves, and guides we've traveled with for years."],
   ["Honest advice", "Sometimes that means fewer places, a different month or a quieter town than the one you'd planned. We'll always tell you."],
   ["Fair to everyone", "Clear pricing for you, fair pay for the people who make India welcoming."],
 ];
 
 export default function AboutPage() {
-  const team = people.filter((p) => p.kind !== "guide");
   return (
     <>
       <PageHero
@@ -67,36 +62,6 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section id="team" tone="deep" labelledBy="team-title" className="scroll-mt-20">
-        <Container>
-          <Eyebrow className="mb-5 text-stone">Meet the team</Eyebrow>
-          <Display id="team-title" size="lg" className="mb-10">The people who&rsquo;ll *plan* it.</Display>
-          <ul className="grid gap-16 lg:grid-cols-2">
-            {team.map((p, i) => (
-              <Reveal as="li" key={p.id} delay={i * 0.1} className="grid gap-8 sm:grid-cols-[14rem_1fr]">
-                <Portrait person={p} tone={i % 2 ? "peacock" : "sandstone"} sizes="14rem" className="aspect-[4/5] w-full" />
-                <div>
-                  <h3 className="font-display text-display-sm">{p.name}</h3>
-                  <p className="mt-1 text-sm text-stone">
-                    {p.role} · {p.base}
-                  </p>
-                  <div className="mt-5 space-y-4 text-charcoal/85">
-                    {p.bio.slice(0, 2).map((b) => (
-                      <p key={b.slice(0, 20)}>{b}</p>
-                    ))}
-                  </div>
-                  <p className="mt-5 text-sm text-stone">Speaks {p.languages.join(", ")} · Loves {p.specialties.join(", ").toLowerCase()}</p>
-                </div>
-              </Reveal>
-            ))}
-          </ul>
-          <p className="mt-12 text-xs text-stone">Team names, stories and photos are placeholders (stand-in stock portraits). Replace with your real team and their own photos.</p>
-          <div className="mt-12 flex flex-wrap gap-3">
-            <ButtonLink href="/our-guides" variant="secondary">Meet our guides</ButtonLink>
-            <ButtonLink href="/responsible-travel" variant="secondary">How we travel</ButtonLink>
-          </div>
-        </Container>
-      </Section>
       <FinalCTA image="udaipur-palace" />
     </>
   );

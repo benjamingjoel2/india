@@ -89,15 +89,6 @@ export const images = {
   "festival-durga-puja": { src: u("1585675998127-04542afd0601"), alt: "A gilded Durga Puja pandal with the goddess and her family on a richly decorated stage" },
   "festival-hornbill": { src: u("1700042628681-65beff2bddb4"), alt: "Naga warriors with spears and shields performing a traditional dance at a heritage village" },
   "festival-cham": { src: u("1780244543434-0a07ca0e9b88"), alt: "A masked cham dancer performing in a Himalayan monastery courtyard as monks and visitors watch" },
-
-  // People: stand-in portraits for placeholder team and guide profiles (Unsplash License).
-  // Replace with real team photos, taken with their consent, before launch.
-  "portrait-meera": { src: u("1726397711445-0a3e894322fa"), alt: "Portrait of a smiling woman in a cream kurta among trees (stand-in photo)" },
-  "portrait-sana": { src: u("1536766768598-e09213fdcf22"), alt: "Portrait of a woman wearing an ochre shawl over her head (stand-in photo)" },
-  "portrait-rohit": { src: u("1663560454891-9bdbdaaed84d"), alt: "Portrait of a young man in a mustard kurta (stand-in photo)" },
-  "portrait-lakshmi": { src: u("1726431531818-5dea4833d523"), alt: "Portrait of a smiling woman in a Kerala kasavu saree near a temple (stand-in photo)" },
-  "portrait-tenzin": { src: u("1505262257955-17b771535717"), alt: "Portrait of a man in a knit cap and scarf with mountains behind (stand-in photo)" },
-  "portrait-anil": { src: u("1596604820148-da737958af16"), alt: "Portrait of a grey-haired man with a white beard (stand-in photo)" },
 } satisfies Record<string, ImageAsset>;
 
 export type ImageKey = keyof typeof images;

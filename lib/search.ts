@@ -15,8 +15,7 @@ export function buildSearchIndex(): SearchItem[] {
     { type: "Page", title: "Plan my journey", text: "Tell us about your trip in five short steps.", href: "/plan-my-journey", keywords: "enquire quote planner" },
     { type: "Page", title: "When to go", text: "India month by month: seasons and festivals.", href: "/when-to-go", keywords: "weather season monsoon month" },
     { type: "Page", title: "Responsible travel", text: "How we travel respectfully and support local communities.", href: "/responsible-travel", keywords: "ethics sustainability wildlife" },
-    { type: "Page", title: "Our guides", text: "The local guides we work with.", href: "/our-guides", keywords: "guide naturalist" },
-    { type: "Page", title: "Contact", text: "Talk to a specialist.", href: "/contact", keywords: "phone email whatsapp" },
+    { type: "Page", title: "Contact", text: "Talk to a specialist.", href: "/contact", keywords: "email contact" },
     { type: "Page", title: "About us", text: "Our story and team.", href: "/about", keywords: "team story specialist" },
   ];
   return [

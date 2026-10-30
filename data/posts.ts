@@ -9,7 +9,6 @@ export const posts: Post[] = [
     excerpt:
       "Where to begin in a country this big? How to give a first journey a clear shape, from Delhi, Agra and Rajasthan to the gentler rhythms of Kerala.",
     date: "2026-09-18",
-    author: "meera",
     readingMinutes: 6,
     image: "taj-arch",
     category: "First-timers",
@@ -26,7 +25,6 @@ export const posts: Post[] = [
     excerpt:
       "Desert forts and palaces, or backwaters and tea hills? An honest comparison of pace, seasons, food and style, and why the answer might be both.",
     date: "2026-08-27",
-    author: "sana",
     readingMinutes: 5,
     image: "kerala-houseboat",
     category: "Where to go",
@@ -43,7 +41,6 @@ export const posts: Post[] = [
     excerpt:
       "The best parks, the best months and why five or six safaris beat one or two. Our practical guide to seeing a wild tiger in India, and watching well.",
     date: "2026-07-30",
-    author: "meera",
     readingMinutes: 6,
     image: "tiger",
     category: "Wildlife",
@@ -60,7 +57,6 @@ export const posts: Post[] = [
     excerpt:
       "Diwali, Holi, Durga Puja, the Pushkar Camel Fair and more: when they typically fall, how to take part respectfully and why booking early matters.",
     date: "2026-06-12",
-    author: "sana",
     readingMinutes: 6,
     image: "golden-temple-dusk",
     category: "Festivals",
