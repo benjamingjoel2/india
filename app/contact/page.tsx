@@ -3,22 +3,19 @@ import { PageHero } from "@/components/sections/PageHero";
 import { Container, Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { PlanButton } from "@/components/planner/PlanButton";
-import { WhatsAppIcon } from "@/components/layout/WhatsAppButton";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
   title: "Contact a specialist",
-  description: "Talk to an India specialist by WhatsApp, phone or email. We reply in as little as 15 minutes and support you 24/7 on WhatsApp while you travel.",
+  description: "Talk to an India specialist by email or through the form. We reply in as little as 15 minutes.",
   path: "/contact",
   image: "kerala-canoe",
 });
 
 export default function ContactPage() {
   const ways = [
-    { label: "WhatsApp", value: contact.whatsappNumber, href: contact.whatsappHref, note: "Fastest. 24/7 while you travel." },
-    { label: "Telephone", value: contact.phone, href: contact.phoneHref, note: contact.hours },
-    { label: "Email", value: contact.email, href: contact.emailHref, note: "For longer questions and documents." },
+    { label: "Email", value: contact.email, href: contact.emailHref, note: "For questions, plans and documents." },
   ];
   return (
     <>
@@ -37,8 +34,7 @@ export default function ContactPage() {
                 {ways.map((w) => (
                   <li key={w.label} className="py-6">
                     <p className="eyebrow text-[0.62rem] text-stone">{w.label}</p>
-                    <a href={w.href} className="mt-1 inline-flex items-center gap-2 font-display text-display-xs underline decoration-marigold underline-offset-4" {...(w.label === "WhatsApp" ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
-                      {w.label === "WhatsApp" && <WhatsAppIcon className="size-5" />}
+                    <a href={w.href} className="mt-1 inline-flex items-center gap-2 font-display text-display-xs underline decoration-marigold underline-offset-4">
                       {w.value}
                     </a>
                     <p className="mt-1 text-sm text-stone">{w.note}</p>

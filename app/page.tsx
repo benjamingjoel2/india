@@ -9,8 +9,6 @@ import { WhenToGo } from "@/components/home/WhenToGo";
 import { ExperiencesCarousel } from "@/components/home/ExperiencesCarousel";
 import { FestivalsFeature } from "@/components/home/FestivalsFeature";
 import { StaysFeature } from "@/components/home/StaysFeature";
-import { SpecialistFeature } from "@/components/home/SpecialistFeature";
-import { Testimonials } from "@/components/home/Testimonials";
 import { GuideSignup } from "@/components/home/GuideSignup";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
@@ -31,7 +29,6 @@ export default function HomePage() {
           "One specialist, start to finish",
           "Guides who grew up where you're going",
           contact.replyPromise,
-          "24/7 WhatsApp while you travel",
         ]}
       />
       <ValueStrip />
@@ -41,8 +38,6 @@ export default function HomePage() {
       <ExperiencesCarousel />
       <FestivalsFeature />
       <StaysFeature />
-      <SpecialistFeature />
-      <Testimonials />
       <GuideSignup />
       <FinalCTA />
     </>

@@ -4,7 +4,7 @@ import { experiences, festivals, journeys, posts, regions, stays } from "@/data"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const statics = ["", "/where-to-go", "/journeys", "/experiences", "/festivals", "/stays", "/when-to-go", "/responsible-travel", "/about", "/our-guides", "/testimonials", "/faq", "/contact", "/journal", "/plan-my-journey"];
+  const statics = ["", "/where-to-go", "/journeys", "/experiences", "/festivals", "/stays", "/when-to-go", "/responsible-travel", "/about", "/faq", "/contact", "/journal", "/plan-my-journey"];
   const entry = (path: string, priority = 0.7): MetadataRoute.Sitemap[number] => ({ url: `${siteUrl}${path}`, lastModified: now, changeFrequency: "monthly", priority });
   return [
     ...statics.map((p) => entry(p, p === "" ? 1 : 0.8)),

@@ -162,8 +162,8 @@ export const faqs: Faq[] = [
     question: "What happens if I need to cancel?",
     category: "Booking",
     answer: [
-      "[PLACEHOLDER] Explain your deposit, payment schedule and cancellation charges here; replace with your booking conditions.",
-      "[PLACEHOLDER] Describe how changes to a confirmed booking are handled, including any amendment fees and supplier charges.",
+      "You can cancel at any time by writing to us. Because we commit money to hotels, guides and trains on your behalf, cancellation charges apply and increase as your departure date gets closer; the charges for your journey are set out in your quote and booking confirmation.",
+      "If you would like to change a confirmed booking, we will always try to help. Changes depend on availability and may involve an amendment fee and any charges our suppliers pass on, which we confirm before making the change. Our booking terms set out the details.",
     ],
   },
 ];

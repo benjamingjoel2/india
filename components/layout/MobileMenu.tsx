@@ -122,8 +122,8 @@ export function MobileMenu({ open, onClose, onSearch }: { open: boolean; onClose
               <CurrencySwitcher id="currency-mobile" />
             </div>
             <PlanButton className="w-full" variant="primary" />
-            <a href={contact.whatsappHref} target="_blank" rel="noopener noreferrer" className="block text-center text-sm underline underline-offset-4">
-              Or chat on WhatsApp
+            <a href={contact.emailHref} className="block text-center text-sm underline underline-offset-4">
+              Or email us
             </a>
           </div>
         </motion.div>

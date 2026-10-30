@@ -7,14 +7,12 @@ import { journeys } from "./journeys";
 import { experiences } from "./experiences";
 import { stays } from "./stays";
 import { festivals } from "./festivals";
-import { people } from "./people";
-import { testimonials } from "./testimonials";
 import { faqs, faqCategories } from "./faqs";
 import { posts } from "./posts";
 import { months, monthOrder, monthNames, monthShort } from "./months";
 import type { MonthKey, RegionSlug } from "./types";
 
-export { regions, journeys, experiences, stays, festivals, people, testimonials, faqs, faqCategories, posts, months, monthOrder, monthNames, monthShort };
+export { regions, journeys, experiences, stays, festivals, faqs, faqCategories, posts, months, monthOrder, monthNames, monthShort };
 
 export const getRegion = (slug: string) => regions.find((r) => r.slug === slug);
 export const getJourney = (slug: string) => journeys.find((j) => j.slug === slug);
@@ -22,7 +20,6 @@ export const getExperience = (slug: string) => experiences.find((e) => e.slug ==
 export const getStay = (slug: string) => stays.find((s) => s.slug === slug);
 export const getFestival = (slug: string) => festivals.find((f) => f.slug === slug);
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
-export const getPersonById = (id: string) => people.find((p) => p.id === id);
 export const getMonth = (key: MonthKey) => months.find((m) => m.key === key)!;
 
 export const allDestinations = regions.flatMap((r) => r.destinations);

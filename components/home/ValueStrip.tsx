@@ -6,7 +6,7 @@ const values = [
   { title: "Trusted local guides", text: "Historians, naturalists and cooks we've traveled with for years.", icon: "M3 20l6-14 4 8 3-5 5 11z" },
   { title: "Hand-picked stays", text: "Palaces, havelis and lodges we've slept in ourselves.", icon: "M4 21V10l8-6 8 6v11M9 21v-6h6v6" },
   { title: "Fair pricing", text: "Clear quotes, no hidden extras, and fair pay for everyone on the ground.", icon: "M12 3v18M7 7h7a3 3 0 010 6H9a3 3 0 000 6h8" },
-  { title: "24/7 WhatsApp support", text: "A real person, any hour, for as long as you're traveling.", icon: "M4 20l1.4-4A8 8 0 1112 20a8 8 0 01-4-1z" },
+  { title: "Support while you travel", text: "A real person to reach for as long as you're traveling.", icon: "M4 20l1.4-4A8 8 0 1112 20a8 8 0 01-4-1z" },
   { title: "Every corner of India", text: "From the Andamans to Nagaland, and the quiet places between.", icon: "M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z" },
 ];
 

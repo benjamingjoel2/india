@@ -8,7 +8,7 @@ import type { AccentKey } from "@/data/types";
 
 export { brand };
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://musafir-travel.vercel.app";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://musafirtravel.tourground.com";
 
 /* ------------------------------------------------------------------ */
 /* Colours                                                             */
@@ -52,30 +52,27 @@ export type CurrencyCode = keyof typeof currencies;
 export const defaultCurrency: CurrencyCode = "USD";
 
 /* ------------------------------------------------------------------ */
-/* Contact & company (placeholders in square brackets)                 */
+/* Contact & company                                                   */
+/* One inbox for guests, trade and press. The site shows no phone,     */
+/* WhatsApp, social links or licence/registration numbers.             */
 /* ------------------------------------------------------------------ */
 export const contact = {
-  phone: "[PHONE]",
-  phoneHref: "tel:[PHONE]",
-  email: "[EMAIL]",
-  emailHref: "mailto:[EMAIL]",
-  whatsappNumber: "[NUMBER]",
-  whatsappHref: "https://wa.me/[NUMBER]",
+  email: "musafirtravel@tourground.com",
+  emailHref: "mailto:musafirtravel@tourground.com",
   replyPromise: "Replies in as little as 15 minutes",
-  hours: "Specialists online 7 days a week · WhatsApp support 24/7 while you travel",
-  address: "[OFFICE ADDRESS]",
-  social: [
-    { label: "Instagram", href: "#" },
-    { label: "Facebook", href: "#" },
-    { label: "Pinterest", href: "#" },
-    { label: "YouTube", href: "#" },
-  ],
+  /** Business address: WeWork Enam Sambhav, the flagship coworking address in Mumbai's Bandra Kurla Complex. */
+  address: "WeWork Enam Sambhav, C-20, G Block, Bandra Kurla Complex, Bandra East, Mumbai 400051, India",
+  postalAddress: {
+    streetAddress: "WeWork Enam Sambhav, C-20, G Block, Bandra Kurla Complex, Bandra East",
+    addressLocality: "Mumbai",
+    postalCode: "400051",
+    addressRegion: "Maharashtra",
+    addressCountry: "IN",
+  },
 } as const;
 
 export const company = {
-  legalName: "[COMPANY NAME]",
-  registrationNumber: "[REGISTRATION NUMBER]",
-  gstNumber: "[GST NUMBER]",
+  legalName: brand.name,
 } as const;
 
 /* ------------------------------------------------------------------ */
@@ -180,10 +177,7 @@ export const navigation: { main: MegaMenu[]; footer: Record<string, NavLink[]>; 
       intro: "A small team of specialists and the guides we've travelled with for years.",
       links: [
         { label: "Our story", href: "/about" },
-        { label: "Meet the team", href: "/about#team" },
-        { label: "Our guides", href: "/our-guides" },
         { label: "Responsible travel", href: "/responsible-travel" },
-        { label: "Testimonials", href: "/testimonials" },
         { label: "FAQ", href: "/faq" },
         { label: "Contact", href: "/contact" },
         { label: "Journal", href: "/journal" },
@@ -210,10 +204,7 @@ export const navigation: { main: MegaMenu[]; footer: Record<string, NavLink[]>; 
     ],
     About: [
       { label: "Our story", href: "/about" },
-      { label: "Meet the team", href: "/about#team" },
-      { label: "Our guides", href: "/our-guides" },
       { label: "Responsible travel", href: "/responsible-travel" },
-      { label: "Testimonials", href: "/testimonials" },
       { label: "Contact", href: "/contact" },
     ],
     Resources: [
@@ -226,10 +217,9 @@ export const navigation: { main: MegaMenu[]; footer: Record<string, NavLink[]>; 
     ],
   },
   legal: [
-    { label: "Privacy policy", href: "/legal/privacy" },
-    { label: "Terms & conditions", href: "/legal/terms" },
-    { label: "Booking conditions", href: "/legal/booking-conditions" },
-    { label: "Cookie policy", href: "/legal/cookies" },
+    { label: "Privacy Policy", href: "/legal/privacy" },
+    { label: "Booking Terms", href: "/legal/booking-conditions" },
+    { label: "Cookie Policy", href: "/legal/cookies" },
   ],
 };
 

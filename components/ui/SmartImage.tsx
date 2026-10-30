@@ -28,7 +28,8 @@ export function SmartImage({
       alt={alt ?? img.alt}
       fill
       sizes={sizes}
-      priority={priority}
+      preload={priority}
+      fetchPriority={priority ? "high" : undefined}
       className={cn(
         "object-cover",
         zoom && "transition-transform duration-[1400ms] ease-musafir will-change-transform group-hover:scale-[1.06] motion-reduce:group-hover:scale-100",

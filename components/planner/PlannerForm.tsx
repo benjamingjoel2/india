@@ -73,7 +73,7 @@ const countryCodes = [
   ["+91", "India"],
 ] as const;
 
-const contactMethods = ["Email", "WhatsApp", "Telephone"] as const;
+const contactMethods = ["Email", "Telephone"] as const;
 
 /* ------------------------------------------------------------------ */
 /* State                                                               */
@@ -167,8 +167,8 @@ function validate(step: number, d: PlannerData): Errors {
     if (d.name.trim().length < 2) e.name = "Please add your name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email.trim())) e.email = "Please enter a valid email address.";
     if (d.phone && !/^[\d\s()-]{6,}$/.test(d.phone.trim())) e.phone = "Use digits only, without the country code.";
-    if ((d.contactMethods.includes("WhatsApp") || d.contactMethods.includes("Telephone")) && !d.phone.trim())
-      e.phone = "Add a phone number so we can reach you by WhatsApp or phone.";
+    if (d.contactMethods.includes("Telephone") && !d.phone.trim())
+      e.phone = "Add a phone number so we can call you.";
     if (d.contactMethods.length === 0) e.contactMethods = "Choose at least one way to reach you.";
   }
   return e;
@@ -318,8 +318,8 @@ export function PlannerForm({ preset, variant = "page" }: { preset?: PlannerPres
           <Link href="/journeys" className={buttonClass("secondary")}>
             Browse journeys
           </Link>
-          <a href={contact.whatsappHref} target="_blank" rel="noopener noreferrer" className={buttonClass("primary")}>
-            Chat on WhatsApp
+          <a href={contact.emailHref} className={buttonClass("primary")}>
+            Email us
           </a>
         </div>
         <button type="button" onClick={startOver} className="mt-8 text-sm underline underline-offset-4 opacity-70">
@@ -565,7 +565,7 @@ export function PlannerForm({ preset, variant = "page" }: { preset?: PlannerPres
                       <input id={`${uid}-email`} type="email" autoComplete="email" value={data.email} onChange={(e) => set("email", e.target.value)} className={inputClass(errors.email)} aria-invalid={!!errors.email} />
                     </Field>
                   </div>
-                  <Field label="Phone" error={errors.phone} htmlFor={`${uid}-phone`} hint="Optional unless you'd like WhatsApp or a call.">
+                  <Field label="Phone" error={errors.phone} htmlFor={`${uid}-phone`} hint="Optional unless you'd like a call.">
                     <div className="flex gap-2">
                       <label htmlFor={`${uid}-cc`} className="sr-only">
                         Country code
@@ -597,7 +597,7 @@ export function PlannerForm({ preset, variant = "page" }: { preset?: PlannerPres
                     </Link>
                     . We&rsquo;ll only use your details to plan your journey.
                   </p>
-                  {status === "error" && <ErrorText>Sorry, that didn&rsquo;t send. Please try again or message us on WhatsApp.</ErrorText>}
+                  {status === "error" && <ErrorText>Sorry, that didn&rsquo;t send. Please try again or email us.</ErrorText>}
                 </div>
               </fieldset>
             )}

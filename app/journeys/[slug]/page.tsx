@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getDestination, getJourney, getRegion, getStay, journeys, monthNames, styleLabels, testimonials } from "@/data";
+import { getDestination, getJourney, getRegion, getStay, journeys, monthNames, styleLabels } from "@/data";
 import { PageHero } from "@/components/sections/PageHero";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { CardGrid } from "@/components/sections/CardGrid";
@@ -34,7 +34,6 @@ export default async function JourneyPage({ params }: PageProps<"/journeys/[slug
   const regionNames = journey.regions.map((r) => getRegion(r)!.name);
   const stops = journey.route.map((s) => getDestination(s)?.name ?? s);
   const related = journeys.filter((j) => j.slug !== journey.slug && j.regions.some((r) => journey.regions.includes(r))).slice(0, 3);
-  const quote = testimonials.find((t) => t.journey === journey.slug);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -166,8 +165,8 @@ export default async function JourneyPage({ params }: PageProps<"/journeys/[slug
                 <PlanButton variant="primary" preset={{ regions: journey.regions, styles: journey.styles, note: `I'm interested in “${journey.title}”.` }}>
                   Enquire about this journey
                 </PlanButton>
-                <ButtonLink href={contact.whatsappHref} variant="secondary">
-                  Ask on WhatsApp
+                <ButtonLink href={contact.emailHref} variant="secondary">
+                  Ask by email
                 </ButtonLink>
               </div>
               <p className="mt-5 text-xs text-stone">Every day can be changed. Your specialist shapes the final version with you.</p>
@@ -218,18 +217,7 @@ export default async function JourneyPage({ params }: PageProps<"/journeys/[slug
               <div className="jaali-frame p-8 md:p-10">
                 <h2 className="font-display text-display-xs">Your guides</h2>
                 <p className="mt-4 leading-relaxed text-charcoal/80">{journey.guides}</p>
-                <Link href="/our-guides" className="mt-5 inline-block text-sm underline underline-offset-4">
-                  Meet our guides
-                </Link>
               </div>
-              {quote && (
-                <figure className="mt-10">
-                  <blockquote className="font-display text-display-xs italic text-indigo">“{quote.quote}”</blockquote>
-                  <figcaption className="mt-3 text-sm text-stone">
-                    {quote.name}, {quote.from} · <span className="text-spice">placeholder testimonial</span>
-                  </figcaption>
-                </figure>
-              )}
             </Reveal>
           </div>
         </Container>
@@ -280,8 +268,8 @@ export default async function JourneyPage({ params }: PageProps<"/journeys/[slug
                   <PlanButton variant="accent" preset={{ regions: journey.regions, styles: journey.styles, note: `I'm interested in “${journey.title}”.` }}>
                     Enquire about this journey
                   </PlanButton>
-                  <ButtonLink href={contact.whatsappHref} variant="light">
-                    Ask on WhatsApp
+                  <ButtonLink href={contact.emailHref} variant="light">
+                    Ask by email
                   </ButtonLink>
                 </div>
               </div>

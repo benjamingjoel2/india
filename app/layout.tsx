@@ -7,7 +7,6 @@ import { CurrencyProvider } from "@/lib/currency";
 import { PlannerProvider } from "@/components/planner/PlannerProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { SideTab } from "@/components/planner/SideTab";
 
@@ -57,7 +56,7 @@ const orgJsonLd = {
   slogan: brand.tagline,
   url: siteUrl,
   email: contact.email,
-  telephone: contact.phone,
+  address: { "@type": "PostalAddress", ...contact.postalAddress },
   areaServed: "India",
 };
 
@@ -73,7 +72,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 {children}
               </main>
               <Footer />
-              <WhatsAppButton />
               <SideTab />
               <SmoothScroll />
             </PlannerProvider>

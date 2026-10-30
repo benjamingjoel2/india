@@ -25,7 +25,7 @@ export default function PlanMyJourneyPage() {
           <ul className="mt-10 space-y-4 text-sm text-charcoal/80">
             <li>— {contact.replyPromise}</li>
             <li>— Your progress saves as you go</li>
-            <li>— Prefer to talk? <a href={contact.whatsappHref} className="underline underline-offset-4">WhatsApp us</a></li>
+            <li>— Prefer to write? <a href={contact.emailHref} className="underline underline-offset-4">Email us</a></li>
           </ul>
         </aside>
         <div className="lg:col-span-8">

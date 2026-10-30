@@ -14,7 +14,7 @@ const coreInclusions = [
   "Airport arrival and departure transfers",
   "English-speaking local guides for all sightseeing in the itinerary",
   "Entry fees to monuments and parks in the itinerary",
-  "24/7 WhatsApp support from your specialist before and during your trip",
+  "Support from your specialist before and during your trip",
 ];
 
 /** Exclusions common to every journey; each journey adds its own specifics. */
@@ -63,7 +63,7 @@ export const journeys: Journey[] = [
         title: "Arrive in Delhi",
         location: "Delhi",
         description:
-          "Your driver meets you in arrivals and takes you to a quiet hotel in leafy central Delhi. If you land early, an evening stroll through Lodhi Garden, among fifteenth-century tombs and joggers, is the gentlest possible introduction. Your specialist checks in by WhatsApp to make sure all is well.",
+          "Your driver meets you in arrivals and takes you to a quiet hotel in leafy central Delhi. If you land early, an evening stroll through Lodhi Garden, among fifteenth-century tombs and joggers, is the gentlest possible introduction. Your specialist checks in to make sure all is well.",
         overnight: "Delhi",
         meals: "None",
       },
