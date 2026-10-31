@@ -9,7 +9,10 @@
     "start": "next start",
     "lint": "eslint",
     "i18n:extract": "node --no-warnings scripts/i18n.mjs extract",
-    "i18n:check": "node --no-warnings scripts/i18n.mjs check -v"
+    "i18n:check": "node --no-warnings scripts/i18n.mjs check -v",
+    "cf-build": "opennextjs-cloudflare build",
+    "cf-pages": "node scripts/cf-pages.mjs",
+    "og-images": "node scripts/build-og-images.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -23,13 +26,16 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.15",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "esbuild": "^0.28.2",
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.156.0"
   }
 }
