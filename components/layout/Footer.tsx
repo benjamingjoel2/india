@@ -1,11 +1,15 @@
-import Link from "next/link";
-import { brand, company, contact, navigation } from "@/config/site";
+import Link from "@/components/ui/Link";
+import { company } from "@/config/site";
+import { getContent } from "@/lib/content";
+import { getT } from "@/lib/i18n/server";
+import { Emph } from "@/components/ui/Display";
 import { Logo } from "@/components/ui/Logo";
 import { BlockPrintBand } from "@/components/ui/Jaali";
 import { GridLines } from "@/components/ui/GridLines";
 import { NewsletterForm } from "./NewsletterForm";
 
-export function Footer() {
+export async function Footer() {
+  const [{ brand, contact, navigation }, t] = await Promise.all([getContent(), getT()]);
   const year = new Date().getFullYear();
   return (
     <footer className="relative overflow-hidden bg-indigo-deep text-ivory">
@@ -19,18 +23,18 @@ export function Footer() {
             <p className="mt-4 max-w-sm font-display text-lg italic text-ivory/90">{brand.tagline}</p>
             <ul className="mt-8 space-y-3 text-[0.95rem]">
               <li>
-                <span className="eyebrow mr-3 text-ivory/70">Email</span>
+                <span className="eyebrow mr-3 text-ivory/70">{t("Email")}</span>
                 <a href={contact.emailHref} className="link-underline">{contact.email}</a>
               </li>
               <li className="flex">
-                <span className="eyebrow mr-3 shrink-0 text-ivory/70">Office</span>
+                <span className="eyebrow mr-3 shrink-0 text-ivory/70">{t("Office")}</span>
                 <span className="text-ivory/85">{contact.address}</span>
               </li>
             </ul>
           </div>
 
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-5">
-            {Object.entries(navigation.footer).map(([title, links]) => (
+          <nav aria-label={t("Footer")} className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-5">
+            {navigation.footer.map(({ title, links }) => (
               <div key={title}>
                 <h2 className="eyebrow mb-5 font-sans text-ivory/70">{title}</h2>
                 <ul className="space-y-2.5 text-[0.95rem] text-ivory/85">
@@ -45,8 +49,8 @@ export function Footer() {
           </nav>
 
           <div className="lg:col-span-3">
-            <h2 className="font-display text-display-xs">Letters from <em className="display-em">India</em></h2>
-            <p className="mt-3 mb-6 text-ivory/75">Seasonal notes, new journeys and the odd recipe, a few times a year.</p>
+            <h2 className="font-display text-display-xs"><Emph>{t("Letters from *India*")}</Emph></h2>
+            <p className="mt-3 mb-6 text-ivory/75">{t("Seasonal notes, new journeys and the odd recipe, a few times a year.")}</p>
             <NewsletterForm source="footer" />
           </div>
         </div>

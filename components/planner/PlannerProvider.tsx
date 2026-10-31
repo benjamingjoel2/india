@@ -6,10 +6,11 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ease } from "@/lib/motion";
 import { useFocusTrap } from "@/lib/useFocusTrap";
+import { useT } from "@/components/i18n/LocaleProvider";
 
 const PlannerForm = dynamic(() => import("./PlannerForm").then((m) => m.PlannerForm), {
   ssr: false,
-  loading: () => <p className="p-10 text-center opacity-70">Loading planner…</p>,
+  loading: () => <PlannerLoading />,
 });
 
 interface PlannerContextValue {
@@ -24,11 +25,17 @@ export interface PlannerPreset {
   note?: string;
 }
 
+function PlannerLoading() {
+  const t = useT();
+  return <p className="p-10 text-center opacity-70">{t("Loading planner…")}</p>;
+}
+
 const PlannerContext = createContext<PlannerContextValue | null>(null);
 
 export function PlannerProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [preset, setPreset] = useState<PlannerPreset | undefined>();
+  const t = useT();
   const pathname = usePathname();
   const reduce = useReducedMotion();
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -81,7 +88,7 @@ export function PlannerProvider({ children }: { children: React.ReactNode }) {
               ref={dialogRef}
               role="dialog"
               aria-modal="true"
-              aria-label="Plan my journey"
+              aria-label={t("Plan my journey")}
               data-lenis-prevent
               className="relative h-full w-full overflow-y-auto bg-ivory md:max-w-3xl"
               initial={reduce ? false : { x: "8%", opacity: 0 }}
@@ -93,7 +100,7 @@ export function PlannerProvider({ children }: { children: React.ReactNode }) {
                 type="button"
                 onClick={close}
                 className="absolute top-4 right-4 z-10 flex size-11 items-center justify-center rounded-full border border-charcoal/20 bg-ivory hover:border-charcoal"
-                aria-label="Close planner"
+                aria-label={t("Close planner")}
               >
                 <svg aria-hidden viewBox="0 0 14 14" className="size-3.5" stroke="currentColor" strokeWidth="1.4">
                   <path d="M1 1l12 12M13 1L1 13" />

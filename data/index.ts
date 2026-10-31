@@ -49,6 +49,17 @@ export const styleLabels: Record<string, string> = {
   beaches: "Beaches",
 };
 
+/** Plural forms of the stay types, used on tabs ("Palace hotels"). */
+export const stayTypePlurals: Record<string, string> = {
+  palace: "Palace hotels",
+  haveli: "Heritage havelis",
+  "safari-lodge": "Tented safari lodges",
+  houseboat: "Houseboats",
+  homestay: "Himalayan homestays",
+  boutique: "Boutique hotels",
+  beach: "Beach retreats",
+};
+
 export const stayTypeLabels: Record<string, string> = {
   palace: "Palace hotel",
   haveli: "Heritage haveli",

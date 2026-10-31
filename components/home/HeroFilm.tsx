@@ -6,6 +6,7 @@ import { media } from "@/config/site";
 import { images, type ImageKey } from "@/data/images";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { cn } from "@/lib/utils";
+import { useT } from "@/components/i18n/LocaleProvider";
 
 export interface HeroFrame {
   image: ImageKey;
@@ -21,6 +22,7 @@ const FRAME_MS = 7000;
  * Visitors can pause it (WCAG 2.2.2); reduced-motion visitors start paused.
  */
 export function HeroFilm({ frames }: { frames: HeroFrame[] }) {
+  const t = useT();
   const reduce = useReducedMotion();
   const [index, setIndex] = useState(0);
   const [userPaused, setUserPaused] = useState(false);
@@ -81,7 +83,7 @@ export function HeroFilm({ frames }: { frames: HeroFrame[] }) {
           <button
             type="button"
             onClick={() => setUserPaused((p) => !p)}
-            aria-label={paused ? "Play hero film" : "Pause hero film"}
+            aria-label={paused ? t("Play hero film") : t("Pause hero film")}
             className="flex size-10 shrink-0 items-center justify-center rounded-full border border-ivory/40 text-ivory hover:border-ivory"
           >
             {paused ? (
@@ -101,7 +103,7 @@ export function HeroFilm({ frames }: { frames: HeroFrame[] }) {
                   <button
                     type="button"
                     onClick={() => setIndex(i)}
-                    aria-label={`Show ${f.place}`}
+                    aria-label={t("Show {place}", { place: f.place })}
                     aria-current={i === index}
                     className={cn("group block w-full text-left transition-opacity duration-500", i === index ? "opacity-100" : "opacity-60 hover:opacity-90")}
                   >

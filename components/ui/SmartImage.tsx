@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useT } from "@/components/i18n/LocaleProvider";
 import { getImage, type ImageKey } from "@/data/images";
 import { cn } from "@/lib/utils";
 
@@ -21,11 +24,12 @@ export function SmartImage({
   zoom?: boolean;
   alt?: string;
 }) {
+  const t = useT();
   const img = getImage(image);
   return (
     <Image
       src={img.src}
-      alt={alt ?? img.alt}
+      alt={alt ?? t(img.alt)}
       fill
       sizes={sizes}
       preload={priority}

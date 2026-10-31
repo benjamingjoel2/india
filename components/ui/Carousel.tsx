@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useT } from "@/components/i18n/LocaleProvider";
 
 /** Scroll-snap carousel with previous/next controls. Works with touch, trackpad and keyboard. */
 export function Carousel({
@@ -15,6 +16,7 @@ export function Carousel({
   itemClassName?: string;
   className?: string;
 }) {
+  const t = useT();
   const track = useRef<HTMLUListElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
@@ -48,7 +50,7 @@ export function Carousel({
     <div className={className} role="region" aria-roledescription="carousel" aria-label={label}>
       <ul ref={track} className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-px-4 px-4 md:mx-0 md:scroll-px-0 md:px-0">
         {children.map((child, i) => (
-          <li key={i} className={cn("shrink-0 snap-start", itemClassName)} aria-roledescription="slide" aria-label={`${i + 1} of ${children.length}`}>
+          <li key={i} className={cn("shrink-0 snap-start", itemClassName)} aria-roledescription="slide" aria-label={t("{i} of {n}", { i: i + 1, n: children.length })}>
             {child}
           </li>
         ))}
@@ -60,7 +62,7 @@ export function Carousel({
             type="button"
             onClick={() => scroll(dir)}
             disabled={dir === -1 ? atStart : atEnd}
-            aria-label={dir === -1 ? "Previous" : "Next"}
+            aria-label={dir === -1 ? t("Previous") : t("Next")}
             className="flex size-12 items-center justify-center rounded-full border border-current/30 transition-colors duration-500 hover:border-current disabled:opacity-30"
           >
             <svg aria-hidden viewBox="0 0 20 10" className={cn("h-2.5 w-5", dir === -1 && "rotate-180")} fill="none" stroke="currentColor" strokeWidth="1.2">

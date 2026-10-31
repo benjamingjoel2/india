@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/ui/Link";
 import { buttonClass } from "@/components/ui/Button";
+import { useT } from "@/components/i18n/LocaleProvider";
 import { usePlanner, type PlannerPreset } from "./PlannerProvider";
 
 type Variant = Parameters<typeof buttonClass>[0];
@@ -11,7 +12,7 @@ type Variant = Parameters<typeof buttonClass>[0];
  * the planner as a modal on a normal click (cmd/ctrl-click still opens the page).
  */
 export function PlanButton({
-  children = "Plan my journey",
+  children,
   variant = "primary",
   className,
   preset,
@@ -22,6 +23,7 @@ export function PlanButton({
   preset?: PlannerPreset;
 }) {
   const { open } = usePlanner();
+  const t = useT();
   return (
     <Link
       href="/plan-my-journey"
@@ -32,7 +34,7 @@ export function PlanButton({
         open(preset);
       }}
     >
-      {children}
+      {children ?? t("Plan my journey")}
     </Link>
   );
 }

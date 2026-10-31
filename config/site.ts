@@ -118,7 +118,7 @@ export interface MegaMenu {
 const region = (slug: string, dests: [string, string][]) =>
   dests.map(([label, d]) => ({ label, href: `/where-to-go/${slug}#${d}` }));
 
-export const navigation: { main: MegaMenu[]; footer: Record<string, NavLink[]>; legal: NavLink[] } = {
+export const navigation: { main: MegaMenu[]; footer: { title: string; links: NavLink[] }[]; legal: NavLink[] } = {
   main: [
     {
       label: "Where to go",
@@ -184,16 +184,16 @@ export const navigation: { main: MegaMenu[]; footer: Record<string, NavLink[]>; 
       ],
     },
   ],
-  footer: {
-    Journeys: [
+  footer: [
+    { title: "Journeys", links: [
       { label: "Golden Triangle", href: "/journeys/golden-triangle" },
       { label: "Rajasthan palaces", href: "/journeys/rajasthan-palaces" },
       { label: "Kerala backwaters", href: "/journeys/kerala-backwaters" },
       { label: "Tigers & temples", href: "/journeys/tigers-and-temples" },
       { label: "Honeymoons", href: "/journeys/honeymoon-india" },
       { label: "All journeys", href: "/journeys" },
-    ],
-    "Where to go": [
+    ] },
+    { title: "Where to go", links: [
       { label: "North India", href: "/where-to-go/north" },
       { label: "Rajasthan", href: "/where-to-go/rajasthan" },
       { label: "South India", href: "/where-to-go/south" },
@@ -201,21 +201,21 @@ export const navigation: { main: MegaMenu[]; footer: Record<string, NavLink[]>; 
       { label: "Central India", href: "/where-to-go/central-india" },
       { label: "East & Northeast", href: "/where-to-go/east-northeast" },
       { label: "Andaman Islands", href: "/where-to-go/islands" },
-    ],
-    About: [
+    ] },
+    { title: "About", links: [
       { label: "Our story", href: "/about" },
       { label: "Responsible travel", href: "/responsible-travel" },
       { label: "Contact", href: "/contact" },
-    ],
-    Resources: [
+    ] },
+    { title: "Resources", links: [
       { label: "When to go", href: "/when-to-go" },
       { label: "Festivals", href: "/festivals" },
       { label: "Where to stay", href: "/stays" },
       { label: "Experiences", href: "/experiences" },
       { label: "FAQ", href: "/faq" },
       { label: "Journal", href: "/journal" },
-    ],
-  },
+    ] },
+  ],
   legal: [
     { label: "Privacy Policy", href: "/legal/privacy" },
     { label: "Booking Terms", href: "/legal/booking-conditions" },

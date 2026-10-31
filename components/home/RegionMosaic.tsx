@@ -1,6 +1,7 @@
-import Link from "next/link";
+import Link from "@/components/ui/Link";
 import { colors } from "@/config/site";
-import { regions } from "@/data";
+import { getContent } from "@/lib/content";
+import { getT } from "@/lib/i18n/server";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { RevealImage } from "@/components/ui/RevealImage";
 import { Container, Section, SectionHeading } from "@/components/ui/Section";
@@ -20,16 +21,17 @@ const layout = [
 ];
 const rowHeights = "lg:grid-rows-[clamp(18rem,21vw,32rem)_clamp(18rem,21vw,32rem)_clamp(20rem,24vw,36rem)_clamp(18rem,22vw,34rem)]";
 
-export function RegionMosaic() {
+export async function RegionMosaic() {
+  const [{ regions }, t] = await Promise.all([getContent(), getT()]);
   return (
     <Section labelledBy="regions-title">
       <Container>
         <SectionHeading
           id="regions-title"
-          eyebrow="Where to go"
-          title="Where to *wander*."
-          intro="Seven regions, each with its own light, food and rhythm. Start with a feeling, and we'll find the places that match it."
-          action={<ButtonLink href="/where-to-go" variant="secondary">All regions</ButtonLink>}
+          eyebrow={t("Where to go")}
+          title={t("Where to *wander*.")}
+          intro={t("Seven regions, each with its own light, food and rhythm. Start with a feeling, and we'll find the places that match it.")}
+          action={<ButtonLink href="/where-to-go" variant="secondary">{t("All regions")}</ButtonLink>}
         />
         <div className={cn("grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-12 lg:gap-4", rowHeights)}>
           {regions.map((r, i) => {
@@ -51,7 +53,7 @@ export function RegionMosaic() {
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 text-ivory md:p-8">
                   <div>
                     <p className="eyebrow text-[0.65rem] opacity-80">
-                      {r.destinations.length} destinations{r.coordinates && <span className="hidden sm:inline"> · [ {r.coordinates} ]</span>}
+                      {t("{n} destinations", { n: r.destinations.length })}{r.coordinates && <span className="hidden sm:inline"> · [ {r.coordinates} ]</span>}
                     </p>
                     <h3 className={cn("mt-2 font-display", i === 0 ? "text-display-md" : "text-display-sm")}>
                       <Link href={`/where-to-go/${r.slug}`} className="after:absolute after:inset-0">

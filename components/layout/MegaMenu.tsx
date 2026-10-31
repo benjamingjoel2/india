@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/ui/Link";
 import { motion, useReducedMotion } from "framer-motion";
 import type { MegaMenu as MegaMenuType } from "@/config/site";
 import type { ImageKey } from "@/data/images";

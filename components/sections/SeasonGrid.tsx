@@ -1,15 +1,19 @@
 import type { SeasonCalendar, Season } from "@/data/types";
-import { monthOrder, monthShort } from "@/data";
+import { monthOrder } from "@/data";
+import { getContent } from "@/lib/content";
+import { getT } from "@/lib/i18n/server";
+import type { Translate } from "@/lib/i18n/config";
 import { cn } from "@/lib/utils";
 
-const seasonStyle: Record<Season, { label: string; cls: string }> = {
-  peak: { label: "Best", cls: "bg-accent text-accent-ink" },
-  good: { label: "Good", cls: "bg-accent/45 text-charcoal" },
-  shoulder: { label: "Mixed", cls: "bg-accent/15 text-charcoal" },
-  avoid: { label: "Avoid", cls: "bg-transparent text-charcoal/40 border border-dashed border-charcoal/20" },
-};
+const seasonStyles = (t: Translate): Record<Season, { label: string; cls: string }> => ({
+  peak: { label: t("Best"), cls: "bg-accent text-accent-ink" },
+  good: { label: t("Good"), cls: "bg-accent/45 text-charcoal" },
+  shoulder: { label: t("Mixed"), cls: "bg-accent/15 text-charcoal" },
+  avoid: { label: t("Avoid"), cls: "bg-transparent text-charcoal/40 border border-dashed border-charcoal/20" },
+});
 
-export function SeasonLegend({ className }: { className?: string }) {
+export async function SeasonLegend({ className }: { className?: string }) {
+  const seasonStyle = seasonStyles(await getT());
   return (
     <ul className={cn("flex flex-wrap gap-4 text-xs", className)}>
       {(Object.keys(seasonStyle) as Season[]).map((s) => (
@@ -23,9 +27,11 @@ export function SeasonLegend({ className }: { className?: string }) {
 }
 
 /** 12-month grid tinted with the current --accent. */
-export function SeasonGrid({ calendar, compact = false, label }: { calendar: SeasonCalendar; compact?: boolean; label?: string }) {
+export async function SeasonGrid({ calendar, compact = false, label }: { calendar: SeasonCalendar; compact?: boolean; label?: string }) {
+  const [{ monthShort }, t] = await Promise.all([getContent(), getT()]);
+  const seasonStyle = seasonStyles(t);
   return (
-    <ol aria-label={label ?? "Best time to visit, month by month"} className={cn("grid grid-cols-6 gap-1 sm:grid-cols-12", compact && "sm:gap-0.5")}>
+    <ol aria-label={label ?? t("Best time to visit, month by month")} className={cn("grid grid-cols-6 gap-1 sm:grid-cols-12", compact && "sm:gap-0.5")}>
       {monthOrder.map((m) => {
         const s = seasonStyle[calendar[m]];
         return (

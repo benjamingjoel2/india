@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/ui/Link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { MonthGuide, MonthKey, Region, Festival } from "@/data/types";
@@ -9,6 +9,7 @@ import { ease } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { VerifyFlag } from "@/components/ui/VerifyFlag";
 import { Arrow } from "@/components/ui/Button";
+import { useT } from "@/components/i18n/LocaleProvider";
 
 type RegionLite = Pick<Region, "slug" | "name" | "accent">;
 type FestivalLite = Pick<Festival, "slug" | "name">;
@@ -19,12 +20,15 @@ export function MonthStrip({
   regions,
   festivals,
   initial,
+  shortNames,
 }: {
+  shortNames: Record<MonthKey, string>;
   months: MonthGuide[];
   regions: RegionLite[];
   festivals: FestivalLite[];
   initial: MonthKey;
 }) {
+  const t = useT();
   const [active, setActive] = useState<MonthKey>(initial);
   const month = months.find((m) => m.key === active)!;
   const best = month.bestRegions.map((s) => regions.find((r) => r.slug === s)).filter(Boolean) as RegionLite[];
@@ -41,7 +45,7 @@ export function MonthStrip({
 
   return (
     <div>
-      <div role="tablist" aria-label="Choose a month" className="no-scrollbar -mx-4 flex overflow-x-auto px-4 md:mx-0 md:grid md:grid-cols-12 md:px-0">
+      <div role="tablist" aria-label={t("Choose a month")} className="no-scrollbar -mx-4 flex overflow-x-auto px-4 md:mx-0 md:grid md:grid-cols-12 md:px-0">
         {months.map((m, i) => {
           const selected = m.key === active;
           return (
@@ -60,7 +64,7 @@ export function MonthStrip({
                 selected ? "border-ivory text-ivory" : "border-ivory/20 text-ivory/70 hover:text-ivory/85",
               )}
             >
-              <span className={cn(selected && "italic")}>{m.name.slice(0, 3)}</span>
+              <span className={cn(selected && "italic")}>{shortNames[m.key]}</span>
               {selected && <motion.span layoutId="month-dot" className="absolute -top-[3px] left-1/2 size-[5px] -translate-x-1/2 rotate-45 bg-marigold" />}
             </button>
           );
@@ -84,11 +88,11 @@ export function MonthStrip({
               <p className="mt-4 text-lede text-ivory/80">{month.summary}</p>
               <p className="mt-4 text-sm text-ivory/60">{month.weather}</p>
               <div className="mt-6 flex flex-wrap items-center gap-3">
-                <VerifyFlag tone="dark">Seasons and dates vary yearly</VerifyFlag>
+                <VerifyFlag tone="dark">{t("Seasons and dates vary yearly")}</VerifyFlag>
               </div>
             </div>
             <div className="lg:col-span-4">
-              <p className="eyebrow text-ivory/70">At their best</p>
+              <p className="eyebrow text-ivory/70">{t("At their best")}</p>
               <ul className="mt-4 space-y-2">
                 {best.map((r) => (
                   <li key={r.slug}>
@@ -108,7 +112,7 @@ export function MonthStrip({
               )}
             </div>
             <div className="lg:col-span-3">
-              <p className="eyebrow text-ivory/70">Festivals & events</p>
+              <p className="eyebrow text-ivory/70">{t("Festivals & events")}</p>
               <ul className="mt-4 space-y-2">
                 {fests.map((f) => (
                   <li key={f.slug}>
@@ -122,10 +126,10 @@ export function MonthStrip({
                     {e}
                   </li>
                 ))}
-                {fests.length === 0 && month.otherEvents.length === 0 && <li className="text-sm text-ivory/60">A quieter month for festivals.</li>}
+                {fests.length === 0 && month.otherEvents.length === 0 && <li className="text-sm text-ivory/60">{t("A quieter month for festivals.")}</li>}
               </ul>
               <Link href="/when-to-go" className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-marigold">
-                Full month-by-month guide <Arrow />
+                {t("Full month-by-month guide")} <Arrow />
               </Link>
             </div>
           </motion.div>

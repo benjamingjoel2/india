@@ -9,7 +9,7 @@ statically generated from typed data files, so content can later move to a CMS w
 ```bash
 npm install
 npm run dev     # http://localhost:3000
-npm run build   # static build of all 78 routes
+npm run build   # static build of every page in EN, FR, DE and ES (276 pages)
 ```
 
 Set `NEXT_PUBLIC_SITE_URL` to the production domain (used for canonical URLs, sitemap and structured data).
@@ -27,6 +27,33 @@ Set `NEXT_PUBLIC_SITE_URL` to the production domain (used for canonical URLs, si
 | Journal post bodies | `content/journal/<slug>.mdx` (metadata in `data/posts.ts`) |
 | Design tokens | `app/globals.css` (`@theme`) |
 | API routes | `app/api/plan` (planner), `app/api/subscribe` (newsletter/guide), `app/api/contact` |
+| Pages (all languages) | `app/[locale]/…` (English is served at the unprefixed URLs) |
+| Translations | `i18n/{fr,de,es}.json` (English text → translation), `content/journal/{fr,de,es}/<slug>.mdx` |
+| Language helpers | `lib/i18n/` (locales, `t()`, `localize()`), `lib/content.ts` (localized data), `components/i18n/` |
+
+## Languages
+
+The site is in **English (default), French, German and Spanish**. English keeps its URLs (`/journeys`);
+the others live under `/fr`, `/de` and `/es` (`/fr/journeys`). Every page in every language is pre-rendered;
+there is no translation library in the browser and no redirect by browser language.
+
+- **Routing.** All pages sit under `app/[locale]`. `next.config.ts` rewrites unprefixed URLs to `/en/...` and
+  308-redirects any `/en/...` URL back to the unprefixed one. `<html lang>`, canonical and `hreflang`
+  alternates (`en`, `fr`, `de`, `es`, `x-default` = English) come from `lib/seo.ts`; `app/sitemap.ts` lists every
+  page in every language with its alternates.
+- **Copy.** Components write English and wrap it in `t("…")` (Server Components: `await getT()`; client
+  components: `useT()`). Module-level copy is marked with `msg("…")`. Data in `/data` stays English and is
+  translated through `getContent()` (`lib/content.ts`), which looks every string up in `i18n/<locale>.json`.
+  Use `{name}` placeholders for variables and keep exactly one `*word*` where the English has one.
+- **Links.** Import `Link` from `@/components/ui/Link`; it keeps visitors in their language.
+- **Language selector.** `components/i18n/LanguageSwitcher.tsx` (EN · FR · DE · ES) in the header from 768px
+  and in the mobile menu. It links to the same page in each language.
+- **Workflow.** After changing copy, run `npm run i18n:check`: it lists every English string without a
+  translation. `npm run i18n:extract` writes the full list to `i18n/strings.json`. Missing translations fall
+  back to English, so the site always builds. `npm run build` regenerates `i18n/client-keys.json` (the few
+  strings client components need) automatically.
+- **Journal.** Each article has one MDX file per language: `content/journal/<slug>.mdx` (English) and
+  `content/journal/<locale>/<slug>.mdx`.
 
 ### Placeholders to replace before launch
 
@@ -35,7 +62,8 @@ Set `NEXT_PUBLIC_SITE_URL` to the production domain (used for canonical URLs, si
   licence/registration numbers, team or guide profiles, or testimonials.
 
 - **Stays** (`data/stays.ts`): property names end in "(placeholder)" (see `IMAGES-NEEDED.md`).
-- **Legal pages** (`data/legal.ts`: Privacy Policy, Booking Terms, Cookie Policy) are complete; have a lawyer review them.
+- **Legal pages** (`data/legal.ts`: Privacy Policy, Booking Terms, Cookie Policy) are complete in all four languages; have a lawyer review them (including the French, German and Spanish versions).
+- **Translations** (`i18n/*.json`, `content/journal/{fr,de,es}`) were written in-house; a native-speaker read-through before launch is recommended.
 - **Currency rates** in `config/site.ts` are indicative; wire to a rates API or update regularly.
 - **Photography** is from Unsplash; images marked "stand-in" in `data/images.ts` are near matches.
 - **Hero film**: add MP4/WebM files to `public/films` and set `media.heroFilm` in `config/site.ts`. Until then the

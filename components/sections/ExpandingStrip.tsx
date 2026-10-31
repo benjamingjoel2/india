@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/ui/Link";
 import { useState } from "react";
 import type { ImageKey } from "@/data/images";
 import { SmartImage } from "@/components/ui/SmartImage";

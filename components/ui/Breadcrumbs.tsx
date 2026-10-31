@@ -1,9 +1,13 @@
-import Link from "next/link";
+import Link from "@/components/ui/Link";
 import { siteUrl } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { getLocale, translator } from "@/lib/i18n/server";
+import { localizeHref } from "@/lib/i18n/config";
 
-export function Breadcrumbs({ items, className }: { items: { label: string; href: string }[]; className?: string }) {
-  const all = [{ label: "Home", href: "/" }, ...items];
+export async function Breadcrumbs({ items, className }: { items: { label: string; href: string }[]; className?: string }) {
+  const locale = await getLocale();
+  const t = translator(locale);
+  const all = [{ label: t("Home"), href: "/" }, ...items];
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -11,11 +15,11 @@ export function Breadcrumbs({ items, className }: { items: { label: string; href
       "@type": "ListItem",
       position: i + 1,
       name: item.label,
-      item: `${siteUrl}${item.href}`,
+      item: `${siteUrl}${localizeHref(item.href, locale)}`,
     })),
   };
   return (
-    <nav aria-label="Breadcrumb" className={cn("text-sm", className)}>
+    <nav aria-label={t("Breadcrumb")} className={cn("text-sm", className)}>
       <ol className="flex flex-wrap items-center gap-2 opacity-80">
         {all.map((item, i) => (
           <li key={item.href} className="flex items-center gap-2">

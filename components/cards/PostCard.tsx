@@ -1,9 +1,13 @@
-import Link from "next/link";
+import Link from "@/components/ui/Link";
 import type { Post } from "@/data/types";
 import { SmartImage } from "@/components/ui/SmartImage";
+import { getLocale, translator } from "@/lib/i18n/server";
+import { intlLocales } from "@/lib/i18n/config";
 
-export function PostCard({ post, sizes = "(min-width: 1024px) 33vw, 100vw" }: { post: Post; sizes?: string }) {
-  const date = new Date(post.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+export async function PostCard({ post, sizes = "(min-width: 1024px) 33vw, 100vw" }: { post: Post; sizes?: string }) {
+  const locale = await getLocale();
+  const t = translator(locale);
+  const date = new Date(post.date).toLocaleDateString(intlLocales[locale], { day: "numeric", month: "long", year: "numeric" });
   return (
     <article className="group relative">
       <div className="relative aspect-[3/2] overflow-hidden bg-ivory-deep">
@@ -11,7 +15,7 @@ export function PostCard({ post, sizes = "(min-width: 1024px) 33vw, 100vw" }: { 
       </div>
       <div className="pt-5">
         <p className="eyebrow text-[0.68rem] text-stone">
-          {post.category} · {post.readingMinutes} min read
+          {post.category} · {t("{n} min read", { n: post.readingMinutes })}
         </p>
         <h3 className="mt-2 font-display text-display-xs">
           <Link href={`/journal/${post.slug}`} className="after:absolute after:inset-0">

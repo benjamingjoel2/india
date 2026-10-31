@@ -1,13 +1,15 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/ui/Link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { SearchItem } from "@/lib/search";
 import { useFocusTrap } from "@/lib/useFocusTrap";
 import { ease } from "@/lib/motion";
+import { useLocale, useT } from "@/components/i18n/LocaleProvider";
+import { localizeHref, msg } from "@/lib/i18n/config";
 
-let cache: SearchItem[] | null = null;
+const cache: Record<string, SearchItem[]> = {};
 
 function score(item: SearchItem, terms: string[]) {
   const title = item.title.toLowerCase();
@@ -20,25 +22,27 @@ function score(item: SearchItem, terms: string[]) {
   return s;
 }
 
-const suggestions = ["Rajasthan", "Tigers", "Kerala", "Diwali", "Ladakh", "Houseboat", "Visa"];
+const suggestions = [msg("Rajasthan"), msg("Tigers"), msg("Kerala"), msg("Diwali"), msg("Ladakh"), msg("Houseboat"), msg("Visa")];
 
 export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [items, setItems] = useState<SearchItem[]>(cache ?? []);
+  const t = useT();
+  const locale = useLocale();
+  const [items, setItems] = useState<SearchItem[]>(cache[locale] ?? []);
   const [query, setQuery] = useState("");
   const panel = useRef<HTMLDivElement>(null);
   const input = useRef<HTMLInputElement>(null);
   useFocusTrap(panel, open, input);
 
   useEffect(() => {
-    if (!open || cache) return;
-    fetch("/search-index.json")
+    if (!open || cache[locale]) return;
+    fetch(localizeHref("/search-index.json", locale))
       .then((r) => r.json())
       .then((data: SearchItem[]) => {
-        cache = data;
+        cache[locale] = data;
         setItems(data);
       })
       .catch(() => {});
-  }, [open]);
+  }, [open, locale]);
 
   useEffect(() => {
     if (!open) return;
@@ -69,7 +73,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
           ref={panel}
           role="dialog"
           aria-modal="true"
-          aria-label="Search the site"
+          aria-label={t("Search the site")}
           data-lenis-prevent
               className="fixed inset-0 z-[80] overflow-y-auto bg-ivory text-charcoal"
           initial={{ opacity: 0 }}
@@ -80,8 +84,8 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
           <div aria-hidden className="jaali-fill absolute inset-x-0 top-0 h-40 text-indigo opacity-[0.05]" />
           <div className="page-x relative mx-auto max-w-4xl py-8 md:py-16">
             <div className="flex items-center justify-between">
-              <p className="eyebrow opacity-70">Search</p>
-              <button type="button" onClick={onClose} className="flex items-center gap-3 text-sm" aria-label="Close search">
+              <p className="eyebrow opacity-70">{t("Search")}</p>
+              <button type="button" onClick={onClose} className="flex items-center gap-3 text-sm" aria-label={t("Close search")}>
                 <kbd className="hidden rounded border border-charcoal/25 px-1.5 py-0.5 text-xs sm:inline">Esc</kbd>
                 <span className="flex size-11 items-center justify-center rounded-full border border-charcoal/20 hover:border-charcoal">
                   <svg aria-hidden viewBox="0 0 14 14" className="size-3.5" stroke="currentColor" strokeWidth="1.4">
@@ -91,7 +95,7 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
               </button>
             </div>
             <label htmlFor="site-search" className="sr-only">
-              Search journeys, places, experiences and articles
+              {t("Search journeys, places, experiences and articles")}
             </label>
             <input
               ref={input}
@@ -99,16 +103,16 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Where would you like to go?"
+              placeholder={t("Where would you like to go?")}
               autoComplete="off"
               className="mt-10 w-full border-b border-charcoal/30 bg-transparent pb-4 font-display text-display-md outline-none placeholder:text-charcoal/35 focus:border-charcoal"
             />
             <div aria-live="polite" className="sr-only">
-              {query && `${results.length} results`}
+              {query && t(results.length === 1 ? msg("{n} result") : msg("{n} results"), { n: results.length })}
             </div>
             {!query && (
               <div className="mt-8 flex flex-wrap gap-2">
-                {suggestions.map((s) => (
+                {suggestions.map((s) => t(s)).map((s) => (
                   <button key={s} type="button" onClick={() => setQuery(s)} className="rounded-full border border-charcoal/20 px-4 py-2 text-sm hover:border-charcoal">
                     {s}
                   </button>
@@ -117,9 +121,9 @@ export function SearchOverlay({ open, onClose }: { open: boolean; onClose: () =>
             )}
             {query && results.length === 0 && items.length > 0 && (
               <p className="mt-10 text-lede opacity-75">
-                Nothing matches yet. Try a place, a festival or a month, or{" "}
+                {t("Nothing matches yet. Try a place, a festival or a month, or")}{" "}
                 <Link href="/contact" onClick={onClose} className="underline decoration-marigold underline-offset-4">
-                  ask a specialist
+                  {t("ask a specialist")}
                 </Link>
                 .
               </p>
