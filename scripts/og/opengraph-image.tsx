@@ -1,3 +1,6 @@
+// Design for the share image, one per language. Not a route: `npm run og-images` renders it to
+// public/og/<locale>.png (commit the PNGs). A next/og route would pull @vercel/og (resvg + yoga
+// WebAssembly, ~0.6 MiB gzipped) into the Cloudflare Worker just to serve prerendered images.
 import { ImageResponse } from "next/og";
 import { brand } from "@/config/site";
 import { isLocale, locales } from "@/lib/i18n/config";
@@ -7,7 +10,7 @@ export const alt = brand.name;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export const generateStaticParams = () => locales.map((locale) => ({ locale }));
+export { locales };
 
 export default async function OpengraphImage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

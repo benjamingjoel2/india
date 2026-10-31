@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
+import { brand } from "@/config/site";
 import { images, type ImageKey } from "@/data/images";
 import { defaultLocale, locales, localizeHref, ogLocales, type Locale } from "@/lib/i18n/config";
 import { getLocale, translateString } from "@/lib/i18n/server";
+
+/** Default share image for a language, rendered by `npm run og-images` (scripts/og/opengraph-image.tsx). */
+export function defaultOgImage(locale: Locale = defaultLocale) {
+  return { url: `/og/${locale}.png`, width: 1200, height: 630, type: "image/png", alt: brand.name };
+}
 
 export function ogImage(key: ImageKey, locale: Locale = defaultLocale) {
   return { url: `${images[key].src}&w=1200&h=630`, width: 1200, height: 630, alt: translateString(locale, images[key].alt) };
@@ -23,8 +29,8 @@ export async function pageMeta({ title, description, path, image }: { title: str
     title,
     description,
     alternates: alternates(path, locale),
-    openGraph: { title, description, url, locale: ogLocales[locale], ...(image ? { images: [ogImage(image, locale)] } : {}) },
-    twitter: { card: "summary_large_image", title, description, ...(image ? { images: [ogImage(image, locale).url] } : {}) },
+    openGraph: { title, description, url, locale: ogLocales[locale], images: [image ? ogImage(image, locale) : defaultOgImage(locale)] },
+    twitter: { card: "summary_large_image", title, description, images: [image ? ogImage(image, locale).url : defaultOgImage(locale).url] },
   };
 }
 

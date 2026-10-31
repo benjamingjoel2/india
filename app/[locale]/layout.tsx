@@ -6,7 +6,7 @@ import { siteUrl } from "@/config/site";
 import { locales, ogLocales } from "@/lib/i18n/config";
 import { clientMessages, getLocale, getT } from "@/lib/i18n/server";
 import { getContent } from "@/lib/content";
-import { alternates } from "@/lib/seo";
+import { alternates, defaultOgImage } from "@/lib/seo";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { CurrencyProvider } from "@/lib/currency";
 import { PlannerProvider } from "@/components/planner/PlannerProvider";
@@ -47,8 +47,9 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: brand.name,
       locale: ogLocales[locale],
       alternateLocale: locales.filter((l) => l !== locale).map((l) => ogLocales[l]),
+      images: [defaultOgImage(locale)],
     },
-    twitter: { card: "summary_large_image" },
+    twitter: { card: "summary_large_image", images: [defaultOgImage(locale).url] },
     alternates: alternates("/", locale),
   };
 }
