@@ -3,13 +3,15 @@
 import { currencies, type CurrencyCode } from "@/config/site";
 import { useCurrency } from "@/lib/currency";
 import { cn } from "@/lib/utils";
+import { useT } from "@/components/i18n/LocaleProvider";
 
 export function CurrencySwitcher({ className, id = "currency" }: { className?: string; id?: string }) {
+  const t = useT();
   const { currency, setCurrency } = useCurrency();
   return (
     <div className={cn("relative inline-flex items-center", className)}>
       <label htmlFor={id} className="sr-only">
-        Display prices in
+        {t("Display prices in")}
       </label>
       <select
         id={id}

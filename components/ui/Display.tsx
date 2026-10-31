@@ -44,6 +44,23 @@ export function Display({
   );
 }
 
+/** Inline version: renders "Where to *wander*." with the starred word in italics, without a wrapping element. */
+export function Emph({ children }: { children: string }) {
+  return (
+    <>
+      {children.split(/(\*[^*]+\*)/g).filter(Boolean).map((part, i) =>
+        part.startsWith("*") && part.endsWith("*") ? (
+          <em key={i} className="display-em">
+            {part.slice(1, -1)}
+          </em>
+        ) : (
+          <Fragment key={i}>{part}</Fragment>
+        ),
+      )}
+    </>
+  );
+}
+
 /** Plain-text version for metadata and aria labels. */
 export function stripEmphasis(s: string) {
   return s.replace(/\*/g, "");

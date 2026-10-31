@@ -2,15 +2,16 @@
 
 import { useId, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useLocale, useT } from "@/components/i18n/LocaleProvider";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 /** Email capture used in the footer and the free guide signup. Posts to /api/subscribe. */
 export function NewsletterForm({
   source,
-  cta = "Subscribe",
-  successTitle = "Thank you.",
-  successText = "Look out for our next letter from India.",
+  cta,
+  successTitle,
+  successText,
   tone = "dark",
   className,
 }: {
@@ -21,6 +22,8 @@ export function NewsletterForm({
   tone?: "dark" | "light";
   className?: string;
 }) {
+  const t = useT();
+  const locale = useLocale();
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
   const id = useId();
@@ -30,7 +33,7 @@ export function NewsletterForm({
     const form = e.currentTarget;
     const email = new FormData(form).get("email")?.toString().trim() ?? "";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError("Please enter a valid email address.");
+      setError(t("Please enter a valid email address."));
       setStatus("error");
       return;
     }
@@ -39,12 +42,12 @@ export function NewsletterForm({
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source }),
+        body: JSON.stringify({ email, source, locale }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
     } catch {
-      setError("Something went wrong. Please try again.");
+      setError(t("Something went wrong. Please try again."));
       setStatus("error");
     }
   }
@@ -52,8 +55,8 @@ export function NewsletterForm({
   if (status === "success") {
     return (
       <div role="status" className={cn("py-2", className)}>
-        <p className="font-display text-display-xs italic">{successTitle}</p>
-        <p className="mt-1 opacity-80">{successText}</p>
+        <p className="font-display text-display-xs italic">{successTitle ?? t("Thank you.")}</p>
+        <p className="mt-1 opacity-80">{successText ?? t("Look out for our next letter from India.")}</p>
       </div>
     );
   }
@@ -62,7 +65,7 @@ export function NewsletterForm({
   return (
     <form onSubmit={onSubmit} noValidate className={className}>
       <label htmlFor={`${id}-email`} className="sr-only">
-        Email address
+        {t("Email address")}
       </label>
       <div className={cn("flex items-center gap-2 border-b pb-2", dark ? "border-ivory/40" : "border-charcoal/40")}>
         <input
@@ -71,7 +74,7 @@ export function NewsletterForm({
           type="email"
           autoComplete="email"
           required
-          placeholder="Your email address"
+          placeholder={t("Your email address")}
           aria-invalid={status === "error"}
           aria-describedby={status === "error" ? `${id}-err` : undefined}
           className={cn(
@@ -87,7 +90,7 @@ export function NewsletterForm({
             dark ? "bg-ivory text-charcoal hover:bg-marigold" : "bg-indigo text-ivory hover:bg-indigo-deep",
           )}
         >
-          {status === "loading" ? "Sending…" : cta}
+          {status === "loading" ? t("Sending…") : (cta ?? t("Subscribe"))}
         </button>
       </div>
       {status === "error" && (
@@ -95,7 +98,7 @@ export function NewsletterForm({
           {error}
         </p>
       )}
-      <p className="mt-3 text-xs opacity-60">We write rarely and never share your address. Unsubscribe any time.</p>
+      <p className="mt-3 text-xs opacity-60">{t("We write rarely and never share your address. Unsubscribe any time.")}</p>
     </form>
   );
 }

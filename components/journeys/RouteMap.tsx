@@ -1,10 +1,12 @@
 import { JaaliPanel } from "@/components/ui/Jaali";
+import { getT } from "@/lib/i18n/server";
 
 /**
  * Map placeholder: a stylised route diagram of the stops in travel order.
  * TODO: replace with an interactive map (Mapbox/MapLibre) using destination coordinates.
  */
-export function RouteMap({ stops }: { stops: string[] }) {
+export async function RouteMap({ stops }: { stops: string[] }) {
+  const t = await getT();
   const n = stops.length;
   const w = 600;
   const h = 360;
@@ -16,7 +18,7 @@ export function RouteMap({ stops }: { stops: string[] }) {
   return (
     <figure className="relative overflow-hidden bg-ivory-deep">
       <JaaliPanel className="absolute inset-0 text-indigo opacity-[0.06]" />
-      <svg viewBox={`0 0 ${w} ${h}`} className="relative w-full" role="img" aria-label={`Route: ${stops.join(", then ")}`}>
+      <svg viewBox={`0 0 ${w} ${h}`} className="relative w-full" role="img" aria-label={t("Route: {stops}", { stops: stops.join(t(", then ")) })}>
         <path d={d} fill="none" stroke="currentColor" strokeWidth="1.2" strokeDasharray="4 6" className="text-indigo/60" />
         {pts.map((p, i) => (
           <g key={stops[i] + i}>
@@ -27,7 +29,7 @@ export function RouteMap({ stops }: { stops: string[] }) {
           </g>
         ))}
       </svg>
-      <figcaption className="absolute right-4 bottom-3 text-[0.7rem] tracking-wide text-stone uppercase">Map placeholder · route not to scale</figcaption>
+      <figcaption className="absolute right-4 bottom-3 text-[0.7rem] tracking-wide text-stone uppercase">{t("Route sketch · not to scale")}</figcaption>
     </figure>
   );
 }

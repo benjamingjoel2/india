@@ -1,7 +1,11 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { useT } from "@/components/i18n/LocaleProvider";
 
 /** Small inline flag for content that must be checked each year (dates, rules, seasons). */
-export function VerifyFlag({ children = "Verify", className, tone = "light" }: { children?: React.ReactNode; className?: string; tone?: "light" | "dark" }) {
+export function VerifyFlag({ children, className, tone = "light" }: { children?: React.ReactNode; className?: string; tone?: "light" | "dark" }) {
+  const t = useT();
   return (
     <span
       className={cn(
@@ -14,7 +18,7 @@ export function VerifyFlag({ children = "Verify", className, tone = "light" }: {
         <circle cx="6" cy="6" r="5" />
         <path d="M6 3.2v3.4M6 8.3v.4" />
       </svg>
-      {children}
+      {children ?? t("Verify")}
     </span>
   );
 }

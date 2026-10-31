@@ -3,7 +3,9 @@
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { navigation } from "@/config/site";
+import type { MegaMenu } from "@/config/site";
+import { useT } from "@/components/i18n/LocaleProvider";
+import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/ui/Logo";
 import { PlanButton } from "@/components/planner/PlanButton";
@@ -14,10 +16,11 @@ import { SearchOverlay } from "./SearchOverlay";
 import { TopBar } from "./TopBar";
 
 /** Routes without a full-bleed hero get a solid header from the start. */
-const SOLID_ROUTES = [/^\/plan-my-journey/, /^\/legal/];
+const SOLID_ROUTES = [/^(\/(fr|de|es|en))?\/plan-my-journey/, /^(\/(fr|de|es|en))?\/legal/];
 
-export function Header() {
-  const pathname = usePathname();
+export function Header({ nav }: { nav: MegaMenu[] }) {
+  const t = useT();
+  const pathname = usePathname() || "/";
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -70,12 +73,12 @@ export function Header() {
   const closeAll = useCallback(() => setActive(null), []);
   const closeSearch = useCallback(() => setSearchOpen(false), []);
 
-  const activeMenu = navigation.main.find((m) => m.label === active);
+  const activeMenu = nav.find((m) => m.label === active);
 
   return (
     <>
       <a href="#main" className="sr-only z-[100] rounded bg-marigold px-4 py-2 text-charcoal focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
-        Skip to content
+        {t("Skip to content")}
       </a>
       <div className="fixed inset-x-0 top-0 z-50">
         <div className={cn("overflow-hidden transition-[max-height] duration-700 ease-musafir", scrolled ? "max-h-0" : "max-h-9")}>
@@ -95,9 +98,9 @@ export function Header() {
           <div className={cn("page-x mx-auto flex max-w-page items-center justify-between gap-6 transition-[height] duration-700 ease-musafir", scrolled ? "h-16" : "h-20 lg:h-24")}>
             <Logo compact={scrolled} />
 
-            <nav aria-label="Main" className="hidden h-full lg:block">
+            <nav aria-label={t("Main")} className="hidden h-full lg:block">
               <ul className="flex h-full items-center gap-1">
-                {navigation.main.map((menu) => {
+                {nav.map((menu) => {
                   const isActive = active === menu.label;
                   const panelId = `mega-${menu.label.replace(/\W+/g, "-")}`;
                   return (
@@ -107,13 +110,13 @@ export function Header() {
                         aria-expanded={isActive}
                         aria-controls={panelId}
                         onClick={() => setActive(isActive ? null : menu.label)}
-                        className="relative flex items-center gap-1.5 px-4 py-2 text-[0.95rem] tracking-wide"
+                        className="relative flex items-center gap-1.5 px-3 py-2 text-[0.95rem] tracking-wide whitespace-nowrap xl:px-4"
                       >
                         {menu.label}
                         <span
                           aria-hidden
                           className={cn(
-                            "absolute right-4 -bottom-0.5 left-4 h-px origin-left bg-current transition-transform duration-500 ease-musafir",
+                            "absolute right-3 -bottom-0.5 left-3 h-px xl:right-4 xl:left-4 origin-left bg-current transition-transform duration-500 ease-musafir",
                             isActive ? "scale-x-100" : "scale-x-0",
                           )}
                         />
@@ -125,19 +128,20 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-2 md:gap-3">
-              <button type="button" onClick={() => setSearchOpen(true)} aria-label="Search (press / or Ctrl+K)" className="flex size-11 items-center justify-center rounded-full hover:bg-current/10">
+              <button type="button" onClick={() => setSearchOpen(true)} aria-label={t("Search (press / or Ctrl+K)")} className="flex size-11 items-center justify-center rounded-full hover:bg-current/10">
                 <SearchIcon className="size-[1.1rem]" />
               </button>
+              <LanguageSwitcher className="hidden md:flex" />
               <div className="hidden md:block">
                 <CurrencySwitcher />
               </div>
-              <div className="hidden sm:block">
-                <PlanButton variant={solid ? "primary" : "light"} className="min-h-11! px-5! text-sm!" />
+              <div className="hidden sm:block lg:hidden xl:block">
+                <PlanButton variant={solid ? "primary" : "light"} className="min-h-11! px-5! text-sm! whitespace-nowrap" />
               </div>
               <button
                 type="button"
                 onClick={() => setMobileOpen(true)}
-                aria-label="Open menu"
+                aria-label={t("Open menu")}
                 aria-expanded={mobileOpen}
                 aria-controls="mobile-menu"
                 className="flex size-11 items-center justify-center lg:hidden"
@@ -163,6 +167,7 @@ export function Header() {
         </header>
       </div>
       <MobileMenu
+        nav={nav}
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
         onSearch={() => {

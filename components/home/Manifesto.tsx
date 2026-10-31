@@ -3,15 +3,17 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { brand } from "@/config/site";
+import { useT } from "@/components/i18n/LocaleProvider";
 
 /**
  * Name-meaning statement. Words brighten one by one as the reader scrolls,
  * like ink taking on a page. Static (fully visible) under reduced motion.
  */
 export function Manifesto() {
+  const t = useT();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 85%", "end 55%"] });
-  const text = `${brand.meaning} We plan India for musafirs: one specialist from first idea to flight home, guides who grew up where you're going, and stays we know by heart.`;
+  const text = `${t(brand.meaning)} ${t("We plan India for musafirs: one specialist from first idea to flight home, guides who grew up where you're going, and stays we know by heart.")}`;
   const words = text.split(" ");
   return (
     <div ref={ref} className="page-x mx-auto max-w-page pt-14 pb-4 md:pt-20">
@@ -19,7 +21,7 @@ export function Manifesto() {
         <span className="font-display text-4xl text-charcoal italic md:text-5xl">{brand.shortName}</span>
         <span lang="hi" className="text-2xl">{brand.scripts.devanagari}</span>
         <span lang="ur" dir="rtl" className="text-2xl">{brand.scripts.urdu}</span>
-        <span className="eyebrow">/{brand.scripts.pronunciation}/ · noun</span>
+        <span className="eyebrow">/{brand.scripts.pronunciation}/ · {t("noun")}</span>
       </div>
       <p className="max-w-[90rem] font-display text-display-md font-light">
         {words.map((w, i) => (

@@ -1,6 +1,6 @@
 import type { MDXComponents } from "mdx/types";
-import Link from "next/link";
-import { getJourney } from "@/data";
+import Link from "@/components/ui/Link";
+import { getContent } from "@/lib/content";
 import { JourneyCard } from "@/components/cards/JourneyCard";
 
 function Callout({ title, children }: { title?: string; children: React.ReactNode }) {
@@ -12,8 +12,8 @@ function Callout({ title, children }: { title?: string; children: React.ReactNod
   );
 }
 
-function JourneyLink({ slug }: { slug: string }) {
-  const j = getJourney(slug);
+async function JourneyLink({ slug }: { slug: string }) {
+  const j = (await getContent()).getJourney(slug);
   if (!j) return null;
   return (
     <div className="my-12 max-w-sm">

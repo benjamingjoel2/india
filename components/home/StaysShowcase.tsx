@@ -1,21 +1,24 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/ui/Link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Stay } from "@/data/types";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { Price } from "@/components/ui/Price";
+import { Emph } from "@/components/ui/Display";
 import { GridLines } from "@/components/ui/GridLines";
 import { Arrow } from "@/components/ui/Button";
 import { ease } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+import { useT } from "@/components/i18n/LocaleProvider";
 
 /**
  * Full-bleed stay photograph with an overlapping card, one stay type at a time.
  * Tabs switch between palace, haveli, safari lodge, houseboat and homestay.
  */
-export function StaysShowcase({ stays, labels }: { stays: Stay[]; labels: Record<string, string> }) {
+export function StaysShowcase({ stays, labels, plurals }: { stays: Stay[]; labels: Record<string, string>; plurals: Record<string, string> }) {
+  const t = useT();
   const [i, setI] = useState(0);
   const s = stays[i];
   return (
@@ -30,12 +33,12 @@ export function StaysShowcase({ stays, labels }: { stays: Stay[]; labels: Record
 
       <div className="page-x relative mx-auto grid min-h-[92svh] max-w-page items-end gap-10 py-14 lg:grid-cols-12">
         <div className="lg:col-span-6">
-          <p className="eyebrow mb-5 text-ivory/80">Where you&rsquo;ll stay</p>
+          <p className="eyebrow mb-5 text-ivory/80">{t("Where you’ll stay")}</p>
           <h2 id="stays-title" className="font-display text-display-lg">
-            Rooms with a <em className="display-em">story</em>.
+            <Emph>{t("Rooms with a *story*.")}</Emph>
           </h2>
-          <p className="mt-6 max-w-md text-lede text-ivory/85">Palace suites above a lake, family havelis, canvas under sal trees, a houseboat at dusk. We&rsquo;ve slept in every one.</p>
-          <div role="tablist" aria-label="Stay types" className="mt-10 flex flex-wrap gap-2">
+          <p className="mt-6 max-w-md text-lede text-ivory/85">{t("Palace suites above a lake, family havelis, canvas under sal trees, a houseboat at dusk. We’ve slept in every one.")}</p>
+          <div role="tablist" aria-label={t("Stay types")} className="mt-10 flex flex-wrap gap-2">
             {stays.map((x, idx) => (
               <button
                 key={x.slug}
@@ -49,12 +52,12 @@ export function StaysShowcase({ stays, labels }: { stays: Stay[]; labels: Record
                   idx === i ? "border-ivory bg-ivory text-charcoal" : "border-ivory/40 text-ivory hover:border-ivory",
                 )}
               >
-                {labels[x.type]}s
+                {plurals[x.type]}
               </button>
             ))}
           </div>
           <Link href="/stays" className="mt-8 inline-flex items-center gap-2 text-sm font-medium">
-            All stays <Arrow />
+            {t("All stays")} <Arrow />
           </Link>
         </div>
 
@@ -87,10 +90,10 @@ export function StaysShowcase({ stays, labels }: { stays: Stay[]; labels: Record
                 <p className="mt-3 line-clamp-3 text-[0.95rem] text-charcoal/80">{s.summary}</p>
                 <div className="mt-6 flex items-end justify-between border-t border-charcoal/15 pt-5">
                   <p className="text-sm text-charcoal/75">
-                    From <Price usd={s.priceFromUSD} className="font-display text-xl text-charcoal" /> per room · night
+                    {t("From")} <Price usd={s.priceFromUSD} className="font-display text-xl text-charcoal" /> {t("per room · night")}
                   </p>
                   <span className="flex items-center gap-2 text-sm font-medium">
-                    View stay <Arrow className="transition-transform duration-700 group-hover:translate-x-1" />
+                    {t("View stay")} <Arrow className="transition-transform duration-700 group-hover:translate-x-1" />
                   </span>
                 </div>
               </div>
