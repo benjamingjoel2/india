@@ -32,6 +32,26 @@ export default async function LegalPage({ params }: PageProps<"/[locale]/legal/[
                 {s.p.map((p) => (
                   <p key={p}>{p}</p>
                 ))}
+                {s.table && (
+                  <div className="overflow-x-auto" role="region" aria-label={s.h} tabIndex={0}>
+                    <table>
+                      <thead>
+                        <tr>
+                          {s.table.head.map((c) => (
+                            <th key={c} scope="col">{c}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {s.table.rows.map((r) => (
+                          <tr key={r[0]}>
+                            {r.map((c, i) => (i === 0 ? <td key={i}><code>{c}</code></td> : <td key={i}>{c}</td>))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </section>
             ))}
           </div>
