@@ -210,6 +210,27 @@
     text-decoration-color: var(--color-marigold);
     text-underline-offset: 3px;
   }
+  .prose-musafir table {
+    width: 100%;
+    min-width: 32rem;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 1em;
+  }
+  .prose-musafir th,
+  .prose-musafir td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.6em 1em 0.6em 0;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  }
+  .prose-musafir th {
+    font-weight: 600;
+  }
+  .prose-musafir td code {
+    white-space: nowrap;
+  }
   .prose-musafir ul {
     list-style: none;
     padding-left: 0;
