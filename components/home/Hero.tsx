@@ -1,56 +1,57 @@
-import { brand } from "@/config/site";
+import Link from "@/components/ui/Link";
 import { getT } from "@/lib/i18n/server";
 import { msg } from "@/lib/i18n/config";
 import { Emph } from "@/components/ui/Display";
-import { ButtonLink } from "@/components/ui/Button";
-import { GridLines } from "@/components/ui/GridLines";
 import { Marquee } from "@/components/ui/Marquee";
+import { SmartImage } from "@/components/ui/SmartImage";
 import { PlanButton } from "@/components/planner/PlanButton";
-import { HeroFilm } from "./HeroFilm";
+import type { ImageKey } from "@/data/images";
 
-const frames = [
-  { image: "varanasi-ghats", place: msg("Varanasi"), caption: msg("First light on the Ganges") },
-  { image: "amber-fort", place: msg("Jaipur"), caption: msg("Amber Fort at golden hour") },
-  { image: "kerala-canoe", place: msg("Kerala"), caption: msg("A canal at sunrise") },
-  { image: "ladakh-road", place: msg("Ladakh"), caption: msg("The road to Nubra") },
-] as const;
+/** Three postcards from different corners of the country, slightly turned like a desk spread. */
+const postcards: { image: ImageKey; place: string; caption: string; pos: string }[] = [
+  { image: "varanasi-ghats", place: msg("Varanasi"), caption: msg("First light on the Ganges"), pos: "left-0 top-[6%] w-[54%] -rotate-[4deg] z-10" },
+  { image: "amber-fort", place: msg("Jaipur"), caption: msg("Amber Fort at golden hour"), pos: "right-0 top-0 w-[50%] rotate-[3deg] z-20" },
+  { image: "kerala-canoe", place: msg("Kerala"), caption: msg("A canal at sunrise"), pos: "left-[22%] bottom-0 w-[52%] rotate-[-1.5deg] z-30" },
+];
 
 export async function Hero({ stats }: { stats: string[] }) {
   const t = await getT();
-  const localFrames = frames.map((f) => ({ ...f, place: t(f.place), caption: t(f.caption) }));
   return (
     <>
-      <section aria-labelledby="hero-title" className="relative flex min-h-[100svh] flex-col overflow-hidden bg-indigo-deep text-ivory">
-        <HeroFilm frames={localFrames} />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-indigo-deep/90 via-indigo-deep/20 to-indigo-deep/50" />
-        <GridLines className="text-ivory/[0.07]" />
-
-        <div className="page-x relative mx-auto flex w-full max-w-page flex-1 flex-col justify-end pt-32 pb-28 md:pb-32">
-          <div className="animate-rise">
-            <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
-              <p className="max-w-xs font-display text-lg leading-snug text-ivory/85 italic">
-                {t("Tailor-made journeys across India, planned by people who know it personally.")}
-              </p>
-              <p className="eyebrow hidden text-ivory/70 md:block">
-                {brand.shortName} · {brand.scripts.devanagari} · {t("traveler")}
-              </p>
-            </div>
-            <h1 id="hero-title" className="font-display text-[clamp(3.4rem,12.5vw,12.5rem)] leading-[0.86] font-[300] tracking-[-0.035em]">
+      <section aria-labelledby="hero-title" className="relative overflow-hidden bg-indigo-deep text-ivory">
+        <div className="page-x relative mx-auto grid w-full max-w-page items-center gap-14 pt-36 pb-20 md:pb-24 lg:min-h-[92svh] lg:grid-cols-12 lg:gap-10">
+          <div className="animate-rise lg:col-span-6">
+            <p className="max-w-sm font-display text-lg leading-snug text-ivory/85 italic">
+              {t("Tailor-made journeys across India, planned by people who know it personally.")}
+            </p>
+            <h1 id="hero-title" className="mt-8 font-display text-[clamp(2.9rem,6.2vw,6rem)] leading-[0.95] font-[300] tracking-[-0.03em]">
               {t("India,")}
               <br />
               <Emph>{t("beautifully *planned*.")}</Emph>
             </h1>
-            <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-              <p className="max-w-lg text-lede text-ivory/85">
-                {t("From first light on the Ganges to a fort turning gold at dusk: one specialist, guides we trust, and every detail known personally.")}
-              </p>
-              <div className="flex shrink-0 flex-wrap gap-3">
-                <PlanButton variant="accent" />
-                <ButtonLink href="/journeys" variant="light">
-                  {t("Explore journeys")}
-                </ButtonLink>
-              </div>
+            <p className="mt-8 max-w-lg text-lede text-ivory/85">
+              {t("From first light on the Ganges to a fort turning gold at dusk: one specialist, guides we trust, and every detail known personally.")}
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <PlanButton variant="accent" />
+              <Link href="/journeys" className="link-underline text-[0.95rem] text-ivory/90">
+                {t("Explore journeys")}
+              </Link>
             </div>
+          </div>
+
+          <div className="relative mx-auto aspect-[10/9] w-full max-w-[34rem] lg:col-span-6 lg:max-w-none" >
+            {postcards.map((p, i) => (
+              <figure key={p.image} className={`absolute bg-ivory p-2.5 pb-0 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.6)] sm:p-3 sm:pb-0 ${p.pos}`}>
+                <div className="relative aspect-[4/3] overflow-hidden bg-indigo">
+                  <SmartImage image={p.image} priority={i === 0} sizes="(min-width: 1024px) 26vw, 50vw" />
+                </div>
+                <figcaption className="flex items-baseline justify-between gap-3 py-2.5 text-charcoal sm:py-3">
+                  <span className="eyebrow text-[0.62rem] sm:text-[0.7rem]">{t(p.place)}</span>
+                  <span className="hidden truncate font-display text-sm italic text-charcoal/75 sm:inline">{t(p.caption)}</span>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>

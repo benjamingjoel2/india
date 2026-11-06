@@ -91,9 +91,9 @@ spice red `#B0442D` (verify flags, errors). Region pages set `--accent`/`--accen
 
 **Spacing.** Sections `py-20` → `md:py-32`; page gutter 16px → 32px → 48px (`.page-x`); max width 1440px.
 
-**Motif.** Jaali (carved lattice) and block-print patterns, used sparingly: `JaaliDivider`, `JaaliPanel`
-(lattice texture tinted with `currentColor`), `BlockPrintBand`, `.jaali-frame` double-rule border and the
-`JaaliMark` in the logo.
+**Motif.** Jaali (carved lattice) and block-print patterns, used sparingly: `JaaliPanel`
+(lattice texture tinted with `currentColor`), the `.jaali-frame` double-rule border and the `JaaliMark` in the logo.
+`JaaliDivider` is now a plain hairline (no repeating icon dividers or block-print bands, owner rule, November 2026).
 
 **Motion.** One easing curve `cubic-bezier(0.22, 1, 0.36, 1)`; reveals 1.1s fade-and-rise, card image zoom
 1.4s to 1.06×, hero stills cross-fade over 2.4s. `<MotionConfig reducedMotion="user">` plus a CSS
@@ -101,8 +101,7 @@ spice red `#B0442D` (verify flags, errors). Region pages set `--accent`/`--accen
 
 **Editorial details** (adapted from the reference set: White Desert, Kultiveret, H+I Adventures,
 The Drake, The Tailor, Mammut):
-- Oversized hero headline over the film, a hairline column grid (`GridLines`) echoing the jaali lattice, and
-  labelled slide indicators with progress bars plus a pause/play control
+- Postcard hero: the headline (96px max) beside three slightly turned photo postcards (Varanasi, Jaipur, Kerala)
 - Ticker band of key facts under the hero (`Marquee`)
 - Name-meaning statement (`Manifesto`): *Musafir* in Latin, Devanagari and Urdu script with words that brighten
   as you scroll (scripts live in `data/brand.ts`)
@@ -110,7 +109,7 @@ The Drake, The Tailor, Mammut):
 - Images unveiled from the centre as they enter the viewport (`RevealImage`)
 - Stays showcase: full-bleed photograph with an overlapping card, one stay type at a time
 - Expanding image strip of the seven regions on `/where-to-go` (`ExpandingStrip`)
-- Vertical "Plan my journey" tab on large screens, oversized wordmark in the footer
+- Footer: one coloured enquiry panel (`FinalCTA`, with the page's photo), then compact columns and a thin base line
 - Inertial smooth scrolling with Lenis (off for prefers-reduced-motion; overlays use `data-lenis-prevent`)
 
 ## Features

@@ -4,7 +4,7 @@ import { colors } from "@/config/site";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { Display } from "@/components/ui/Display";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { JaaliPanel, BlockPrintBand } from "@/components/ui/Jaali";
+import { JaaliPanel } from "@/components/ui/Jaali";
 import { cn } from "@/lib/utils";
 import { GridLines } from "@/components/ui/GridLines";
 
@@ -41,7 +41,6 @@ export function PageHero({ title, eyebrow, intro, image, breadcrumbs, accent, ch
         <div className="relative min-h-[60svh] lg:min-h-0">
           <SmartImage image={image} priority sizes="(min-width:1024px) 50vw, 100vw" />
         </div>
-        <BlockPrintBand className="absolute inset-x-0 bottom-0 text-current opacity-25" />
       </section>
     );
   }

@@ -9,7 +9,6 @@ import { PageHero } from "@/components/sections/PageHero";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { CardGrid } from "@/components/sections/CardGrid";
 import { JourneyCard } from "@/components/cards/JourneyCard";
-import { RouteMap } from "@/components/journeys/RouteMap";
 import { Container, Section } from "@/components/ui/Section";
 import { Display, stripEmphasis } from "@/components/ui/Display";
 import { Reveal } from "@/components/ui/Reveal";
@@ -115,8 +114,15 @@ export default async function JourneyPage({ params }: PageProps<"/[locale]/journ
               </ul>
             </Reveal>
             <Reveal delay={0.1} className="lg:col-span-6">
-              <RouteMap stops={stops} />
-              <p className="mt-4 text-sm text-stone">{t("Route: {stops}", { stops: stops.join(" → ") })}</p>
+              <h3 className="font-display text-display-xs">{t("Route")}</h3>
+              <ol className="mt-5 divide-y divide-charcoal/10 border-y border-charcoal/10">
+                {stops.map((s, i) => (
+                  <li key={s + i} className="flex items-baseline gap-5 py-3.5">
+                    <span className="eyebrow w-6 shrink-0 text-stone">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="font-display text-lg">{s}</span>
+                  </li>
+                ))}
+              </ol>
             </Reveal>
           </div>
         </Container>
