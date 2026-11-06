@@ -13,7 +13,6 @@ import { PlannerProvider } from "@/components/planner/PlannerProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
-import { SideTab } from "@/components/planner/SideTab";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -87,7 +86,6 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
                 {children}
               </main>
               <Footer />
-              <SideTab />
               <SmoothScroll />
             </PlannerProvider>
           </CurrencyProvider>

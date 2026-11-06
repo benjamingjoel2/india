@@ -2,38 +2,25 @@ import Link from "@/components/ui/Link";
 import { company } from "@/config/site";
 import { getContent } from "@/lib/content";
 import { getT } from "@/lib/i18n/server";
-import { Emph } from "@/components/ui/Display";
 import { Logo } from "@/components/ui/Logo";
-import { BlockPrintBand } from "@/components/ui/Jaali";
-import { GridLines } from "@/components/ui/GridLines";
-import { NewsletterForm } from "./NewsletterForm";
 
 export async function Footer() {
   const [{ brand, contact, navigation }, t] = await Promise.all([getContent(), getT()]);
   const year = new Date().getFullYear();
   return (
-    <footer className="relative overflow-hidden bg-indigo-deep text-ivory">
-      <BlockPrintBand className="text-marigold/70" />
-      <GridLines className="text-ivory/[0.05]" />
-      <div className="page-x relative mx-auto max-w-page pt-14 pb-8">
-        <div className="grid gap-14 lg:grid-cols-12">
+    <footer className="bg-indigo-deep text-ivory">
+      <div className="page-x mx-auto max-w-page pt-16 pb-8 md:pt-20">
+        <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Logo className="text-ivory" />
-            <p className="mt-6 max-w-sm leading-relaxed text-ivory/75">{brand.description}</p>
-            <p className="mt-4 max-w-sm font-display text-lg italic text-ivory/90">{brand.tagline}</p>
-            <ul className="mt-8 space-y-3 text-[0.95rem]">
-              <li>
-                <span className="eyebrow mr-3 text-ivory/70">{t("Email")}</span>
-                <a href={contact.emailHref} className="link-underline">{contact.email}</a>
-              </li>
-              <li className="flex">
-                <span className="eyebrow mr-3 shrink-0 text-ivory/70">{t("Office")}</span>
-                <span className="text-ivory/85">{contact.address}</span>
-              </li>
-            </ul>
+            <p className="mt-5 max-w-sm text-[0.95rem] leading-relaxed text-ivory/75">{brand.promise}</p>
+            <p className="mt-6 text-[0.95rem]">
+              <a href={contact.emailHref} className="link-underline">{contact.email}</a>
+            </p>
+            <address className="mt-3 max-w-xs text-[0.9rem] leading-relaxed text-ivory/70 not-italic">{contact.address}</address>
           </div>
 
-          <nav aria-label={t("Footer")} className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-5">
+          <nav aria-label={t("Footer")} className="grid grid-cols-2 gap-10 sm:grid-cols-4 lg:col-span-8">
             {navigation.footer.map(({ title, links }) => (
               <div key={title}>
                 <h2 className="eyebrow mb-5 font-sans text-ivory/70">{title}</h2>
@@ -47,25 +34,12 @@ export async function Footer() {
               </div>
             ))}
           </nav>
-
-          <div className="lg:col-span-3">
-            <h2 className="font-display text-display-xs"><Emph>{t("Letters from *India*")}</Emph></h2>
-            <p className="mt-3 mb-6 text-ivory/75">{t("Seasonal notes, new journeys and the odd recipe, a few times a year.")}</p>
-            <NewsletterForm source="footer" />
-          </div>
         </div>
 
-        <p aria-hidden className="mt-14 -mb-[0.18em] select-none font-display text-[clamp(4rem,35vw,33.5rem)] leading-[0.8] font-[300] tracking-[-0.04em] text-ivory/90">
-          {brand.logo.primary}
-          <em className="display-em text-marigold">.</em>
-        </p>
-
-        <div className="mt-12 flex flex-col gap-6 border-t border-ivory/15 pt-8 text-[0.8rem] text-ivory/60 lg:flex-row lg:items-center lg:justify-between">
-          <div className="space-y-1">
-            <p>
-              © {year} {company.legalName}.
-            </p>
-          </div>
+        <div className="mt-14 flex flex-col gap-4 border-t border-ivory/15 pt-6 text-[0.8rem] text-ivory/60 lg:flex-row lg:items-center lg:justify-between">
+          <p>
+            © {year} {company.legalName}.
+          </p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
             {navigation.legal.map((l) => (
               <li key={l.href}>
