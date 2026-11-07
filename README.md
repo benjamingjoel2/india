@@ -101,7 +101,8 @@ spice red `#B0442D` (verify flags, errors). Region pages set `--accent`/`--accen
 
 **Editorial details** (adapted from the reference set: White Desert, Kultiveret, H+I Adventures,
 The Drake, The Tailor, Mammut):
-- Postcard hero: the headline (96px max) beside three slightly turned photo postcards (Varanasi, Jaipur, Kerala)
+- Oversized hero headline over the film, a hairline column grid (`GridLines`) echoing the jaali lattice, and
+  labelled slide indicators with progress bars plus a pause/play control
 - Ticker band of key facts under the hero (`Marquee`)
 - Name-meaning statement (`Manifesto`): *Musafir* in Latin, Devanagari and Urdu script with words that brighten
   as you scroll (scripts live in `data/brand.ts`)
