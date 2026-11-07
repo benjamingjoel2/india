@@ -181,7 +181,7 @@ export type StayType =
 
 export interface Stay {
   slug: string;
-  /** Placeholder name; replace with the real property. */
+  /** Descriptive name (no invented hotel names); replace with the real property once contracted. */
   name: string;
   type: StayType;
   region: RegionSlug;

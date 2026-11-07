@@ -1,13 +1,14 @@
 import type { Stay } from "./types";
 
 /**
- * Placeholder stays. Names and details describe the KIND of property we use;
- * replace with real, contracted properties before launch.
+ * Example stays. Names are descriptive ("A palace hotel on Lake Pichola") and the
+ * details describe the KIND of property we use; swap in real, contracted
+ * properties (with their own media-kit photos) when agreements are in place.
  */
 export const stays: Stay[] = [
   {
     slug: "udaipur-lake-palace",
-    name: "Jal Mahal Lake Palace (placeholder)",
+    name: "A palace hotel on Lake Pichola",
     type: "palace",
     region: "rajasthan",
     location: "Udaipur",
@@ -16,7 +17,7 @@ export const stays: Stay[] = [
     description: [
       "Picture a palace that seems to float. Courtyards of white marble open onto the lake, lotus pools ripple in the breeze, and the walls are inlaid with colored glass and mirrorwork that catches every lamp after dark. You arrive by boat, garlanded at the jetty, and the city falls quiet behind you.",
       "Rooms look out over Lake Pichola to the Aravalli hills and the long facade of the City Palace. Mornings start with breakfast on a terrace above the water; evenings end with a sunset cruise and dinner by candlelight in a pavilion where Mewar royals once escaped the summer heat.",
-      "This is a placeholder for the kind of lake palace we love in Udaipur. Your specialist will recommend the right property for your dates, budget and style.",
+      "This is the kind of lake palace we love in Udaipur. Your specialist will recommend the right property for your dates, budget and style.",
     ],
     image: "udaipur-palace",
     priceFromUSD: 620,
@@ -38,7 +39,7 @@ export const stays: Stay[] = [
   },
   {
     slug: "jodhpur-fort-palace",
-    name: "Umaid Bagh Fort Palace (placeholder)",
+    name: "A palace hotel below the fort",
     type: "palace",
     region: "rajasthan",
     location: "Jodhpur",
@@ -47,7 +48,7 @@ export const stays: Stay[] = [
     description: [
       "Imagine a palace of honey-colored sandstone set in walled gardens, where peacocks strut across the lawns in the morning and the sound of the city drifts up only faintly. Inside are high ceilings, Art Deco touches and long verandas made for an afternoon with a book and a pot of tea.",
       "From the terraces you look across the blue-washed houses of the old city to Mehrangarh Fort, one of the most formidable in India. Evenings bring a drink on the lawn as the fort lights up, and dinner of Marwari dishes such as ker sangri and laal maas.",
-      "This is a placeholder for the kind of palace stay we recommend in Jodhpur. We will match you with the right property for your journey.",
+      "This is the kind of palace stay we recommend in Jodhpur. We will match you with the right property for your journey.",
     ],
     image: "amber-fort",
     priceFromUSD: 480,
@@ -70,7 +71,7 @@ export const stays: Stay[] = [
   },
   {
     slug: "jaipur-heritage-haveli",
-    name: "Haveli Gulabi (placeholder)",
+    name: "A heritage haveli in the old city",
     type: "haveli",
     region: "rajasthan",
     location: "Jaipur",
@@ -79,7 +80,7 @@ export const stays: Stay[] = [
     description: [
       "Behind a carved gateway is a quiet courtyard, a neem tree and a small pool of marigolds floating in water. A haveli like this was once a merchant family's townhouse, and the family may still live upstairs. The rooms are each different: hand-painted walls, block-printed bedspreads, jharokha windows with deep cushioned seats.",
       "The rooftop is the heart of the place, with chai at sunrise, kites in the afternoon and dinner under the stars with the floodlit Nahargarh Fort above the city. The bazaars, the Hawa Mahal and the City Palace are a short rickshaw ride away.",
-      "This is a placeholder for the kind of heritage haveli we use in Jaipur. Your specialist will suggest the best match for you.",
+      "This is the kind of heritage haveli we use in Jaipur. Your specialist will suggest the best match for you.",
     ],
     image: "hawa-mahal",
     priceFromUSD: 210,
@@ -101,7 +102,7 @@ export const stays: Stay[] = [
   },
   {
     slug: "varanasi-riverside-haveli",
-    name: "Ganga Ghat Haveli (placeholder)",
+    name: "A riverside haveli on the ghats",
     type: "haveli",
     region: "north",
     location: "Varanasi",
@@ -110,7 +111,7 @@ export const stays: Stay[] = [
     description: [
       "Old Varanasi rises straight from the river in a jumble of stone steps, temples and tall houses. A haveli like this sits right in the middle of it, its terraces facing east across the Ganges so that sunrise floods straight into the rooms.",
       "Step out of the door and you are on the ghats: bathers, priests, flower sellers, and the bells of a hundred temples. Step back in and the thick stone walls hold the quiet. Boats leave from the steps below for the dawn ride and the evening aarti.",
-      "This is a placeholder for the kind of riverside haveli we choose in Varanasi. We'll recommend the right one for your journey.",
+      "This is the kind of riverside haveli we choose in Varanasi. We'll recommend the right one for your journey.",
     ],
     image: "varanasi-ghats",
     priceFromUSD: 190,
@@ -132,7 +133,7 @@ export const stays: Stay[] = [
   },
   {
     slug: "vembanad-houseboat",
-    name: "Vembanad Kettuvallam (placeholder)",
+    name: "A private kettuvallam houseboat",
     type: "houseboat",
     region: "south",
     location: "Alleppey backwaters, Kerala",
@@ -141,7 +142,7 @@ export const stays: Stay[] = [
     description: [
       "Think of a kettuvallam built the old way, of jackfruit wood and coir, with a curved roof of woven palm and an open deck at the bow. It is yours alone, with a captain, a deckhand and a cook who will feed you fried karimeen, appam and coconut curries as the palms slip past.",
       "By afternoon you are drifting through narrow canals between paddy fields and villages, stopping to visit a toddy shop or a local church. At dusk the boat moors and the lamps come on, and you fall asleep to the sound of water and frogs.",
-      "This is a placeholder for the kind of houseboat we book in Kerala. Your specialist will select an operator with well-maintained boats and quieter routes.",
+      "This is the kind of houseboat we book in Kerala. Your specialist will select an operator with well-maintained boats and quieter routes.",
     ],
     image: "kerala-backwater-palms",
     priceFromUSD: 340,
@@ -163,7 +164,7 @@ export const stays: Stay[] = [
   },
   {
     slug: "kanha-tented-lodge",
-    name: "Sal Forest Tented Lodge (placeholder)",
+    name: "A tented lodge in the sal forest",
     type: "safari-lodge",
     region: "central-india",
     location: "Kanha",
@@ -172,7 +173,7 @@ export const stays: Stay[] = [
     description: [
       "Imagine canvas suites raised on wooden decks among tall sal trees, each with a hammock, a deep tub and the sounds of the forest all around. Before dawn, a knock at the door brings tea and biscuits, and the jeep is waiting with blankets and a hot water bottle.",
       "Kanha's meadows and sal forests inspired Kipling's Jungle Book, and are home to tigers, leopards, sloth bears and the hard-ground barasingha. Back at camp there are bush walks, village visits and evenings by the fire with naturalists who have spent their lives in this forest.",
-      "This is a placeholder for the kind of tented lodge we use in Kanha. We'll recommend the right lodge for your dates and interests.",
+      "This is the kind of tented lodge we use in Kanha. We'll recommend the right lodge for your dates and interests.",
     ],
     image: "safari-tent",
     priceFromUSD: 520,
@@ -195,7 +196,7 @@ export const stays: Stay[] = [
   },
   {
     slug: "ranthambore-jungle-lodge",
-    name: "Ranthambore Jungle Lodge (placeholder)",
+    name: "A jungle lodge near the park",
     type: "safari-lodge",
     region: "central-india",
     location: "Ranthambore",
@@ -204,7 +205,7 @@ export const stays: Stay[] = [
     description: [
       "Picture low stone cottages set in landscaped gardens of native trees, with a pool shaded by neem and a terrace where you can watch birds while you wait for your evening drive. The style is relaxed and earthy, with local stone, block-printed fabrics and old wildlife photographs on the walls.",
       "Ranthambore is one of the best places in India to see tigers, its dry forest overlooked by the ancient walls of Ranthambore Fort. Between drives, take a cooking lesson, visit a local craft cooperative, or simply lie by the pool.",
-      "This is a placeholder for the kind of jungle lodge we recommend in Ranthambore. Your specialist will choose the right one for you.",
+      "This is the kind of jungle lodge we recommend in Ranthambore. Your specialist will choose the right one for you.",
     ],
     image: "lodge-pool",
     priceFromUSD: 450,
@@ -226,7 +227,7 @@ export const stays: Stay[] = [
   },
   {
     slug: "nubra-valley-homestay",
-    name: "Nubra Valley Homestay (placeholder)",
+    name: "A family homestay in the Nubra Valley",
     type: "homestay",
     region: "himalaya",
     location: "Nubra Valley, Ladakh",
@@ -235,7 +236,7 @@ export const stays: Stay[] = [
     description: [
       "Imagine a whitewashed mud-brick house with carved wooden windows, a kitchen lined with polished copper pots and a family who welcomes you with butter tea and fresh apricots. Rooms are simple and spotless, with thick quilts for the cold nights.",
       "Nubra lies beyond one of the high Himalayan road passes north of Leh, a valley of sand dunes, Bactrian camels and centuries-old monasteries such as Diskit. Dinner is home-cooked: thukpa, momos and vegetables from the garden.",
-      "This is a placeholder for the kind of homestay we work with in Ladakh. We will match you with a family that suits your journey.",
+      "This is the kind of homestay we work with in Ladakh. We will match you with a family that suits your journey.",
     ],
     image: "ladakh-road",
     priceFromUSD: 120,
@@ -257,7 +258,7 @@ export const stays: Stay[] = [
   },
   {
     slug: "darjeeling-tea-bungalow",
-    name: "Tea Planter's Bungalow (placeholder)",
+    name: "A tea planter's bungalow",
     type: "homestay",
     region: "himalaya",
     location: "Darjeeling",
@@ -266,7 +267,7 @@ export const stays: Stay[] = [
     description: [
       "Picture a rambling bungalow with deep verandas, polished wood floors and fireplaces in every room, set above slopes of tea that fall away into the clouds. A bearer brings morning tea grown on the estate, and on a clear day the snows of Kangchenjunga fill the window.",
       "Days are for walking the tea gardens, touring the factory with the planter and tasting the season's flush. Evenings are for a drink by the fire and a dinner of estate-grown vegetables, Nepali dishes and old Anglo-Indian recipes.",
-      "This is a placeholder for the kind of tea bungalow we use in Darjeeling. Your specialist will recommend the right estate for you.",
+      "This is the kind of tea bungalow we use in Darjeeling. Your specialist will recommend the right estate for you.",
     ],
     image: "heritage-room",
     priceFromUSD: 260,
@@ -288,7 +289,7 @@ export const stays: Stay[] = [
   },
   {
     slug: "andaman-beach-retreat",
-    name: "Radhanagar Beach Retreat (placeholder)",
+    name: "A beach retreat near Radhanagar",
     type: "beach",
     region: "islands",
     location: "Swaraj Dweep (Havelock), Andaman Islands",
@@ -297,7 +298,7 @@ export const stays: Stay[] = [
     description: [
       "Imagine wooden villas tucked into tall forest, the canopy loud with birdsong, and a sandy path leading to a long arc of white beach and clear, turquoise water. Days settle into a gentle rhythm: a swim before breakfast, a snorkel over the reef, a book in the shade.",
       "Swaraj Dweep, still widely known as Havelock, is reached by ferry from Port Blair. Its waters are excellent for snorkelling and diving, and sunsets at Radhanagar are a nightly ritual.",
-      "This is a placeholder for the kind of beach retreat we recommend in the Andamans. We'll choose the right one for your journey.",
+      "This is the kind of beach retreat we recommend in the Andamans. We'll choose the right one for your journey.",
     ],
     image: "palm-pool",
     priceFromUSD: 380,
