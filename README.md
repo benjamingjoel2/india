@@ -61,7 +61,7 @@ there is no translation library in the browser and no redirect by browser langua
   Bandra Kurla Complex, Mumbai) in `config/site.ts`. The site deliberately shows no phone, WhatsApp, social links,
   licence/registration numbers, team or guide profiles, or testimonials.
 
-- **Stays** (`data/stays.ts`): property names end in "(placeholder)" (see `IMAGES-NEEDED.md`).
+- **Stays** (`data/stays.ts`, and the stays listed on each journey): described by place ("A palace hotel on Lake Pichola"), not named. Add the real contracted hotels and their media-kit photos (see `IMAGES-NEEDED.md`).
 - **Legal pages** (`data/legal.ts`: Privacy Policy, Booking Terms, Cookie Policy) are complete in all four languages; have a lawyer review them (including the French, German and Spanish versions).
 - **Translations** (`i18n/*.json`, `content/journal/{fr,de,es}`) were written in-house; a native-speaker read-through before launch is recommended.
 - **Currency rates** in `config/site.ts` are indicative; wire to a rates API or update regularly.

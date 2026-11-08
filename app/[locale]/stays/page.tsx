@@ -30,7 +30,7 @@ export default async function StaysPage() {
       <PageHero
         title={t("Rooms with a *story*.")}
         eyebrow={t("Where to stay")}
-        intro={t("We choose stays for their character and their people as much as their thread count. Property names here are placeholders for the hotels we work with.")}
+        intro={t("We choose stays for their character and their people as much as their thread count. Each stay here describes the kind of place we book; your specialist names the exact hotel for your dates.")}
         image="udaipur-palace"
         breadcrumbs={[{ label: t("Stays"), href: "/stays" }]}
       />

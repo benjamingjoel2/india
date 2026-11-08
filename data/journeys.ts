@@ -2,8 +2,9 @@
  * Signature journeys. Each is a starting point that a specialist tailors:
  * dates, pace, hotels and guides all change to suit the traveler.
  *
- * Property names marked "(placeholder)" stand in for real hotels; prices are
- * indicative per person, sharing a double room, in USD.
+ * Stays are described by place ("A heritage haveli in the old city") rather than
+ * named, until real contracted hotels are added; prices are indicative per
+ * person, sharing a double room, in USD.
  */
 import type { Journey } from "./types";
 
@@ -131,15 +132,15 @@ export const journeys: Journey[] = [
       },
     ],
     stays: [
-      { nights: "Nights 1–2", location: "Delhi", name: "Lodhi Garden House (placeholder)" },
-      { nights: "Night 3", location: "Agra", name: "Mehtab Garden Hotel (placeholder)" },
+      { nights: "Nights 1–2", location: "Delhi", name: "A boutique guesthouse near Lodhi Garden" },
+      { nights: "Night 3", location: "Agra", name: "A garden hotel near the Taj Mahal" },
       {
         nights: "Nights 4–6",
         location: "Jaipur",
-        name: "Haveli Gulabi (placeholder)",
+        name: "A heritage haveli in the old city",
         staySlug: "jaipur-heritage-haveli",
       },
-      { nights: "Night 7", location: "Delhi", name: "Aerocity Garden Hotel (placeholder)" },
+      { nights: "Night 7", location: "Delhi", name: "A quiet hotel near the airport" },
     ],
     guides:
       "A Delhi-born historian leads you through Old and New Delhi, a Mughal-architecture specialist guides you at the Taj and Agra Fort, and a Jaipur guide from a family of craftspeople opens doors to the city's workshops.",
@@ -316,26 +317,26 @@ export const journeys: Journey[] = [
       },
     ],
     stays: [
-      { nights: "Night 1", location: "Delhi", name: "Lodhi Garden House (placeholder)" },
-      { nights: "Nights 2–3", location: "Jaisalmer", name: "Sonar Haveli (placeholder)" },
-      { nights: "Night 4", location: "Thar Desert", name: "Khuri Dunes Camp (placeholder)" },
+      { nights: "Night 1", location: "Delhi", name: "A boutique guesthouse near Lodhi Garden" },
+      { nights: "Nights 2–3", location: "Jaisalmer", name: "A haveli below the fort" },
+      { nights: "Night 4", location: "Thar Desert", name: "A desert camp in the dunes near Khuri" },
       {
         nights: "Nights 5–6",
         location: "Jodhpur",
-        name: "Umaid Bagh Fort Palace (placeholder)",
+        name: "A palace hotel below the fort",
         staySlug: "jodhpur-fort-palace",
       },
       {
         nights: "Nights 7–9",
         location: "Udaipur",
-        name: "Jal Mahal Lake Palace (placeholder)",
+        name: "A palace hotel on Lake Pichola",
         staySlug: "udaipur-lake-palace",
       },
-      { nights: "Night 10", location: "Pushkar", name: "Pushkar Rose Garden Retreat (placeholder)" },
+      { nights: "Night 10", location: "Pushkar", name: "A retreat among the rose gardens" },
       {
         nights: "Nights 11–13",
         location: "Jaipur",
-        name: "Haveli Gulabi (placeholder)",
+        name: "A heritage haveli in the old city",
         staySlug: "jaipur-heritage-haveli",
       },
     ],
@@ -479,16 +480,16 @@ export const journeys: Journey[] = [
       },
     ],
     stays: [
-      { nights: "Nights 1–2", location: "Fort Kochi", name: "Spice Port Heritage Hotel (placeholder)" },
-      { nights: "Nights 3–4", location: "Munnar", name: "Tea Hills Bungalow (placeholder)" },
-      { nights: "Nights 5–6", location: "Thekkady", name: "Cardamom Forest Lodge (placeholder)" },
+      { nights: "Nights 1–2", location: "Fort Kochi", name: "A heritage hotel in the old port" },
+      { nights: "Nights 3–4", location: "Munnar", name: "A bungalow in the tea hills" },
+      { nights: "Nights 5–6", location: "Thekkady", name: "A forest lodge among cardamom gardens" },
       {
         nights: "Night 7",
         location: "Vembanad Lake",
-        name: "Vembanad Kettuvallam (placeholder)",
+        name: "A private kettuvallam houseboat",
         staySlug: "vembanad-houseboat",
       },
-      { nights: "Nights 8–10", location: "Marari", name: "Marari Palm Beach Villas (placeholder)" },
+      { nights: "Nights 8–10", location: "Marari", name: "Beach villas under the palms" },
     ],
     guides:
       "A Kochi historian guides you through the old spice port, a tea planter's family hosts you in Munnar, and a forest tracker from Periyar's community ecotourism program leads your walk in the reserve.",
@@ -629,22 +630,22 @@ export const journeys: Journey[] = [
       },
     ],
     stays: [
-      { nights: "Night 1", location: "Delhi", name: "Aerocity Garden Hotel (placeholder)" },
+      { nights: "Night 1", location: "Delhi", name: "A quiet hotel near the airport" },
       {
         nights: "Nights 2–3",
         location: "Varanasi",
-        name: "Ganga Ghat Haveli (placeholder)",
+        name: "A riverside haveli on the ghats",
         staySlug: "varanasi-riverside-haveli",
       },
-      { nights: "Night 4", location: "Khajuraho", name: "Chandela Garden Hotel (placeholder)" },
-      { nights: "Nights 5–7", location: "Bandhavgarh", name: "Bandhavgarh Fort View Lodge (placeholder)" },
+      { nights: "Night 4", location: "Khajuraho", name: "A garden hotel near the temples" },
+      { nights: "Nights 5–7", location: "Bandhavgarh", name: "A forest lodge near the park gate" },
       {
         nights: "Nights 8–10",
         location: "Kanha",
-        name: "Sal Forest Tented Lodge (placeholder)",
+        name: "A tented lodge in the sal forest",
         staySlug: "kanha-tented-lodge",
       },
-      { nights: "Night 11", location: "Delhi", name: "Aerocity Garden Hotel (placeholder)" },
+      { nights: "Night 11", location: "Delhi", name: "A quiet hotel near the airport" },
     ],
     guides:
       "A Varanasi-born scholar of the city's rituals guides you on the ghats, an art historian leads you through Khajuraho, and resident naturalists, many raised in villages on the forest edge, accompany every safari in Bandhavgarh and Kanha.",
@@ -804,17 +805,17 @@ export const journeys: Journey[] = [
       },
     ],
     stays: [
-      { nights: "Night 1", location: "Delhi", name: "Aerocity Garden Hotel (placeholder)" },
-      { nights: "Nights 2–4", location: "Leh", name: "Stok View Hotel (placeholder)" },
+      { nights: "Night 1", location: "Delhi", name: "A quiet hotel near the airport" },
+      { nights: "Nights 2–4", location: "Leh", name: "A small hotel facing the Stok range" },
       {
         nights: "Nights 5–6",
         location: "Nubra Valley",
-        name: "Nubra Valley Homestay (placeholder)",
+        name: "A family homestay in the Nubra Valley",
         staySlug: "nubra-valley-homestay",
       },
-      { nights: "Night 7", location: "Pangong Tso", name: "Pangong Lakeside Camp (placeholder)" },
-      { nights: "Nights 8–10", location: "Leh", name: "Stok View Hotel (placeholder)" },
-      { nights: "Night 11", location: "Delhi", name: "Aerocity Garden Hotel (placeholder)" },
+      { nights: "Night 7", location: "Pangong Tso", name: "A tented camp by the lake" },
+      { nights: "Nights 8–10", location: "Leh", name: "A small hotel facing the Stok range" },
+      { nights: "Night 11", location: "Delhi", name: "A quiet hotel near the airport" },
     ],
     guides:
       "A Ladakhi guide born in Leh travels with you throughout the high country, explaining monastery life and mountain culture, while your driver is an experienced local who has driven these passes for many years.",
@@ -964,17 +965,17 @@ export const journeys: Journey[] = [
       },
     ],
     stays: [
-      { nights: "Night 1", location: "Delhi", name: "Lodhi Garden House (placeholder)" },
+      { nights: "Night 1", location: "Delhi", name: "A boutique guesthouse near Lodhi Garden" },
       {
         nights: "Nights 2–4",
         location: "Varanasi",
-        name: "Ganga Ghat Haveli (placeholder)",
+        name: "A riverside haveli on the ghats",
         staySlug: "varanasi-riverside-haveli",
       },
-      { nights: "Nights 5–8", location: "Rishikesh", name: "Ganges Valley Retreat (placeholder)" },
-      { nights: "Night 9", location: "Delhi", name: "Lodhi Garden House (placeholder)" },
-      { nights: "Nights 10–11", location: "Amritsar", name: "Punjab Heritage Haveli (placeholder)" },
-      { nights: "Night 12", location: "Delhi", name: "Aerocity Garden Hotel (placeholder)" },
+      { nights: "Nights 5–8", location: "Rishikesh", name: "A riverside retreat in the Ganges valley" },
+      { nights: "Night 9", location: "Delhi", name: "A boutique guesthouse near Lodhi Garden" },
+      { nights: "Nights 10–11", location: "Amritsar", name: "A restored heritage haveli" },
+      { nights: "Night 12", location: "Delhi", name: "A quiet hotel near the airport" },
     ],
     guides:
       "A Varanasi-born scholar of the city's rituals, a Buddhist teacher at Sarnath, an experienced yoga teacher in Rishikesh, and a Sikh guide in Amritsar who has volunteered in the Golden Temple's kitchen since childhood.",
@@ -1133,12 +1134,12 @@ export const journeys: Journey[] = [
       },
     ],
     stays: [
-      { nights: "Nights 1–2", location: "Delhi", name: "Lodhi Garden House (placeholder)" },
-      { nights: "Nights 3–4", location: "Amritsar", name: "Punjab Heritage Haveli (placeholder)" },
-      { nights: "Nights 5–6", location: "Lucknow", name: "Nawabi Kothi Hotel (placeholder)" },
-      { nights: "Nights 7–8", location: "Kolkata", name: "Park Street Heritage Hotel (placeholder)" },
-      { nights: "Night 9", location: "Chennai", name: "Mylapore Garden Hotel (placeholder)" },
-      { nights: "Nights 10–11", location: "Chettinad", name: "Chettinad Mansion Hotel (placeholder)" },
+      { nights: "Nights 1–2", location: "Delhi", name: "A boutique guesthouse near Lodhi Garden" },
+      { nights: "Nights 3–4", location: "Amritsar", name: "A restored heritage haveli" },
+      { nights: "Nights 5–6", location: "Lucknow", name: "A heritage mansion hotel" },
+      { nights: "Nights 7–8", location: "Kolkata", name: "A heritage hotel in central Kolkata" },
+      { nights: "Night 9", location: "Chennai", name: "A garden hotel in Mylapore" },
+      { nights: "Nights 10–11", location: "Chettinad", name: "A restored Chettiar mansion" },
     ],
     guides:
       "A Delhi food writer leads you through the old city, a Sikh guide hosts you in Amritsar, a Lucknowi storyteller introduces Awadhi cuisine, a Kolkata food historian guides you through the markets, and a Chettiar family welcomes you into their kitchen.",
@@ -1279,12 +1280,12 @@ export const journeys: Journey[] = [
       },
     ],
     stays: [
-      { nights: "Nights 1–2", location: "Delhi", name: "Lutyens Grand Hotel (placeholder)" },
-      { nights: "Nights 3–7", location: "Rajasthan", name: "Luxury palace train, deluxe cabin (placeholder)" },
+      { nights: "Nights 1–2", location: "Delhi", name: "A grand hotel in Lutyens' Delhi" },
+      { nights: "Nights 3–7", location: "Rajasthan", name: "A deluxe cabin on a luxury palace train" },
       {
         nights: "Nights 8–9",
         location: "Udaipur",
-        name: "Jal Mahal Lake Palace (placeholder)",
+        name: "A palace hotel on Lake Pichola",
         staySlug: "udaipur-lake-palace",
       },
     ],
@@ -1439,25 +1440,25 @@ export const journeys: Journey[] = [
       {
         nights: "Nights 1–3",
         location: "Udaipur",
-        name: "Jal Mahal Lake Palace (placeholder)",
+        name: "A palace hotel on Lake Pichola",
         staySlug: "udaipur-lake-palace",
       },
-      { nights: "Night 4", location: "Fort Kochi", name: "Spice Port Heritage Hotel (placeholder)" },
+      { nights: "Night 4", location: "Fort Kochi", name: "A heritage hotel in the old port" },
       {
         nights: "Night 5",
         location: "Vembanad Lake",
-        name: "Vembanad Kettuvallam (placeholder)",
+        name: "A private kettuvallam houseboat",
         staySlug: "vembanad-houseboat",
       },
-      { nights: "Night 6", location: "Kumarakom", name: "Kumarakom Lake Retreat (placeholder)" },
-      { nights: "Night 7", location: "Port Blair", name: "Port Blair Bay Hotel (placeholder)" },
+      { nights: "Night 6", location: "Kumarakom", name: "A lakeside retreat on Vembanad" },
+      { nights: "Night 7", location: "Port Blair", name: "A hotel overlooking the bay" },
       {
         nights: "Nights 8–12",
         location: "Havelock",
-        name: "Radhanagar Beach Retreat (placeholder)",
+        name: "A beach retreat near Radhanagar",
         staySlug: "andaman-beach-retreat",
       },
-      { nights: "Night 13", location: "Chennai", name: "Chennai Airport Hotel (placeholder)" },
+      { nights: "Night 13", location: "Chennai", name: "A hotel near the airport" },
     ],
     guides:
       "An Udaipur guide who knows the city's quiet corners, a Kochi historian for Fort Kochi, and in the Andamans, local hosts and licensed dive instructors who know the reefs well.",
@@ -1617,21 +1618,21 @@ export const journeys: Journey[] = [
       },
     ],
     stays: [
-      { nights: "Nights 1–2", location: "Delhi", name: "Lodhi Garden House (placeholder)" },
-      { nights: "Night 3", location: "Agra", name: "Mehtab Garden Hotel (placeholder)" },
+      { nights: "Nights 1–2", location: "Delhi", name: "A boutique guesthouse near Lodhi Garden" },
+      { nights: "Night 3", location: "Agra", name: "A garden hotel near the Taj Mahal" },
       {
         nights: "Nights 4–5",
         location: "Ranthambore",
-        name: "Ranthambore Jungle Lodge (placeholder)",
+        name: "A jungle lodge near the park",
         staySlug: "ranthambore-jungle-lodge",
       },
       {
         nights: "Nights 6–8",
         location: "Jaipur",
-        name: "Haveli Gulabi (placeholder)",
+        name: "A heritage haveli in the old city",
         staySlug: "jaipur-heritage-haveli",
       },
-      { nights: "Nights 9–11", location: "Udaipur", name: "Pichola Garden Hotel (placeholder)" },
+      { nights: "Nights 9–11", location: "Udaipur", name: "A garden hotel near Lake Pichola" },
     ],
     guides:
       "Guides chosen for their warmth with children: a Delhi storyteller, a Taj specialist who brings Mughal history to life, a Ranthambore naturalist who has guided many young wildlife lovers, and family-friendly guides in Jaipur and Udaipur.",

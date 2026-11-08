@@ -97,7 +97,7 @@ export default async function StayPage({ params }: PageProps<"/[locale]/stays/[s
                   ))}
                 </ul>
               </div>
-              <p className="mt-4 text-xs text-stone">{t("Placeholder property. Replace with the real hotel, photography and rates.")}</p>
+              <p className="mt-4 text-xs text-stone">{t("This page describes the kind of property we use here. Your specialist names the exact hotel and confirms rates when you plan.")}</p>
             </Reveal>
           </div>
         </Container>
